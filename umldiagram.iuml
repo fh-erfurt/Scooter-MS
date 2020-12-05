@@ -1,0 +1,35 @@
+@startuml
+
+title Types - Class Diagram
+
+
+skinparam componentStyle uml2
+
+
+
+
+class User {
+.. Simple Getter ..
++ getName() : String
++ getAddress() : Address
+  .. Some setter ..
++ setName() : String
+  __ private data __
+  -int age
+  -- crypted --
+  -String password
+  }
+
+enum status {
+ready
+charging
+damaged
+maintenance
+}
+
+
+
+class Object << general >>
+Object <|--- ArrayList
+
+@enduml
