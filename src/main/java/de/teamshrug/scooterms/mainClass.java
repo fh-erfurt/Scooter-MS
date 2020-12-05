@@ -6,10 +6,10 @@ public class mainClass {
         System.out.println("Scooter-MS Start...");
 
 
-        area Erfurt = new area("Erfurt",50.95f,51.01f, 11.00f,11.06f);
+        Area Erfurt = new Area("Erfurt",50.95f,51.01f, 11.00f,11.06f);
 
-        coordinate PosInArea = new coordinate(50.978966f,11.029587f);
-        coordinate PosNotInArea = new coordinate(50.992366f,11.079712f);
+        Coordinate PosInArea = new Coordinate(50.978966f,11.029587f);
+        Coordinate PosNotInArea = new Coordinate(50.992366f,11.079712f);
 
 
 
