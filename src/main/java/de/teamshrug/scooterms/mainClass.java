@@ -1,6 +1,4 @@
-
-
-
+package de.teamshrug.scooterms;
 
 public class mainClass {
     public static void main(String[] args)
