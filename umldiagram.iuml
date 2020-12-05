@@ -2,7 +2,6 @@
 
 
 
-title Classes and Enums
 
 
 skinparam componentStyle uml2
@@ -10,22 +9,68 @@ skinparam componentStyle uml2
 
 
 class scooter {
-  .. Simple Getter ..
-  + getName() : String
-  + getAddress() : Address
-  .. Some setter ..
-  + setName() : String
+  .. Getter ..
+  + getState() : status
+  + getBatteryInfo() : int
+  + getPosition() : coordinate
+  +getRegisteredArea() : area
+
+  .. Setter ..
+  + setState(status)
+  + setPosition(coordinate)
+  + setPosition(coordinate)
+  +setRegisteredArea(area)
+
+  .. Methods ..
+
   __ private data __
-  -int age
-  -- crypted --
-  -String password
+  -int ID
+  -status State
+  -int Battery
+  -coordinate Position
+  -area RegisteredArea
 }
 
+class area {
+  .. Getter ..
+  +getAreaCoordinates() : float(4)
+
+  .. Setter ..
+  +setAreaCoordinates(float(4))
+
+  .. Methods ..
+  +isInArea() : Bool
+
+  __ private data __
+  -string AreaName
+  -float Ndegree1
+  -float Ndegree2
+  -float Edegree1
+  -float Edegree2
+}
+
+
+
+class coordinate {
+  .. Getter ..
+
+  .. Setter ..
+
+  .. Methods ..
+
+  __ private data __
+  -float Ndegree
+  -float Edegree
+}
+
+
+
 enum status {
-ready
-charging
-damaged
-maintenance
+  +ready
+  +parked
+  +charging
+  +damaged
+  +maintenance
 }
 
 

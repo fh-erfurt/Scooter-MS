@@ -1,7 +1,9 @@
 
 
 
-public enum statusEnum {
+public enum statusEnum
+{
 
+    ready,charging,damaged,maintenance;
 
 }
