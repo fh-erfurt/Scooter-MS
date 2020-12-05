@@ -14,15 +14,15 @@ class scooter {
   + getBatteryInfo() : int
   + getPosition() : coordinate
   +getRegisteredArea() : area
-
+  
   .. Setter ..
   + setState(status)
   + setPosition(coordinate)
   + setPosition(coordinate)
   +setRegisteredArea(area)
-
+  
   .. Methods ..
-
+  
   __ private data __
   -int ID
   -status State
@@ -34,10 +34,10 @@ class scooter {
 class area {
   .. Getter ..
   +getAreaCoordinates() : float(4)
-
+  
   .. Setter ..
   +setAreaCoordinates(float(4))
-
+  
   .. Methods ..
   +isInArea() : Bool
 
@@ -52,11 +52,12 @@ class area {
 
 
 class coordinate {
+  .. Constructor ..
+  (Ndegree , Edegree)
+
   .. Getter ..
 
   .. Setter ..
-
-  .. Methods ..
 
   __ private data __
   -float Ndegree
@@ -75,7 +76,5 @@ enum status {
 
 
 
-class Object << general >>
-Object <|--- ArrayList
 
 @enduml
