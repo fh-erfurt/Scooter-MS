@@ -1,6 +1,6 @@
 @startuml
 
-title Types - Class Diagram
+title Classes and Enums
 
 
 skinparam componentStyle uml2
@@ -8,17 +8,17 @@ skinparam componentStyle uml2
 
 
 
-class User {
-.. Simple Getter ..
-+ getName() : String
-+ getAddress() : Address
+class scooter {
+  .. Simple Getter ..
+  + getName() : String
+  + getAddress() : Address
   .. Some setter ..
-+ setName() : String
+  + setName() : String
   __ private data __
   -int age
   -- crypted --
   -String password
-  }
+}
 
 enum status {
 ready
