@@ -6,8 +6,8 @@ public class Scooter
     public Scooter(Status _state, Area _registeredArea)
     {
         state = _state;
-        battery = 100;
         registeredarea = _registeredArea;
+        battery = 100;
 
         Coordinate position = new Coordinate(0,0);
     }

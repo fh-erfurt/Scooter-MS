@@ -17,8 +17,12 @@ public class mainClass {
         {
             System.out.println("In der Area");
         }
-        else System.out.println("Nicht in Area");
+        else
+        {
+            System.out.println("Nicht in Area");
+        }
 
+        System.out.println(Erfurt.getAreaInfo());
 
     }
 }

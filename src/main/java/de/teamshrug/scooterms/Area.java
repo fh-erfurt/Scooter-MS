@@ -28,9 +28,16 @@ public class Area {
     }
 
 
+    public String getAreaInfo() {
+        return String.format(areaname,ndegree1,ndegree2,edegree1,edegree2);
+    }
+
+
     private final String areaname;
     private final float ndegree1;
     private final float ndegree2;
     private final float edegree1;
     private final float edegree2;
+
+
 }
