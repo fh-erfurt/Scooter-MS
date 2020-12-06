@@ -22,6 +22,8 @@ public class mainClass {
             System.out.println("Nicht in Area");
         }
 
+
+
         System.out.println(Erfurt.getAreaInfo());
 
     }
