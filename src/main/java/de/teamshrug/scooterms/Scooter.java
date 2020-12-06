@@ -8,6 +8,7 @@ public class Scooter
         state = _state;
         registeredarea = _registeredArea;
         battery = 100;
+        id = ++numberofscooters;
 
         Coordinate position = new Coordinate(0,0);
     }
@@ -24,7 +25,7 @@ public class Scooter
 
 
 
-    public int getID() {
+    public int getId() {
         return id;
     }
 
@@ -46,6 +47,9 @@ public class Scooter
 
     public void setPosition(Coordinate position) {this.position = position;}
 
+    public static int getNumberofscooters() {
+        return numberofscooters;
+    }
 
 
     private Area registeredarea;
@@ -53,6 +57,7 @@ public class Scooter
     private int id;
     private Status state;
     private int battery;
+    private static int numberofscooters;
 
 
 

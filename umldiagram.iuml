@@ -16,7 +16,9 @@ class scooter {
   + getState() : status
   + getBatteryInfo() : int
   + getPosition() : coordinate
-  +getRegisteredArea() : area
+  + getRegisteredArea() : area
+  + getId() : int
+  + getNumberofscooters() : int
 
   .. Setter ..
   + setState(status)
