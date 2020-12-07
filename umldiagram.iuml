@@ -28,11 +28,11 @@ class scooter {
   .. Methods ..
 
   __ private data __
-  -int ID
-  -status State
-  -int Battery
-  -coordinate Position
-  -area RegisteredArea
+  -int id
+  -status state
+  -int battery
+  -coordinate position
+  -area registeredarea
 }
 
 class area {
@@ -46,11 +46,11 @@ class area {
   +isInArea(coordinate) : Bool
 
   __ private data __
-  -string AreaName
-  -float Ndegree1
-  -float Ndegree2
-  -float Edegree1
-  -float Edegree2
+  -string areaname
+  -float ndegree1
+  -float ndegree2
+  -float edegree1
+  -float edegree2
 }
 
 
@@ -59,13 +59,8 @@ class coordinate {
   .. Constructor ..
   (Ndegree , Edegree)
 
-  .. Getter ..
-
-  .. Setter ..
-
-  __ private data __
-  -float Ndegree
-  -float Edegree
+  -float ndegree
+  -float edegree
 }
 
 
