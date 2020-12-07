@@ -1,4 +1,4 @@
-package de.teamshrug.scooterms.test;
+package de.teamshrug.scooterms;
 
 import de.teamshrug.scooterms.Area;
 
