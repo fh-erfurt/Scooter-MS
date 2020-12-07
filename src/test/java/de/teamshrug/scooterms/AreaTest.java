@@ -1,9 +1,9 @@
 package de.teamshrug.scooterms;
 
-import de.teamshrug.scooterms.Area;
+
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
-//import junit.framework.Test;
+
 
 
 public class AreaTest {
