@@ -10,6 +10,14 @@ public class AreaTest {
 
     private boolean isinarea = true;
 
+
+    @Test
+    public void constructorTest()
+    {
+
+    }
+
+
     @Test
     public void isInAreaTest()
     {
@@ -18,4 +26,5 @@ public class AreaTest {
 
         assertEquals(isinarea, TestArea.isInArea(TestPositionInArea));
     }
+
 }

@@ -23,7 +23,10 @@ public class Scooter
         registeredarea = _registeredArea;
     }
 
-
+    public void driveScooter()
+    {
+        battery--;
+    }
 
     public int getId() {
         return id;
@@ -54,7 +57,7 @@ public class Scooter
 
     private Area registeredarea;
     private Coordinate position;
-    private int id;
+    private final int id;
     private Status state;
     private int battery;
     private static int numberofscooters;
