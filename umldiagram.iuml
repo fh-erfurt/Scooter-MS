@@ -66,19 +66,32 @@ class Coordinate {
 
 class Customer {
   .. Constructor ..
-  ()
+  (username, password)
+
+  .. Getter ..
+  + getPosition() : coordinate
+  + getCreditedEuros(): float
+
+  .. Setter ..
+  + setPosition(coordinate)
+  + setCreditedEuros(creditedeuros)
+
+
+  .. Methods ..
+  + useNearestScooter()
 
   __ private data __
   -string username
   -float creditedeuros
   -string password
+  -coordinate position
 }
 
 
 
 enum Status {
   + ready
-  + parked
+  + inuse
   + charging
   + damaged
   + maintenance
