@@ -23,7 +23,6 @@ public class ScooterTest
         assertEquals(100,TestScooter1.getBattery(),"Battery should be 100 after instantiation");
 
 
-
     }
 
 }
