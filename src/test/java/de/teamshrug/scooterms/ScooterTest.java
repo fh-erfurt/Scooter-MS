@@ -24,6 +24,10 @@ public class ScooterTest
 
         assertEquals(3,TestScooter1.getNumberofscooters(),"After instantitation of 3 Scooters, the static variable should be 3");
 
+        TestScooter3.finalize();
+
+        assertEquals(2,TestScooter1.getNumberofscooters(),"After removing one Scooter, the static variable should be 2");
+
 
     }
 

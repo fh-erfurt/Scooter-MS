@@ -13,6 +13,11 @@ public class Scooter
         Coordinate position = new Coordinate(0,0);
     }
 
+    protected void finalize()
+    {
+        --numberofscooters;
+    }
+
 
 
     public Area getRegisteredArea() {
