@@ -5,10 +5,10 @@ public class Scooter
 
     public Scooter(Status _state, Area _registeredArea)
     {
-        state = _state;
-        registeredarea = _registeredArea;
-        battery = 100;
-        id = ++numberofscooters;
+        this.state = _state;
+        this.registeredarea = _registeredArea;
+        this.battery = 100;
+        this.id = ++numberofscooters;
 
         Coordinate position = new Coordinate(0,0);
     }
@@ -21,11 +21,11 @@ public class Scooter
 
 
     public Area getRegisteredArea() {
-        return registeredarea;
+        return this.registeredarea;
     }
 
     public void setRegisteredArea(Area _registeredArea) {
-        registeredarea = _registeredArea;
+        this.registeredarea = _registeredArea;
     }
 
     public void drive()
@@ -42,7 +42,7 @@ public class Scooter
     }
 
     public void setState(Status _state) {
-        state = _state;
+        this.state = _state;
     }
 
     public int getBattery() {

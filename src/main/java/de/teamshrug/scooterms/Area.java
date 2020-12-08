@@ -4,11 +4,11 @@ public class Area {
 
 
     public Area(String _areaname, float _ndegree1, float _ndegree2, float _edegree1, float _edegree2) {
-        areaname = _areaname;
-        ndegree1 = _ndegree1;
-        ndegree2 = _ndegree2;
-        edegree1 = _edegree1;
-        edegree2 = _edegree2;
+        this.areaname = _areaname;
+        this.ndegree1 = _ndegree1;
+        this.ndegree2 = _ndegree2;
+        this.edegree1 = _edegree1;
+        this.edegree2 = _edegree2;
     }
 
 
