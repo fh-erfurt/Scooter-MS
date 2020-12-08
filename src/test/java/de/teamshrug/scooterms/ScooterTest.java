@@ -16,9 +16,13 @@ public class ScooterTest
         Scooter TestScooter2 = new Scooter(Status.ready,TestArea);
         Scooter TestScooter3 = new Scooter(Status.ready,TestArea);
 
-        assertEquals(1,TestScooter1.getId());
-        assertEquals(2,TestScooter2.getId());
-        assertEquals(3,TestScooter3.getId());
+        assertEquals(1,TestScooter1.getId(),"ID should be 1");
+        assertEquals(2,TestScooter2.getId(),"ID should be 2");
+        assertEquals(3,TestScooter3.getId(),"ID should be 3");
+
+        assertEquals(100,TestScooter1.getBattery(),"Battery should be 100 after instantiation");
+
+
 
     }
 
