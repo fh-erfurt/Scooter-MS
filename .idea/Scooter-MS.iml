@@ -72,7 +72,6 @@
     <orderEntry type="library" name="Maven: org.apache.maven.doxia:doxia-module-xhtml5:1.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-i18n:1.0-beta-10" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-30" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-velocity:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.4" level="project" />
