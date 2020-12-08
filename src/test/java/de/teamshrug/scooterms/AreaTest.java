@@ -8,14 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AreaTest {
 
-    private boolean isinarea = true;
+    private final boolean isinarea = true;
 
 
-    @Test
-    public void constructorTest()
-    {
 
-    }
 
 
     @Test

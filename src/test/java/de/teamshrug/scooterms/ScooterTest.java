@@ -1,11 +1,25 @@
 package de.teamshrug.scooterms;
 
-import de.teamshrug.scooterms.Scooter;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ScooterTest
 {
 
+    @Test
+    public void constructorTest()
+    {
+        Area TestArea = new Area("TestArea",40.123f,45.321f,50.123f,55.321f);
+        Scooter TestScooter1 = new Scooter(Status.ready,TestArea);
+        Scooter TestScooter2 = new Scooter(Status.ready,TestArea);
+        Scooter TestScooter3 = new Scooter(Status.ready,TestArea);
 
+        assertEquals(1,TestScooter1.getId());
+        assertEquals(2,TestScooter2.getId());
+        assertEquals(3,TestScooter3.getId());
+
+    }
 
 }
