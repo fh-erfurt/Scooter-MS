@@ -27,7 +27,10 @@ public class Customer {
 
     public void useNearestScooter()
     {
-        creditedeuros--;
+        if (creditedeuros != 0)
+        {
+            creditedeuros--;
+        }
     }
 
     private float creditedeuros;

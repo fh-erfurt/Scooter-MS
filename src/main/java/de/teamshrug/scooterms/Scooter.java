@@ -21,7 +21,7 @@ public class Scooter
 
 
     public Area getRegisteredArea() {
-        return this.registeredarea;
+        return registeredarea;
     }
 
     public void setRegisteredArea(Area _registeredArea) {
