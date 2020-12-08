@@ -8,7 +8,7 @@ skinparam componentStyle uml2
 
 
 
-class scooter {
+class Scooter {
   .. Constructor ..
 
 
@@ -35,7 +35,7 @@ class scooter {
   -area registeredarea
 }
 
-class area {
+class Area {
   .. Getter ..
   +getAreaCoordinates() : float(4)
 
@@ -55,7 +55,7 @@ class area {
 
 
 
-class coordinate {
+class Coordinate {
   .. Constructor ..
   (Ndegree , Edegree)
 
@@ -64,7 +64,7 @@ class coordinate {
 }
 
 
-class customer {
+class Customer {
   .. Constructor ..
   ()
 
@@ -76,7 +76,7 @@ class customer {
 
 
 
-enum status {
+enum Status {
   + ready
   + parked
   + charging
