@@ -64,6 +64,17 @@ class coordinate {
 }
 
 
+class customer {
+  .. Constructor ..
+  ()
+
+  __ private data __
+  -string username
+  -float creditedeuros
+  -string password
+}
+
+
 
 enum status {
   + ready
