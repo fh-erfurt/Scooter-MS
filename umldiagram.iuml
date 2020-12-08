@@ -9,10 +9,7 @@ skinparam componentStyle uml2
 
 
 class Scooter {
-  .. Constructor ..
-
-
-  .. Getter ..
+    .. Getter ..
   + getState() : status
   + getBatteryInfo() : int
   + getPosition() : coordinate
@@ -36,11 +33,14 @@ class Scooter {
 }
 
 class Area {
+  .. Constructor ..
+  (areaname, 4*float)
+
   .. Getter ..
-  +getAreaCoordinates() : float(4)
+  +getAreaInfo() : string
 
   .. Setter ..
-  +setAreaCoordinates(float(4))
+  +setAreaCoordinates(4*float)
 
   .. Methods ..
   +isInArea(coordinate) : Bool
@@ -57,7 +57,7 @@ class Area {
 
 class Coordinate {
   .. Constructor ..
-  (Ndegree , Edegree)
+  (ndegree, edegree)
 
   -float ndegree
   -float edegree
@@ -70,7 +70,7 @@ class Customer {
 
   .. Getter ..
   + getPosition() : coordinate
-  + getCreditedEuros(): float
+  + getCreditedEuros() : float
 
   .. Setter ..
   + setPosition(coordinate)
