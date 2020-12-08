@@ -5,6 +5,7 @@ import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
 
+
 public class AreaTest {
 
     private boolean isinarea = true;
