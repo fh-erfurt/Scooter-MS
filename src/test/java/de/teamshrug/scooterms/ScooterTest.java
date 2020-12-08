@@ -22,6 +22,8 @@ public class ScooterTest
 
         assertEquals(100,TestScooter1.getBattery(),"Battery should be 100 after instantiation");
 
+        assertEquals(3,TestScooter1.getNumberofscooters(),"After instantitation of 3 Scooters, the static variable should be 3");
+
 
     }
 

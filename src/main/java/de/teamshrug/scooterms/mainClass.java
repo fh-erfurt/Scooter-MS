@@ -27,15 +27,7 @@ public class mainClass {
         System.out.println(Erfurt.getAreaInfo());
 
 
-        Scooter scooter1 = new Scooter(Status.ready,Erfurt);
-        Scooter scooter2 = new Scooter(Status.ready,Erfurt);
-        Scooter scooter3 = new Scooter(Status.ready,Erfurt);
 
-        System.out.println("Menge an Scootern: " + scooter2.getNumberofscooters());
-
-        System.out.println(scooter1.getId());
-        System.out.println(scooter2.getId());
-        System.out.println(scooter3.getId());
 
     }
 }
