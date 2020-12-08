@@ -20,9 +20,10 @@ class Scooter {
   .. Setter ..
   + setState(status)
   + setPosition(coordinate)
-  +setRegisteredArea(area)
+  + setRegisteredArea(area)
 
   .. Methods ..
+  + drive() : void
 
   __ private data __
   -int id
@@ -37,13 +38,13 @@ class Area {
   (areaname, 4*float)
 
   .. Getter ..
-  +getAreaInfo() : string
+  + getAreaInfo() : string
 
   .. Setter ..
-  +setAreaCoordinates(4*float)
+  + setAreaCoordinates(4*float)
 
   .. Methods ..
-  +isInArea(coordinate) : Bool
+  + isInArea(coordinate) : Bool
 
   __ private data __
   -string areaname
@@ -78,7 +79,7 @@ class Customer {
 
 
   .. Methods ..
-  + useNearestScooter()
+  + useNearestScooter() : void
 
   __ private data __
   -string username

@@ -28,7 +28,7 @@ public class Scooter
         registeredarea = _registeredArea;
     }
 
-    public void driveScooter()
+    public void drive()
     {
         battery--;
     }
