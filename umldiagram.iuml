@@ -118,7 +118,19 @@ class ScooterHunter {
 
 }
 
+class ScooterHotspot {
+  .. Constructor ..
 
+  .. Getter ..
+
+  .. Setter ..
+
+  .. Methods ..
+
+  __ private data __
+  -coordinate location
+
+}
 
 enum Status {
   + ready
