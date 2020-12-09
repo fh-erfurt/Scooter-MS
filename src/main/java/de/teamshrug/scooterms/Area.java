@@ -12,6 +12,8 @@ public class Area {
     }
 
 
+
+
     public boolean isInArea(Coordinate _position)
     {
         if (((ndegree1 < _position.ndegree) && (_position.ndegree < ndegree2)) || ((ndegree1 > _position.ndegree) && (_position.ndegree > ndegree2)))
