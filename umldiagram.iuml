@@ -10,12 +10,13 @@ skinparam componentStyle uml2
 
 class Scooter {
     .. Getter ..
+  + getId() : int
   + getState() : status
   + getBatteryInfo() : int
   + getPosition() : coordinate
   + getRegisteredArea() : area
-  + getId() : int
-  + getNumberofscooters() : int
+  + getNumberOfScooters() : int
+  + getLicensePlate() : string
 
   .. Setter ..
   + setState(status)
@@ -24,6 +25,7 @@ class Scooter {
 
   .. Methods ..
   + drive() : void
+  + charge() : void
 
   __ private data __
   -int id
@@ -31,6 +33,7 @@ class Scooter {
   -int battery
   -coordinate position
   -area registeredarea
+  -string licenseplate
 }
 
 class Area {
@@ -88,6 +91,11 @@ class Customer {
   -coordinate position
 }
 
+class ScooterHunter {
+  ..  ..
+
+}
+
 
 
 enum Status {
@@ -97,6 +105,8 @@ enum Status {
   + damaged
   + maintenance
 }
+
+
 
 
 
