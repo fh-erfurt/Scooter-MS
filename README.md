@@ -8,3 +8,6 @@
 
 
 
+![map image](https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/img.png)
+
+![](https://www.scribblemaps.com/api/maps/images/550/400/ScooterMapEF.png)
