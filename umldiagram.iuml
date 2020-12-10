@@ -9,6 +9,8 @@ skinparam componentStyle uml2
 
 
 class Scooter {
+    .. Constructor ..
+      (id ,position ,registeredarea ,licenseplate )
     .. Getter ..
   + getId() : int
   + getState() : status
@@ -33,6 +35,7 @@ class Scooter {
   -int battery
   -coordinate position
   -area registeredarea
+  -int numberofscooter
   -string licenseplate
 }
 
@@ -120,15 +123,25 @@ class ScooterHunter {
 
 class ScooterHotspot {
   .. Constructor ..
-
+(hotspotname, location, maxscootercount)
   .. Getter ..
-
+   + getHotSpotName() : string
+   + getLocation() : coordinate
+   + getMaxScooterCount() : int
+   + getScooterCount() : int
   .. Setter ..
-
+   + setHotSpotName(string) : void
+   + setLocation(coordinate) : void
+   + setMaxScooterCount(int) : void
+   + setScooterCount(int) : void
   .. Methods ..
 
   __ private data __
+  -string hotspotname
   -coordinate location
+  -int maxscootercount
+  -int scootercount
+
 
 }
 
@@ -140,8 +153,7 @@ enum Status {
   + maintenance
 }
 
-
-
+Customer --|> ScooterHunter
 
 
 
