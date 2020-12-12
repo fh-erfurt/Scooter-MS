@@ -95,29 +95,12 @@ class Customer {
 }
 
 class ScooterHunter {
-  .. Constructor ..
-    (username, password)
-
-  .. Getter ..
-  + getCreditedEuros() : float
-  + getPosition() : coordinate
-
-  .. Setter ..
-  + setCreditedEuros(creditedeuros)
-  + setPosition(coordinate)
-
 
   .. Methods ..
-  + returnNearestScooter() : Scooter
   + chargeScooter(Scooter) : void
   + inspectScooter(Scooter) : void
   + cashOut(float): void
 
-  __ private data __
-  -string username
-  -string password
-  -float creditedeuros
-  -coordinate position
 
 }
 
