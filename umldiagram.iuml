@@ -130,6 +130,7 @@ class ScooterHotspot {
 
 enum Status {
   + ready
+  + lowonbattery
   + inuse
   + charging
   + damaged
