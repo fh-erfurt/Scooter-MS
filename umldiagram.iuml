@@ -137,9 +137,12 @@ enum Status {
   + maintenance
 }
 
-Customer --|> ScooterHunter
-
-
+ScooterHunter --|> Customer
+Scooter -- Status
+Scooter -- Coordinate
+Scooter -- Area
+ScooterHotspot -- Coordinate
+Customer -- Coordinate
 
 
 @enduml
