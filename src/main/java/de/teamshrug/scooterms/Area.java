@@ -2,7 +2,6 @@ package de.teamshrug.scooterms;
 
 public class Area {
 
-
     public Area(String _areaname, float _ndegree1, float _ndegree2, float _edegree1, float _edegree2) {
         this.areaname = _areaname;
         this.ndegree1 = _ndegree1;
@@ -10,9 +9,6 @@ public class Area {
         this.edegree1 = _edegree1;
         this.edegree2 = _edegree2;
     }
-
-
-
 
     public boolean isInArea(Coordinate _position)
     {
@@ -29,18 +25,14 @@ public class Area {
             return false;
     }
 
-
     public String getAreaInfo()
     {
         return areaname + ": N" + ndegree1 + "° - N" + ndegree2 + "°  &  E" + edegree1 + "° - E" + edegree2 + "°";
     }
-
 
     private final String areaname;
     private final float ndegree1;
     private final float ndegree2;
     private final float edegree1;
     private final float edegree2;
-
-
 }

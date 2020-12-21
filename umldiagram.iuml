@@ -100,9 +100,32 @@ class ScooterHunter {
   + chargeScooter(Scooter) : void
   + inspectScooter(Scooter) : void
   + cashOut(float): void
-
-
 }
+
+class Admin {
+
+  .. Methods ..
+  + returnAllScooters() : Scooter[]
+  + returnLocalMaintenanceDepartment(Scooter) : MaintenanceDepartment
+  + sendScooterToMaintenance(Scooter,MaintenanceDepartment) : boolean
+}
+
+
+class MaintenanceDepartment {
+  .. Constructor ..
+(departmentname, location, maxscootercapacity)
+
+
+  .. Methods ..
+  + repairScooter(Scooter) : void
+  + checkOutScooter(Scooter) : void
+
+  __ private data __
+  -coordinate location
+  -maxscootercapacity
+  -scooterarray[maxscootercapacity]
+}
+
 
 class ScooterHotspot {
   .. Constructor ..
@@ -117,7 +140,6 @@ class ScooterHotspot {
    + setLocation(coordinate) : void
    + setMaxScooterCount(int) : void
    + setScooterCount(int) : void
-  .. Methods ..
 
   __ private data __
   -string hotspotname
@@ -137,12 +159,15 @@ enum Status {
   + maintenance
 }
 
+Admin --|> Customer
 ScooterHunter --|> Customer
 Scooter -- Status
 Scooter -- Coordinate
 Scooter -- Area
+MaintenanceDepartment -- Coordinate
 ScooterHotspot -- Coordinate
 Customer -- Coordinate
 
 
 @enduml
+
