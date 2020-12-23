@@ -1,16 +1,23 @@
 package de.teamshrug.scooterms;
 
+import java.util.LinkedList;
+import java.util.Random;
+
+
 public class Scooter
 {
 
-    public Scooter(Status _state, Area _registeredArea)
+    public Scooter(Area _registeredArea)
     {
-        this.state = _state;
+        this.state = Status.ready;
         this.registeredarea = _registeredArea;
         this.battery = 100;
         this.id = ++numberofscooters;
 
-        Coordinate position = new Coordinate(0,0);
+        requestLicensePlate();
+
+        //Coordinate position = new Coordinate(1.0f,1.0f);
+        this.setPosition(new Coordinate(0,0));
     }
 
     protected void finalize()
@@ -18,6 +25,32 @@ public class Scooter
         --numberofscooters;
     }
 
+
+
+    void requestLicensePlate()
+    {
+        if (this.licenseplate == null)
+        {
+            this.licenseplate = genRandomNumber(100,999) + genChars();
+        }
+    }
+
+    private int genRandomNumber(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+    public String genChars(){
+        char one   = (char)(Math.random()*26 + 'A');
+        char two   = (char)(Math.random()*26 + 'A');
+        char three = (char)(Math.random()*26 + 'A');
+        return String.valueOf(one) + String.valueOf(two) + String.valueOf(three);
+    }
 
 
     public Area getRegisteredArea() {
@@ -59,12 +92,20 @@ public class Scooter
         return numberofscooters;
     }
 
+    public String getLicensePlate() {
+        return licenseplate;
+    }
+
+    public void setLicensePlate(String licenseplate) {
+        this.licenseplate = licenseplate;
+    }
 
     private Area registeredarea;
     private Coordinate position;
     private final int id;
     private Status state;
     private int battery;
+    private String licenseplate;
     private static int numberofscooters;
 
 

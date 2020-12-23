@@ -11,6 +11,7 @@ skinparam componentStyle uml2
 class Scooter {
     .. Constructor ..
       (id ,position ,registeredarea ,licenseplate )
+
     .. Getter ..
   + getId() : int
   + getState() : status
@@ -28,6 +29,7 @@ class Scooter {
   .. Methods ..
   + drive() : void
   + charge() : void
+  + requestLicensePlate() : void
 
   __ private data __
   -int id
@@ -83,7 +85,6 @@ class Customer {
   + setPosition(coordinate)
   + setCreditedEuros(creditedeuros)
 
-
   .. Methods ..
   + returnNearestScooter() : Scooter
 
@@ -105,7 +106,7 @@ class ScooterHunter {
 class Admin {
 
   .. Methods ..
-  + returnAllScooters() : Scooter[]
+  + printAllScooters() : Scooter[]
   + returnLocalMaintenanceDepartment(Scooter) : MaintenanceDepartment
   + sendScooterToMaintenance(Scooter,MaintenanceDepartment) : boolean
 }
@@ -113,33 +114,39 @@ class Admin {
 
 class MaintenanceDepartment {
   .. Constructor ..
-(departmentname, location, maxscootercapacity)
+(departmentname, location, scootercapacity)
 
+  .. Getter ..
+  + getLocation() : coordinate
+  + getScooterCapacity() int
+  + getScooterArray() : Scooter[]
 
   .. Methods ..
   + repairScooter(Scooter) : void
   + checkOutScooter(Scooter) : void
 
   __ private data __
+  -string departmentname
   -coordinate location
-  -maxscootercapacity
-  -scooterarray[maxscootercapacity]
+  -int scootercapacity
+  -Scooter scooterarray[scootercapacity]
 }
 
 
 class ScooterHotspot {
   .. Constructor ..
 (hotspotname, location, maxscootercount)
+
   .. Getter ..
-   + getHotSpotName() : string
-   + getLocation() : coordinate
-   + getMaxScooterCount() : int
-   + getScooterCount() : int
+  + getHotSpotName() : string
+  + getLocation() : coordinate
+  + getMaxScooterCount() : int
+  + getScooterCount() : int
   .. Setter ..
-   + setHotSpotName(string) : void
-   + setLocation(coordinate) : void
-   + setMaxScooterCount(int) : void
-   + setScooterCount(int) : void
+  + setHotSpotName(string) : void
+  + setLocation(coordinate) : void
+  + setMaxScooterCount(int) : void
+  + setScooterCount(int) : void
 
   __ private data __
   -string hotspotname
@@ -161,7 +168,7 @@ enum Status {
 
 Admin --|> Customer
 ScooterHunter --|> Customer
-Scooter -- Status
+Scooter - Status
 Scooter -- Coordinate
 Scooter -- Area
 MaintenanceDepartment -- Coordinate

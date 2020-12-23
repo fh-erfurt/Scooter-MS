@@ -12,9 +12,9 @@ public class ScooterTest
     public void constructorTest()
     {
         Area TestArea = new Area("TestArea",40.123f,45.321f,50.123f,55.321f);
-        Scooter TestScooter1 = new Scooter(Status.ready,TestArea);
-        Scooter TestScooter2 = new Scooter(Status.ready,TestArea);
-        Scooter TestScooter3 = new Scooter(Status.ready,TestArea);
+        Scooter TestScooter1 = new Scooter(TestArea);
+        Scooter TestScooter2 = new Scooter(TestArea);
+        Scooter TestScooter3 = new Scooter(TestArea);
 
         assertEquals(1,TestScooter1.getId(),"ID should be 1");
         assertEquals(2,TestScooter2.getId(),"ID should be 2");
@@ -28,7 +28,7 @@ public class ScooterTest
 
         assertEquals(2,TestScooter1.getNumberofscooters(),"After removing one Scooter, the static variable should be 2");
 
-
+        assertEquals("String".getClass(),TestScooter1.getLicensePlate().getClass(), "Licenseplate should be a string");
     }
 
 }

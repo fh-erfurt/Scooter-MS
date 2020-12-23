@@ -2,5 +2,5 @@ package de.teamshrug.scooterms;
 
 public enum Status
 {
-    ready,inuse,charging,damaged,maintenance
+    ready,lowonbattery,inuse,charging,damaged,maintenance
 }
