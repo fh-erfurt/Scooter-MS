@@ -23,6 +23,7 @@ public class mainClass {
         ScooterList.get(56).setState(Status.lowonbattery);
         ScooterList.get(87).setState(Status.charging);
 
+        /*
         ScooterList.forEach(Scooter -> {
             System.out.println(Scooter.getId() +
                     ": " + "Status: " + Scooter.getState() + " - "
@@ -32,6 +33,12 @@ public class mainClass {
             );
 
         });
+        */
+
+
+        for (Scooter scooter : ScooterList) {
+            System.out.println(scooter);
+        }
 
     }
 }

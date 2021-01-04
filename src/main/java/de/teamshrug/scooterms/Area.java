@@ -30,6 +30,12 @@ public class Area {
         return areaname + ": N" + ndegree1 + "° - N" + ndegree2 + "°  &  E" + edegree1 + "° - E" + edegree2 + "°";
     }
 
+    @Override
+    public String toString()
+    {
+        return areaname;
+    }
+
     private final String areaname;
     private final float ndegree1;
     private final float ndegree2;

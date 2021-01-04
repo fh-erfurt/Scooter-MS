@@ -100,6 +100,32 @@ public class Scooter
         this.licenseplate = licenseplate;
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder strBuilder = new StringBuilder("Scooter ");
+        strBuilder.append(this.id);
+        strBuilder.append(" with Licenseplate ");
+        strBuilder.append(this.licenseplate);
+        strBuilder.append(" is ");
+        strBuilder.append(this.state);
+        strBuilder.append(" and has ");
+        strBuilder.append(this.battery);
+        strBuilder.append("% Battery and ");
+        if (registeredarea.isInArea(this.position))
+        {
+            strBuilder.append("it in his registered Area ");
+        }
+        else
+        {
+            strBuilder.append("is NOT in his registered Area ");
+        }
+
+        strBuilder.append(this.registeredarea);
+
+        return strBuilder.toString();
+    }
+
     private Area registeredarea;
     private Coordinate position;
     private final int id;
