@@ -9,27 +9,37 @@ public class Customer {
         this.position = new Coordinate(0,0);
     }
 
-    public float getCreditedeuros() {
+    public float getCreditedeuros()
+    {
         return creditedeuros;
     }
 
-    public void setCreditedeuros(float creditedeuros) {
+    public void setCreditedeuros(float creditedeuros)
+    {
         this.creditedeuros = creditedeuros;
     }
 
-    public Coordinate getPosition() {
+    public Coordinate getPosition()
+    {
         return position;
     }
 
-    public void setPosition(Coordinate position) {
+    public void setPosition(Coordinate position)
+    {
         this.position = position;
     }
 
-    public void useNearestScooter()
+    public /*Scooter*/ void returnNearestScooter()
+    {
+
+    }
+
+    public void useScooter(Scooter _scooter)
     {
         if (creditedeuros != 0)
         {
             creditedeuros--;
+            _scooter.drive();
         }
     }
 

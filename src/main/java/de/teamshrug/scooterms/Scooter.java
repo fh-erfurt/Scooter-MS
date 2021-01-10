@@ -53,11 +53,13 @@ public class Scooter
     }
 
 
-    public Area getRegisteredArea() {
+    public Area getRegisteredArea()
+    {
         return registeredarea;
     }
 
-    public void setRegisteredArea(Area _registeredArea) {
+    public void setRegisteredArea(Area _registeredArea)
+    {
         this.registeredarea = _registeredArea;
     }
 
@@ -66,37 +68,47 @@ public class Scooter
         battery--;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public Status getState() {
+    public Status getState()
+    {
         return state;
     }
 
-    public void setState(Status _state) {
+    public void setState(Status _state)
+    {
         this.state = _state;
     }
 
-    public int getBattery() {
+    public int getBattery()
+    {
         return battery;
     }
 
-    public Coordinate getPosition() {
+    public Coordinate getPosition()
+    {
         return position;
     }
 
-    public void setPosition(Coordinate position) {this.position = position;}
+    public void setPosition(Coordinate position)
+    {this.position = position;
+    }
 
-    public static int getNumberofscooters() {
+    public static int getNumberofscooters()
+    {
         return numberofscooters;
     }
 
-    public String getLicensePlate() {
+    public String getLicensePlate()
+    {
         return licenseplate;
     }
 
-    public void setLicensePlate(String licenseplate) {
+    public void setLicensePlate(String licenseplate)
+    {
         this.licenseplate = licenseplate;
     }
 

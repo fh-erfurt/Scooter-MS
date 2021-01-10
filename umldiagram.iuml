@@ -87,6 +87,7 @@ class Customer {
 
   .. Methods ..
   + returnNearestScooter() : Scooter
+  + useScooter(Scooter) : void
 
   __ private data __
   -string username
