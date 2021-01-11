@@ -127,8 +127,8 @@ class MaintenanceDepartment {
   + checkOutScooter(Scooter) : void
 
   __ private data __
-  -string departmentname
-  -coordinate location
+  -String departmentname
+  -Coordinate location
   -int scootercapacity
   -Scooter scooterarray[scootercapacity]
 }
@@ -150,8 +150,8 @@ class ScooterHotspot {
   + setScooterCount(int) : void
 
   __ private data __
-  -string hotspotname
-  -coordinate location
+  -String hotspotname
+  -Coordinate location
   -int maxscootercount
   -int scootercount
 

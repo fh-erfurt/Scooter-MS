@@ -15,15 +15,18 @@ public class MaintenanceDepartment
 
 
 
-    public Coordinate getLocation() {
+    public Coordinate getLocation()
+    {
         return location;
     }
 
-    public int getScootercapacity() {
+    public int getScootercapacity()
+    {
         return scootercapacity;
     }
 
-    public Scooter[] getScooterarray() {
+    public Scooter[] getScooterarray()
+    {
         return scooterarray;
     }
 

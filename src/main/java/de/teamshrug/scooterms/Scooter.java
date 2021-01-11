@@ -26,7 +26,7 @@ public class Scooter
     }
 
 
-
+    // creates licenseplate with pattern like '263ZDE'
     void requestLicensePlate()
     {
         if (this.licenseplate == null)
@@ -35,7 +35,8 @@ public class Scooter
         }
     }
 
-    private int genRandomNumber(int min, int max) {
+    private int genRandomNumber(int min, int max)
+    {
 
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
@@ -45,7 +46,8 @@ public class Scooter
         return r.nextInt((max - min) + 1) + min;
     }
 
-    public String genChars(){
+    public String genChars()
+    {
         char one   = (char)(Math.random()*26 + 'A');
         char two   = (char)(Math.random()*26 + 'A');
         char three = (char)(Math.random()*26 + 'A');
@@ -124,6 +126,7 @@ public class Scooter
         strBuilder.append(" and has ");
         strBuilder.append(this.battery);
         strBuilder.append("% Battery and ");
+
         if (registeredarea.isInArea(this.position))
         {
             strBuilder.append("it in his registered Area ");
@@ -145,7 +148,4 @@ public class Scooter
     private int battery;
     private String licenseplate;
     private static int numberofscooters;
-
-
-
 }

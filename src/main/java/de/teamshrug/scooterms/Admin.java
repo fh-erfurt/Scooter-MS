@@ -4,7 +4,8 @@ import java.util.LinkedList;
 
 public class Admin extends Customer
 {
-    public Admin(String username, String password) {
+    public Admin(String username, String password)
+    {
         super(username, password);
     }
 
