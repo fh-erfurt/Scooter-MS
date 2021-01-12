@@ -6,7 +6,7 @@
 
 ### Used Software and Tools in this project
 IntelliJ IDE for development<br />
-[Scribblemaps for the embedded Area Image](https://www.scribblemaps.com/)<br />
+Scribblemaps.com for the embedded Area Image
 PlantUML integration for IntelliJ
 
 
