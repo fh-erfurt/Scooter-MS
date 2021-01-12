@@ -3,6 +3,13 @@
 ## Scooter Management System
 
 
+
+### Used Software and Tools in this project
+IntelliJ IDE for development
+[Scribblemaps for the embedded Area Image](https://www.scribblemaps.com/)
+PlantUML integration for IntelliJ
+
+
 ### UML
 ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/umldiagram.iuml)
 
