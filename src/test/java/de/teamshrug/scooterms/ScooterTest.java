@@ -12,9 +12,10 @@ public class ScooterTest
     public void constructorTest()
     {
         Area TestArea = new Area("TestArea",40.123f,45.321f,50.123f,55.321f);
-        Scooter TestScooter1 = new Scooter(TestArea);
-        Scooter TestScooter2 = new Scooter(TestArea);
-        Scooter TestScooter3 = new Scooter(TestArea);
+        MaintenanceDepartment MD_Test = new MaintenanceDepartment("MD_Test", new Coordinate(41.2345f,51.2345f),8);
+        Scooter TestScooter1 = new Scooter(TestArea, MD_Test);
+        Scooter TestScooter2 = new Scooter(TestArea, MD_Test);
+        Scooter TestScooter3 = new Scooter(TestArea, MD_Test);
 
         assertEquals(1,TestScooter1.getId(),"ID should be 1");
         assertEquals(2,TestScooter2.getId(),"ID should be 2");

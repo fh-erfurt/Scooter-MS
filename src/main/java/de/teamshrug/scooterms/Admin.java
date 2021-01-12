@@ -10,27 +10,26 @@ public class Admin extends Customer
     }
 
 
-     void printAllScooters(LinkedList<Scooter> _scooterlist)
+     void printAllScooters()
      {
-         _scooterlist.forEach(Scooter -> {
-             System.out.println(Scooter.getId() + ": "
-                     + "Status: " + Scooter.getState() + " - "
-                     + "Batterie: " + Scooter.getBattery() + " - "
-                     + "in seiner registrierten Area: " + Scooter.getRegisteredArea().isInArea(Scooter.getPosition()) + " - "
-                     + "Kennzeichen: " + Scooter.getLicensePlate()
-             );
-         });
+         //Scooter.scooterlist.forEach(Scooter -> {
+         //    System.out.println(Scooter.getId() + ": "
+         //            + "Status: " + Scooter.getState() + " - "
+         //            + "Batterie: " + Scooter.getBattery() + " - "
+         //            + "in seiner registrierten Area: " + Scooter.getRegisteredArea().isInArea(Scooter.getPosition()) + " - "
+         //            + "Kennzeichen: " + Scooter.getLicensePlate());
+         //});
+
+         Scooter.scooterlist.forEach(System.out::println);
      }
 
-     /*MaintenanceDepartment*/void returnLocalMaintenanceDepartment(Scooter _scooter)
+     MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
      {
-
+        return _scooter.getRegisteredMaintenanceDepartment();
      }
 
      boolean sendScooterToMaintenance(Scooter _scooter, MaintenanceDepartment _maintenancedepartment)
      {
-        return true; //!
+         return _maintenancedepartment.receiveScooter(_scooter);
      }
-
-
 }

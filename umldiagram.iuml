@@ -14,12 +14,13 @@ class Scooter {
 
     .. Getter ..
   + getId() : int
-  + getState() : status
+  + getState() : Status
   + getBatteryInfo() : int
-  + getPosition() : coordinate
-  + getRegisteredArea() : area
+  + getPosition() : Coordinate
+  + getRegisteredArea() : A
   + getNumberOfScooters() : int
-  + getLicensePlate() : string
+  + getLicensePlate() : String
+  + getRegisteredMaintenanceDepartment() : MaintenanceDepartment
 
   .. Setter ..
   + setState(status)
@@ -33,12 +34,12 @@ class Scooter {
 
   __ private data __
   -int id
-  -status state
+  -Status state
   -int battery
-  -coordinate position
-  -area registeredarea
+  -Coordinate position
+  -Area registeredarea
   -int numberofscooter
-  -string licenseplate
+  -String licenseplate
 }
 
 class Area {
@@ -55,7 +56,7 @@ class Area {
   + isInArea(coordinate) : bool
 
   __ private data __
-  -string areaname
+  -String areaname
   -float ndegree1
   -float ndegree2
   -float edegree1
@@ -90,10 +91,10 @@ class Customer {
   + useScooter(Scooter) : void
 
   __ private data __
-  -string username
-  -string password
+  -String username
+  -String password
   -float creditedeuros
-  -coordinate position
+  -Coordinate position
 }
 
 class ScooterHunter {
@@ -108,8 +109,9 @@ class Admin {
 
   .. Methods ..
   + printAllScooters() : Scooter[]
-  + returnLocalMaintenanceDepartment(Scooter) : MaintenanceDepartment
+  + returnLocalMaintenanceDepartmentFromScooter(Scooter) : MaintenanceDepartment
   + sendScooterToMaintenance(Scooter,MaintenanceDepartment) : boolean
+
 }
 
 

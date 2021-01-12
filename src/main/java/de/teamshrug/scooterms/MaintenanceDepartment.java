@@ -1,5 +1,7 @@
 package de.teamshrug.scooterms;
 
+import java.util.LinkedList;
+
 public class MaintenanceDepartment
 {
     public MaintenanceDepartment(String _departmentname, Coordinate _location, int _scootercapacity) {
@@ -40,9 +42,21 @@ public class MaintenanceDepartment
 
     }
 
+    boolean receiveScooter(Scooter _scooter)
+    {
+        if (MaintenanceDepartmentScooterList.size() < scootercapacity)
+        {
+            MaintenanceDepartmentScooterList.add(_scooter);
+            return true;
+        }
+        else
+            return false;
+    }
+
     private final String departmentname;
     private final Coordinate location;
     private int scootercapacity = 8;
     private Scooter scooterarray [] = new Scooter[scootercapacity];
+    private LinkedList<Scooter> MaintenanceDepartmentScooterList = new LinkedList<Scooter>();
 
 }

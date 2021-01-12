@@ -1,18 +1,20 @@
 package de.teamshrug.scooterms;
 
-import java.util.LinkedList;
 import java.util.Random;
+import java.util.LinkedList;
 
 
 public class Scooter
 {
 
-    public Scooter(Area _registeredArea)
+    public Scooter(Area _registeredArea, MaintenanceDepartment _registeredmaintenancedepartment)
     {
+        this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
         this.state = Status.ready;
         this.registeredarea = _registeredArea;
         this.battery = 100;
         this.id = ++numberofscooters;
+        scooterlist.add(this);
 
         requestLicensePlate();
 
@@ -23,6 +25,7 @@ public class Scooter
     protected void finalize()
     {
         --numberofscooters;
+        scooterlist.remove(this);
     }
 
 
@@ -146,6 +149,17 @@ public class Scooter
     private final int id;
     private Status state;
     private int battery;
+
+    public MaintenanceDepartment getRegisteredMaintenanceDepartment() {
+        return registeredmaintenancedepartment;
+    }
+
+    public void setRegisteredMaintenanceDepartment(MaintenanceDepartment _registeredmaintenancedepartment) {
+        this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
+    }
+
     private String licenseplate;
+    public static LinkedList<Scooter> scooterlist = new LinkedList<Scooter>();
     private static int numberofscooters;
+    private MaintenanceDepartment registeredmaintenancedepartment;
 }
