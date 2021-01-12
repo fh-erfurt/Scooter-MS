@@ -12,35 +12,43 @@ public class ScooterHotspot {
 
 
 
-    public String getHotspotname() {
+    public String getHotspotname()
+    {
         return hotspotname;
     }
 
-    public void setHotspotname(String hotspotname) {
+    public void setHotspotname(String hotspotname)
+    {
         this.hotspotname = hotspotname;
     }
 
-    public Coordinate getLocation() {
+    public Coordinate getLocation()
+    {
         return location;
     }
 
-    public void setLocation(Coordinate location) {
+    public void setLocation(Coordinate location)
+    {
         this.location = location;
     }
 
-    public int getMaxscootercount() {
+    public int getMaxscootercount()
+    {
         return maxscootercount;
     }
 
-    public void setMaxscootercount(int maxscootercount) {
+    public void setMaxscootercount(int maxscootercount)
+    {
         this.maxscootercount = maxscootercount;
     }
 
-    public int getScootercount() {
+    public int getScootercount()
+    {
         return scootercount;
     }
 
-    public void setScootercount(int scootercount) {
+    public void setScootercount(int scootercount)
+    {
         this.scootercount = scootercount;
     }
 
@@ -49,5 +57,4 @@ public class ScooterHotspot {
     private Coordinate location;
     private int maxscootercount;
     private int scootercount;
-
 }

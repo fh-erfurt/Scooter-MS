@@ -27,10 +27,7 @@ public class MaintenanceDepartment
         return scootercapacity;
     }
 
-    public Scooter[] getScooterarray()
-    {
-        return scooterarray;
-    }
+
 
     void repairScooter(Scooter _scooter)
     {
@@ -56,7 +53,6 @@ public class MaintenanceDepartment
     private final String departmentname;
     private final Coordinate location;
     private int scootercapacity = 8;
-    private Scooter scooterarray [] = new Scooter[scootercapacity];
     private LinkedList<Scooter> MaintenanceDepartmentScooterList = new LinkedList<Scooter>();
 
 }
