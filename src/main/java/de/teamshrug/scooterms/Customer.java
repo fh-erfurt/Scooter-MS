@@ -7,6 +7,25 @@ public class Customer {
         this.password = password;
         this.creditedeuros = 0;
         this.position = new Coordinate(0,0);
+        this.isloggedin = false;
+    }
+
+    boolean logIn(String password)
+    {
+        if (this.password.equals(password))
+        {
+            this.isloggedin = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void logOut()
+    {
+        this.isloggedin = false;
     }
 
     public float getCreditedeuros()
@@ -27,16 +46,46 @@ public class Customer {
     public void setPosition(Coordinate position)
     {
         this.position = position;
+
     }
 
-    public /*Scooter*/ void returnNearestScooter()
+    public Scooter returnNearestScooter()
     {
+        if (isloggedin)
+        {
+            double kmdistance = 0;
+            int scooterid = 0;
 
+            for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
+            {
+                double newdistance;
+
+                if (kmdistance == 0)
+                {
+                    kmdistance = Haversine.distance(this.position.ndegree, this.position.edegree,
+                            Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
+                }
+
+                newdistance = Haversine.distance(this.position.ndegree, this.position.edegree,
+                        Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
+
+                if (newdistance < kmdistance)
+                {
+                    kmdistance = newdistance;
+                    scooterid = Scooter.scooterlist.get(_i).getId();
+                }
+            }
+
+
+            return Scooter.scooterlist.get(scooterid);
+        }
+        else
+            return null;
     }
 
     public void useScooter(Scooter _scooter)
     {
-        if (creditedeuros != 0)
+        if (creditedeuros != 0 && isloggedin)
         {
             creditedeuros--;
             _scooter.drive();
@@ -47,4 +96,5 @@ public class Customer {
     private Coordinate position;
     private String username;
     private String password;
+    protected boolean isloggedin;
 }

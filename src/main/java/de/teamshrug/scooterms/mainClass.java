@@ -19,39 +19,20 @@ public class mainClass {
             Scooter _scooter = new Scooter(Erfurt, MD_Erfurt);
         }
 
+        float nmin = Erfurt.getNdegree1();
+        float nmax = Erfurt.getNdegree2();
+        float emin = Erfurt.getEdegree1();
+        float emax = Erfurt.getEdegree2();
 
-        Admin1.printAllScooters();
-/*
-        LinkedList<Scooter> ScooterList = new LinkedList<Scooter>();
-
-        for (int _i = 1 ; _i <= 100 ; _i++ )
+        for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
         {
-            Scooter _scooter = new Scooter(Erfurt, MD_Erfurt);
-            ScooterList.add(_scooter);
+            float rndegree = (float)Math.random() * (nmax - nmin ) + nmin;
+            float redegree = (float)Math.random() * (emax - emin ) + emin;
+
+            Scooter.scooterlist.get(_i).setPosition(new Coordinate(rndegree,redegree));
         }
 
-        ScooterList.get(5).setState(Status.damaged);
-        ScooterList.get(19).setState(Status.maintenance);
-        ScooterList.get(56).setState(Status.lowonbattery);
-        ScooterList.get(87).setState(Status.charging);
 
-
-        ScooterList.forEach(Scooter -> {
-            System.out.println(Scooter.getId() +
-                    ": " + "Status: " + Scooter.getState() + " - "
-                    + "Batterie: " + Scooter.getBattery() + " - "
-                    + "in seiner registrierten Area: " + Scooter.getRegisteredArea().isInArea(Scooter.getPosition())
-                    + " - " + "Kennzeichen: " + Scooter.getLicensePlate()
-            );
-
-        });
-
-
-
-        for (Scooter scooter : ScooterList) {
-            System.out.println(scooter);
-        }
-        */
 
     }
 }

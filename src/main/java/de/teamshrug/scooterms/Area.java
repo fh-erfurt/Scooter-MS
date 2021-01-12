@@ -25,6 +25,22 @@ public class Area {
             return false;
     }
 
+    public float getNdegree1() {
+        return ndegree1;
+    }
+
+    public float getNdegree2() {
+        return ndegree2;
+    }
+
+    public float getEdegree1() {
+        return edegree1;
+    }
+
+    public float getEdegree2() {
+        return edegree2;
+    }
+
     public String getAreaInfo()
     {
         return areaname + ": N" + ndegree1 + "° - N" + ndegree2 + "°  &  E" + edegree1 + "° - E" + edegree2 + "°";

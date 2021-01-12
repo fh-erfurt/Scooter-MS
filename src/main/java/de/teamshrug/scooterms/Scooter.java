@@ -29,6 +29,8 @@ public class Scooter
     }
 
 
+
+
     // creates licenseplate with pattern like '263ZDE'
     void requestLicensePlate()
     {
@@ -130,9 +132,9 @@ public class Scooter
         strBuilder.append(this.battery);
         strBuilder.append("% Battery and ");
 
-        if (registeredarea.isInArea(this.position))
+        if (isInRegisteredArea())
         {
-            strBuilder.append("it in his registered Area ");
+            strBuilder.append("is in his registered Area ");
         }
         else
         {
@@ -144,12 +146,6 @@ public class Scooter
         return strBuilder.toString();
     }
 
-    private Area registeredarea;
-    private Coordinate position;
-    private final int id;
-    private Status state;
-    private int battery;
-
     public MaintenanceDepartment getRegisteredMaintenanceDepartment() {
         return registeredmaintenancedepartment;
     }
@@ -158,6 +154,16 @@ public class Scooter
         this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
     }
 
+    public boolean isInRegisteredArea()
+    {
+        return registeredarea.isInArea(this.position);
+    }
+
+    private Area registeredarea;
+    private Coordinate position;
+    private final int id;
+    private Status state;
+    private int battery;
     private String licenseplate;
     public static LinkedList<Scooter> scooterlist = new LinkedList<Scooter>();
     private static int numberofscooters;

@@ -12,24 +12,29 @@ public class Admin extends Customer
 
      void printAllScooters()
      {
-         //Scooter.scooterlist.forEach(Scooter -> {
-         //    System.out.println(Scooter.getId() + ": "
-         //            + "Status: " + Scooter.getState() + " - "
-         //            + "Batterie: " + Scooter.getBattery() + " - "
-         //            + "in seiner registrierten Area: " + Scooter.getRegisteredArea().isInArea(Scooter.getPosition()) + " - "
-         //            + "Kennzeichen: " + Scooter.getLicensePlate());
-         //});
-
-         Scooter.scooterlist.forEach(System.out::println);
+         if (isloggedin)
+         {
+             Scooter.scooterlist.forEach(System.out::println);
+         }
      }
 
-     MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
+     public MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
      {
-        return _scooter.getRegisteredMaintenanceDepartment();
+         if (isloggedin)
+         {
+             return _scooter.getRegisteredMaintenanceDepartment();
+         }
+         else
+             return null;
      }
 
      boolean sendScooterToMaintenance(Scooter _scooter, MaintenanceDepartment _maintenancedepartment)
      {
-         return _maintenancedepartment.receiveScooter(_scooter);
+         if (isloggedin)
+         {
+             return _maintenancedepartment.receiveScooter(_scooter);
+         }
+         else
+             return false;
      }
 }
