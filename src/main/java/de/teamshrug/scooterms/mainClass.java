@@ -12,6 +12,7 @@ public class mainClass {
         MaintenanceDepartment MD_Erfurt = new MaintenanceDepartment("MD_Erfurt",new Coordinate(50.975f,11.073f),8);
 
         Admin Admin1 = new Admin("Admin1","1234");
+        ScooterHunter ScooterHunter1 = new ScooterHunter("ScooterHunter1","1234");
 
 
         for (int _i = 1 ; _i <= 100 ; _i++ )
@@ -31,7 +32,9 @@ public class mainClass {
 
             Scooter.scooterlist.get(_i).setPosition(new Coordinate(rndegree,redegree));
         }
-
+        ScooterHunter1.logIn("1234");
+        ScooterHunter1.setPosition(new Coordinate(50.975f,11.073f));
+        ScooterHunter1.returnAllScooterLowonbattery();
 
 
     }

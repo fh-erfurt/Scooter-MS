@@ -12,7 +12,7 @@ public class Scooter
         this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
         this.state = Status.ready;
         this.registeredarea = _registeredArea;
-        this.battery = 100;
+        this.battery = genRandomNumber(1,100);
         this.id = ++numberofscooters;
         scooterlist.add(this);
 
@@ -101,8 +101,7 @@ public class Scooter
     }
 
     public void setPosition(Coordinate position)
-    {this.position = position;
-    }
+    {this.position = position; }
 
     public static int getNumberofscooters()
     {
