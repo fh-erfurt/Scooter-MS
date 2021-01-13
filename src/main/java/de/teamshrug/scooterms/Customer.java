@@ -83,6 +83,11 @@ public class Customer {
             return null;
     }
 
+    public boolean getIsLoggedIn()
+    {
+        return isloggedin;
+    }
+
     public void useScooter(Scooter _scooter)
     {
         if (creditedeuros != 0 && isloggedin)
@@ -96,5 +101,5 @@ public class Customer {
     private Coordinate position;
     private String username;
     private String password;
-    protected boolean isloggedin;
+    private boolean isloggedin;
 }

@@ -18,19 +18,6 @@ public class AdminTest {
         {
             Scooter _scooter = new Scooter(TestArea, MD_Test);
         }
-
-        float nmin = TestArea.getNdegree1();
-        float nmax = TestArea.getNdegree2();
-        float emin = TestArea.getEdegree1();
-        float emax = TestArea.getEdegree2();
-
-        for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
-        {
-            float rndegree = (float)Math.random() * (nmax - nmin ) + nmin;
-            float redegree = (float)Math.random() * (emax - emin ) + emin;
-
-            Scooter.scooterlist.get(_i).setPosition(new Coordinate(rndegree,redegree));
-        }
     }
 
     @Test

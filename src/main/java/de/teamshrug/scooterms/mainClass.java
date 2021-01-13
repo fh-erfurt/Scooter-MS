@@ -1,7 +1,5 @@
 package de.teamshrug.scooterms;
 
-import java.util.LinkedList;
-
 public class mainClass {
     public static void main(String[] args)
     {
@@ -19,23 +17,5 @@ public class mainClass {
         {
             Scooter _scooter = new Scooter(Erfurt, MD_Erfurt);
         }
-
-        float nmin = Erfurt.getNdegree1();
-        float nmax = Erfurt.getNdegree2();
-        float emin = Erfurt.getEdegree1();
-        float emax = Erfurt.getEdegree2();
-
-        for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
-        {
-            float rndegree = (float)Math.random() * (nmax - nmin ) + nmin;
-            float redegree = (float)Math.random() * (emax - emin ) + emin;
-
-            Scooter.scooterlist.get(_i).setPosition(new Coordinate(rndegree,redegree));
-        }
-        ScooterHunter1.logIn("1234");
-        ScooterHunter1.setPosition(new Coordinate(50.975f,11.073f));
-        ScooterHunter1.returnAllScooterLowonbattery();
-
-
     }
 }

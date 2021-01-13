@@ -18,16 +18,23 @@ public class Scooter
 
         requestLicensePlate();
 
-        //Coordinate position = new Coordinate(1.0f,1.0f);
-        this.setPosition(new Coordinate(0,0));
+        float nmin = registeredarea.getNdegree1();
+        float nmax = registeredarea.getNdegree2();
+        float emin = registeredarea.getEdegree1();
+        float emax = registeredarea.getEdegree2();
+
+        float rndegree = (float)Math.random() * (nmax - nmin ) + nmin;
+        float redegree = (float)Math.random() * (emax - emin ) + emin;
+
+        this.setPosition(new Coordinate(rndegree,redegree));
     }
+
 
     protected void finalize()
     {
         --numberofscooters;
         scooterlist.remove(this);
     }
-
 
 
 

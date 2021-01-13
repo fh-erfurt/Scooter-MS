@@ -12,7 +12,7 @@ public class Admin extends Customer
 
      void printAllScooters()
      {
-         if (isloggedin)
+         if (getIsLoggedIn())
          {
              Scooter.scooterlist.forEach(System.out::println);
          }
@@ -20,7 +20,7 @@ public class Admin extends Customer
 
      public MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
      {
-         if (isloggedin)
+         if (getIsLoggedIn())
          {
              return _scooter.getRegisteredMaintenanceDepartment();
          }
@@ -30,7 +30,7 @@ public class Admin extends Customer
 
      boolean sendScooterToMaintenance(Scooter _scooter, MaintenanceDepartment _maintenancedepartment)
      {
-         if (isloggedin)
+         if (getIsLoggedIn())
          {
              return _maintenancedepartment.receiveScooter(_scooter);
          }

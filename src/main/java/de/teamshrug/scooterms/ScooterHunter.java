@@ -7,9 +7,9 @@ public class ScooterHunter extends Customer
         super(username, password);
     }
 
-    public void returnAllScooterLowonbattery()
+    public void returnScootersLowOnBattery()
     {
-        if (isloggedin)
+        if (getIsLoggedIn())
         {
 
             for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
@@ -30,7 +30,7 @@ public class ScooterHunter extends Customer
 
         }
         else
-            System.out.println("Login faild");
+            System.out.println("Login failed");
     }
 }
 
