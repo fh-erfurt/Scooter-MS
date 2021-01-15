@@ -14,7 +14,7 @@ public class AdminTest {
     @BeforeAll
     static void createTestInstances()
     {
-        for (int _i = 1 ; _i <= 100 ; _i++ )
+        for (int _i = 1 ; _i <= 10 ; _i++ )
         {
             Scooter _scooter = new Scooter(TestArea, MD_Test);
         }
@@ -29,10 +29,4 @@ public class AdminTest {
         TestAdmin.printAllScooters();
     }
 
-    @Test
-    public void returnNearestScooterTest()
-    {
-        TestAdmin.logIn("1234");
-        System.out.println(TestAdmin.returnNearestScooter());
-    }
 }

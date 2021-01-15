@@ -1,5 +1,8 @@
 package de.teamshrug.scooterms;
 
+/**
+ * Customer is allowed to check the account balance and drive a scotter if account balance is sufficient
+ */
 public class Customer {
 
     public Customer(String username, String password) {
@@ -10,6 +13,11 @@ public class Customer {
         this.isloggedin = false;
     }
 
+    /**
+     * if param password quals the password registered in the customer instance, private attribute loggedin is being set to true
+     * @param password plain text password
+     * @return true for the matching password, false for the wrong one
+     */
     boolean logIn(String password)
     {
         if (this.password.equals(password))
@@ -23,6 +31,9 @@ public class Customer {
         }
     }
 
+    /**
+     * If logged in, the private attribute is set to false
+     */
     void logOut()
     {
         this.isloggedin = false;
@@ -38,17 +49,26 @@ public class Customer {
         this.creditedeuros = creditedeuros;
     }
 
+    /**
+     * @return gives back the private positon as Coordinate class
+     */
     public Coordinate getPosition()
     {
         return position;
     }
 
+    /**
+     * @param position applies the position parameter to the private attribute position
+     */
     public void setPosition(Coordinate position)
     {
         this.position = position;
-
     }
 
+    /**
+     * Uses Haverine formula for calculating the distance. Distance is not yet used, but is ready to be used
+     * @return When logged in, the method returns the scooter, which is geographically closest
+     */
     public Scooter returnNearestScooter()
     {
         if (isloggedin)
@@ -83,11 +103,18 @@ public class Customer {
             return null;
     }
 
+    /**
+     * @return Returns boolean value, whether the private isloggedin is set true or false
+     */
     public boolean getIsLoggedIn()
     {
         return isloggedin;
     }
 
+    /**
+     * Customer can use the scooter (drive) if his balance is sufficient
+     * @param _scooter Scooter which is returned by returnNearestScooter
+     */
     public void useScooter(Scooter _scooter)
     {
         if (creditedeuros != 0 && isloggedin)

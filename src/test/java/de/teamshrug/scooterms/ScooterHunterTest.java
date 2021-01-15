@@ -10,13 +10,13 @@ class ScooterHunterTest {
     static Area TestArea = new Area("TestArea",50.95f,51.01f, 11.00f,11.06f);
     static MaintenanceDepartment MD_Test = new MaintenanceDepartment("MD_Test", new Coordinate(41.2345f,51.2345f),8);
 
-    static ScooterHunter ScooterHunter1 = new ScooterHunter("ScooterHunter1","1234");
+    static ScooterHunter TestScooterHunter = new ScooterHunter("ScooterHunter1","1234");
 
 
     @BeforeAll
     static void createTestInstances()
     {
-        for (int _i = 1 ; _i <= 100 ; _i++ )
+        for (int _i = 1 ; _i <= 10 ; _i++ )
         {
             Scooter _scooter = new Scooter(TestArea, MD_Test);
         }
@@ -24,10 +24,12 @@ class ScooterHunterTest {
 
 
     @Test
-    public void printAllScootersTest()
+    public void returnScootersLowOnBatteryTest()
     {
-        ScooterHunter1.logIn("1234");
-        ScooterHunter1.setPosition(new Coordinate(50.975f,11.073f));
-        ScooterHunter1.returnScootersLowOnBattery();
+        TestScooterHunter.logIn("1234");
+
+        TestScooterHunter.setPosition(new Coordinate(50.975f,11.073f));
+
+        TestScooterHunter.returnScootersLowOnBattery();
     }
 }

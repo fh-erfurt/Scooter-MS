@@ -23,7 +23,7 @@ public class ScooterHunter extends Customer
                             Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
                     scooterid = Scooter.scooterlist.get(_i).getId();
                     double roundkmdistance = Math.round(kmdistance * 100.0) / 100.0; // round kmdistance to 2 decimal places
-                    System.out.println("ScooterId:"+" "+ scooterid +" "+ "Distance:"+" "+ roundkmdistance + "km"+" "+"Battery is on:"+" "+ batterylvl + "%");
+                    System.out.println("ScooterId:"+" "+ scooterid +" "+ "Distance:"+" "+ roundkmdistance + "km"+" "+"Battery is:"+" "+ batterylvl + "%");
 
                 }
             }
