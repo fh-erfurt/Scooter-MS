@@ -39,12 +39,12 @@ public class Customer {
         this.isloggedin = false;
     }
 
-    public float getCreditedeuros()
+    public float getBalance()
     {
         return creditedeuros;
     }
 
-    public void setCreditedeuros(float creditedeuros)
+    public void setBalance(float creditedeuros)
     {
         this.creditedeuros = creditedeuros;
     }
@@ -115,15 +115,22 @@ public class Customer {
      * Customer can use the scooter (drive) if his balance is sufficient
      * @param _scooter Scooter which is returned by returnNearestScooter
      */
-    public void useScooter(Scooter _scooter)
+    public void useScooter(Scooter scooter)
     {
-        if (creditedeuros != 0 && isloggedin)
+        if (creditedeuros > 0 && isloggedin)
         {
-            creditedeuros--;
-            _scooter.drive();
+            scooter.drive(this);
+            usingScooter = scooter;
         }
     }
 
+    public void endDrive()
+    {
+        usingScooter.park();
+        usingScooter = null;
+    }
+
+    private Scooter usingScooter;
     private float creditedeuros;
     private Coordinate position;
     private String username;

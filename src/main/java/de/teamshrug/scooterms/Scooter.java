@@ -77,9 +77,40 @@ public class Scooter
         this.registeredarea = _registeredArea;
     }
 
-    public void drive()
+    public void drive(Customer driver)
     {
-        battery--;
+        setState(Status.inuse);
+        inUseByDriver = driver;
+    }
+
+    /**
+     * Calculates the driven distance and deducts the costs from the user and reduces the battery charge (each KM started 1€)
+     * If the battery drops under 20% when the scooter is parked, it state changes to lowonbattery and a scooterhunter is able to pick it up for recharging
+     */
+    public void park()
+    {
+        float ndestination = inUseByDriver.getPosition().ndegree;
+        float edestination = inUseByDriver.getPosition().edegree;
+        float startBalance = inUseByDriver.getBalance();
+
+        float kmdriven = (float)Haversine.distance(position.ndegree,position.edegree,ndestination,edestination);
+
+        float roundkmdistance = (float)(Math.round(kmdriven * 100.0) / 100.0);      // like this 4.11  rounds kmdriven to 2 decimal places
+        int meterdistance = (int)(kmdriven*1000);                                   // like this 4109
+
+        if (battery >= 20)
+        {
+            setState(Status.ready);
+        }
+        else
+        {
+            setState(Status.lowonbattery);
+        }
+
+        this.position = inUseByDriver.getPosition();                    // applies Customers position when scooter is parked
+        this.battery = this.battery - (int)(meterdistance*0.002);
+        inUseByDriver.setBalance(startBalance - roundkmdistance);
+        inUseByDriver = null;
     }
 
     public int getId()
@@ -165,6 +196,7 @@ public class Scooter
         return registeredarea.isInArea(this.position);
     }
 
+    private Customer inUseByDriver;
     private Area registeredarea;
     private Coordinate position;
     private final int id;
