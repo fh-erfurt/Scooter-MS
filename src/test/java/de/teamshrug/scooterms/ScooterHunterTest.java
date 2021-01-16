@@ -24,7 +24,7 @@ class ScooterHunterTest {
 
 
     @Test
-    public void returnScootersLowOnBatteryTest()
+    public void testReturnScootersLowOnBattery()
     {
         TestScooterHunter.logIn("1234");
 

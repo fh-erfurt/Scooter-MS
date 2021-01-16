@@ -13,27 +13,24 @@ public class AdminTest {
     static Customer TestCustomer = new Admin("1234");
 
     @BeforeAll
-    static void testCreateInstances()
+    static void CreateInstances()
     {
         for (int _i = 1 ; _i <= 10 ; _i++ )
         {
             Scooter _scooter = new Scooter(TestArea, MD_Test);
-        }
-    }
 
-    @BeforeAll
-    static void testReportDamagedScooters()
-    {
+        }
+
         TestCustomer.reportScooterDamaged(Scooter.scooterlist.get(0));
         TestCustomer.reportScooterDamaged(Scooter.scooterlist.get(1));
     }
+
 
     @Test
     public void shouldPrintAllScooters()
     {
         TestAdmin.logIn("1234");
 
-        //assertEquals(MD_Test,TestAdmin.returnLocalMaintenanceDepartmentFromScooter(Scooter.scooterlist.get(1)));
         TestAdmin.printAllScooters();
     }
 

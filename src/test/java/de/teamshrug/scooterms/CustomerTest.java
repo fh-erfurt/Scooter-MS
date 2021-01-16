@@ -21,7 +21,7 @@ class CustomerTest {
     }
 
     @Test
-    public void returnNearestScooterTest()
+    public void testReturnNearestScooter()
     {
         TestCustomer.logIn("1234");
         System.out.println(TestCustomer.returnNearestScooter());
