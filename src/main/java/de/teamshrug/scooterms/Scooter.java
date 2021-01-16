@@ -139,7 +139,9 @@ public class Scooter
     }
 
     public void setPosition(Coordinate position)
-    {this.position = position; }
+    {
+        this.position = position;
+    }
 
     public static int getNumberofscooters()
     {
@@ -156,6 +158,9 @@ public class Scooter
         this.licenseplate = licenseplate;
     }
 
+    /**
+     * @return toString method to show important information about the Scooters instead of the internal IDs
+     */
     @Override
     public String toString()
     {

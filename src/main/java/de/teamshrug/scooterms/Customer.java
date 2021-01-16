@@ -50,6 +50,15 @@ public class Customer {
     }
 
     /**
+     * An attentive Customer is able to report a non-working/damaged Scooter to the system
+     * @param scooter The Scooter as param which is damaged/defective
+     */
+    public void reportScooterDamaged(Scooter scooter)
+    {
+        scooter.setState(Status.damaged);
+    }
+
+    /**
      * @return gives back the private positon as Coordinate class
      */
     public Coordinate getPosition()

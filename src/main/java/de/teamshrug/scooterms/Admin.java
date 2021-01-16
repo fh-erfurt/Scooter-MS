@@ -21,6 +21,7 @@ public class Admin extends Customer
          }
      }
 
+     /*
      public MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
      {
          if (getIsLoggedIn())
@@ -30,12 +31,17 @@ public class Admin extends Customer
          else
              return null;
      }
+     */
 
-     boolean sendScooterToMaintenance(Scooter _scooter, MaintenanceDepartment _maintenancedepartment)
+    /**
+     * @param scooter Scooter which is damaged/defective
+     * @return If Admin is logged in and MaintenanceDepartment has capacity, true should be returned
+     */
+     boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
      {
          if (getIsLoggedIn())
          {
-             return _maintenancedepartment.receiveScooter(_scooter);
+             return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
          }
          else
              return false;
