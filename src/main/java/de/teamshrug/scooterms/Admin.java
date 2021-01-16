@@ -17,7 +17,9 @@ public class Admin extends Customer
      {
          if (getIsLoggedIn())
          {
-             Scooter.scooterlist.forEach(System.out::println);
+             for (Scooter scooter : Scooter.scooterlist) {
+                 System.out.println(scooter);
+             }
          }
      }
 
