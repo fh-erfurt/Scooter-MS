@@ -11,6 +11,8 @@
     <properties>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <java.version>15</java.version>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
 
