@@ -2,17 +2,23 @@
 
 ## Scooter Management System
 
-
+![Java CI with Maven](https://github.com/fh-erfurt/Scooter-MS/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main)
+<br />
+<br />
 
 ### Used Software and Tools in this project
-- 💻 IntelliJ IDE for development<br />
-- 🌎 Scribblemaps.com for the embedded Area Image<br />
+- 💻 IntelliJ IDE for development
+  <br />
+- 🌎 Scribblemaps.com for the embedded Area Image
+  <br />
 - 📊 PlantUML IntelliJ integration
-
+  <br />
+  <br />
 
 ### UML
 ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/umldiagram.iuml)
-
+<br />
+<br />
 
 ### Scooter-Map
 <!---
