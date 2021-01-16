@@ -7,13 +7,16 @@ import java.util.LinkedList;
  */
 public class Admin extends Customer
 {
-    public Admin(String username, String password)
+    public Admin(String password)
     {
-        super(username, password);
+        super(password);
     }
 
 
-     void printAllScooters()
+    /**
+     * Uses toStrin method from Scooter to deliver useful information
+     */
+    public void printAllScooters()
      {
          if (getIsLoggedIn())
          {
@@ -21,23 +24,30 @@ public class Admin extends Customer
          }
      }
 
-     /*
-     public MaintenanceDepartment returnLocalMaintenanceDepartmentFromScooter(Scooter _scooter)
-     {
-         if (getIsLoggedIn())
-         {
-             return _scooter.getRegisteredMaintenanceDepartment();
-         }
-         else
-             return null;
-     }
+    /**
+     *
      */
+    public void printScootersReportedAsDamaged()
+    {
+        if (getIsLoggedIn())
+        {
+            for (Scooter scooter : Scooter.scooterlist) {
+                if (scooter.getState().equals(Status.damaged))
+                {
+                    System.out.println(scooter);
+                }
+            }
+        }
+    }
+
+
+
 
     /**
      * @param scooter Scooter which is damaged/defective
      * @return If Admin is logged in and MaintenanceDepartment has capacity, true should be returned
      */
-     boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
+     public boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
      {
          if (getIsLoggedIn())
          {

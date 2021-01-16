@@ -9,7 +9,7 @@ class CustomerTest {
     static Area TestArea = new Area("TestArea",50.95f,51.01f, 11.00f,11.06f);
     static MaintenanceDepartment MD_Test = new MaintenanceDepartment("MD_Test", new Coordinate(41.2345f,51.2345f),8);
 
-    static Customer TestCustomer = new Customer("Admin1","1234");
+    static Customer TestCustomer = new Customer("1234");
 
     @BeforeAll
     static void createTestInstances()

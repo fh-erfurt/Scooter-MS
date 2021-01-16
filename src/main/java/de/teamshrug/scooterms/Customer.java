@@ -5,8 +5,7 @@ package de.teamshrug.scooterms;
  */
 public class Customer {
 
-    public Customer(String username, String password) {
-        this.username = username;
+    public Customer(String password) {
         this.password = password;
         this.creditedeuros = 0;
         this.position = new Coordinate(0,0);
@@ -142,7 +141,6 @@ public class Customer {
     private Scooter usingScooter;
     private float creditedeuros;
     private Coordinate position;
-    private String username;
     private String password;
     private boolean isloggedin;
 }

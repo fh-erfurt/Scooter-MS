@@ -109,7 +109,6 @@ class Admin {
 
   .. Methods ..
   + printAllScooters() : Scooter[]
-  + returnLocalMaintenanceDepartmentFromScooter(Scooter) : MaintenanceDepartment
   + sendScooterToMaintenance(Scooter,MaintenanceDepartment) : boolean
 
 }

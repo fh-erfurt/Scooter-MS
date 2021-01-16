@@ -14,7 +14,7 @@ public class ScooterTest
     Scooter TestScooter1 = new Scooter(Erfurt, MD_Erfurt);
     Scooter TestScooter2 = new Scooter(Erfurt, MD_Erfurt);
     Scooter TestScooter3 = new Scooter(Erfurt, MD_Erfurt);
-    Customer TestCustomer = new Customer("Driver1","1234");
+    Customer TestCustomer = new Customer("1234");
 
 
 
@@ -33,6 +33,11 @@ public class ScooterTest
         int firstquantity = Scooter.getNumberofscooters();
 
         TestScooter3.finalize();
+
+
+
+
+
 
         assertEquals(firstquantity - 1,Scooter.getNumberofscooters());
 

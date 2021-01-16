@@ -10,7 +10,7 @@ class ScooterHunterTest {
     static Area TestArea = new Area("TestArea",50.95f,51.01f, 11.00f,11.06f);
     static MaintenanceDepartment MD_Test = new MaintenanceDepartment("MD_Test", new Coordinate(41.2345f,51.2345f),8);
 
-    static ScooterHunter TestScooterHunter = new ScooterHunter("ScooterHunter1","1234");
+    static ScooterHunter TestScooterHunter = new ScooterHunter("1234");
 
 
     @BeforeAll
