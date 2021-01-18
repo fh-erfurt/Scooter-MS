@@ -12,7 +12,7 @@
 - <img src="https://logonoid.com/images/intellij-idea-logo.png" alt="IntelliJ" width="16"/>
   IntelliJ Idea for Development
   <br />
-- <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-512.png" alt="Plantuml" width="16"/>
+- <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-512.png" alt="Plantuml" width="17"/>
   Scribblemaps.com for the embedded Area Image
   <br />
 - 📊 PlantUML IntelliJ integration
