@@ -4,13 +4,16 @@
 
 ![build](https://github.com/fh-erfurt/Scooter-MS/workflows/build/badge.svg?branch=main)
 <br />
-[![Generic badge](https://img.shields.io/badge/javadoc-Read%20Here-yellow.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
+[![Generic badge](https://img.shields.io/badge/javadoc-Read%20Here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
 <br />
 
 ### Used Software and Tools in this projectapachemaven
-- 💻 IntelliJ IDE for development
+
+- <img src="https://logonoid.com/images/intellij-idea-logo.png" alt="IntelliJ" width="16"/>
+  IntelliJ Idea for Development
   <br />
-- 🌎 Scribblemaps.com for the embedded Area Image
+- <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-512.png" alt="Plantuml" width="16"/>
+  Scribblemaps.com for the embedded Area Image
   <br />
 - 📊 PlantUML IntelliJ integration
   <br />
