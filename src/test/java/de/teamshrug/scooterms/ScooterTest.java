@@ -22,27 +22,12 @@ public class ScooterTest
     public void constructorTest()
     {
 
-        /*
-        assertEquals(1,TestScooter1.getId(),"ID should be 1");
-        assertEquals(2,TestScooter2.getId(),"ID should be 2");
-        assertEquals(3,TestScooter3.getId(),"ID should be 3");
-         */
-
-        //assertEquals(3,TestScooter1.getNumberofscooters(),"After instantitation of 3 Scooters, the static variable should be 3");
-
-        int firstquantity = Scooter.getNumberofscooters();
-
-        TestScooter3.finalize();
+        int firstquantity = Scooter.scooterlist.size();
+        Scooter.scooterlist.removeLast();
 
 
+        assertEquals(firstquantity - 1,Scooter.scooterlist.size());
 
-
-
-
-        assertEquals(firstquantity - 1,Scooter.getNumberofscooters());
-
-
-        //assertEquals(2,TestScooter1.getNumberofscooters(),"After removing one Scooter, the static variable should be 2");
 
         assertEquals("String".getClass(),TestScooter1.getLicensePlate().getClass(), "Licenseplate should be a string");
     }

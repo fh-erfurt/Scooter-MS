@@ -2,7 +2,7 @@
 
 ## Scooter Management System
 
-![Java CI with Maven](https://github.com/fh-erfurt/Scooter-MS/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main)
+![build](https://github.com/fh-erfurt/Scooter-MS/workflows/build/badge.svg?branch=main)
 <br />
 <br />
 
