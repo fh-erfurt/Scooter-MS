@@ -2,11 +2,9 @@
 
 ## Scooter Management System
 
-![](https://img.shields.io/github/workflow/status/fh-erfurt/Scooter-MS/build/main?style=flat&logo=apache-maven)
+![CI](https://img.shields.io/github/workflow/status/fh-erfurt/Scooter-MS/build/main?style=flat&logo=apache-maven)
 <br />
-![build](https://github.com/fh-erfurt/Scooter-MS/workflows/build/badge.svg?branch=main)
-<br />
-[![Generic badge](https://img.shields.io/badge/javadoc-Read%20Here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
+[![Docs](https://img.shields.io/badge/javadoc-Read%20Here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
 <br />
 
 ### Used Software and Tools in this projectapachemaven
