@@ -22,11 +22,11 @@ public class MaintenanceDepartment
     }
 
 
-
     public Coordinate getLocation()
     {
         return location;
     }
+
 
     public int getScootercapacity()
     {
