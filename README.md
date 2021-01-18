@@ -4,7 +4,7 @@
 
 ![build](https://github.com/fh-erfurt/Scooter-MS/workflows/build/badge.svg?branch=main)
 <br />
-[![Generic badge](https://img.shields.io/badge/javadoc-Read-<COLOR>.svg)](https://fh-erfurt.github.io/Scooter-MS)
+[![Generic badge](https://img.shields.io/badge/javadoc-Read%20Here-<COLOR>.svg)](https://fh-erfurt.github.io/Scooter-MS)
 <br />
 
 ### Used Software and Tools in this project
