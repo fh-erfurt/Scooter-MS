@@ -121,7 +121,7 @@ public class Customer {
 
     /**
      * Customer can use the scooter (drive) if his balance is sufficient
-     * @param _scooter Scooter which is returned by returnNearestScooter
+     * @param scooter Scooter which is returned by returnNearestScooter
      */
     public void useScooter(Scooter scooter)
     {
