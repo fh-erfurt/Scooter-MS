@@ -24,7 +24,7 @@ public class ScooterHunter extends Customer
                 int scooterid = 0;
                 if (batterylvl <= 20)
                 {
-                    kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                    kmdistance = Haversine.distance(getPosition().ndegree, getPosition().edegree,
                             Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
                     scooterid = Scooter.scooterlist.get(_i).getId();
                     double roundkmdistance = Math.round(kmdistance * 100.0) / 100.0; // round kmdistance to 2 decimal places

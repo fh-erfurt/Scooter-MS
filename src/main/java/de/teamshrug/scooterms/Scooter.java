@@ -133,6 +133,11 @@ public class Scooter
         return battery;
     }
 
+    public void setBattery(int battery)
+    {
+        this.battery = battery;
+    }
+
     public Coordinate getPosition()
     {
         return position;
