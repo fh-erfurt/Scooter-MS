@@ -196,6 +196,7 @@ public class Scooter
         this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
     }
 
+
     public boolean isInRegisteredArea()
     {
         return registeredarea.isInArea(this.position);

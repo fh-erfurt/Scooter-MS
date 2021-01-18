@@ -35,5 +35,33 @@ public class ScooterHunter extends Customer
         else
             System.out.println("Login failed");
     }
+
+    /**
+     * @param battery Gets the percentage of battery of the scooter which is going to be charged
+     * @return Returns the earned credits for charging
+     */
+    public float calcBalanceForCharging(int battery)
+    {
+        int maxBattery = 100;
+        float chargingCredits = 0.05f;
+
+        int usedPowerForCharging = maxBattery - battery;
+
+        return usedPowerForCharging * chargingCredits;
+    }
+
+    /**
+     * Uses the return of calcBalanceForCharging to add the credits to the balance and fully recharges the scooter
+     * @param scooter Scooter from a list of scooters which are going to be charged by the ScooterHunter
+     */
+    public void chargeScooter(Scooter scooter)
+    {
+        scooter.setState(Status.charging);
+        float actualBalance = getBalance();
+        float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
+        setBalance(actualBalance+balanceForCharging);
+        scooter.setBattery(100);
+    }
 }
+
 
