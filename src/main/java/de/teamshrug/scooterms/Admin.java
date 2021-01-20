@@ -1,6 +1,7 @@
 package de.teamshrug.scooterms;
 
 import java.util.LinkedList;
+import java.util.logging.*;
 
 /**
  * Can do what a Customer can do, but is able to see information about all Scooter and sending them to the local repair facility
@@ -17,15 +18,22 @@ public class Admin extends Customer
      * Uses toStrin method from Scooter to deliver useful information
      */
     public void printAllScooters()
-     {
-         if (getIsLoggedIn())
-         {
-             Scooter.scooterlist.forEach(System.out::println);
-         }
-     }
+    {
+        if (getIsLoggedIn())
+        {
+            for (Scooter scooter : Scooter.scooterlist) {
+                System.out.println(scooter);
+                /*System.out.print(scooter.getPosition().ndegree);
+                System.out.print("  ");
+                System.out.print(scooter.getPosition().edegree);
+                System.out.print("  ");
+                System.out.print(Haversine.distance(getPosition().ndegree,getPosition().edegree,scooter.getPosition().ndegree,scooter.getPosition().edegree));*/
+            }
+        }
+    }
 
     /**
-     *
+     * Uses toStrin method from Scooter to deliver information about non-working Scooters
      */
     public void printScootersReportedAsDamaged()
     {

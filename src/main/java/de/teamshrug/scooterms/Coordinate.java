@@ -2,9 +2,9 @@ package de.teamshrug.scooterms;
 
 public class Coordinate
 {
-    public Coordinate(float _ndegree, float _edegree) {
-        this.ndegree = _ndegree;
-        this.edegree = _edegree;
+    public Coordinate(float ndegree, float edegree) {
+        this.ndegree = ndegree;
+        this.edegree = edegree;
     }
 
     public float ndegree;

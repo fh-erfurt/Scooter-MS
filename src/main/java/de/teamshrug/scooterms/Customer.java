@@ -38,6 +38,14 @@ public class Customer {
         this.isloggedin = false;
     }
 
+    void changePassword(String newpassword)
+    {
+        if (this.getIsLoggedIn())
+        {
+            this.password = newpassword;
+        }
+    }
+
     public float getBalance()
     {
         return creditedeuros;
@@ -79,33 +87,37 @@ public class Customer {
      */
     public Scooter returnNearestScooter()
     {
-        if (isloggedin)
+        if (getIsLoggedIn())
         {
-            double kmdistance = 0;
-            int scooterid = 0;
+            double kmdistance = -1;
+            Scooter returnscooter = null;
 
-            for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
+
+            for (Scooter scooter : Scooter.scooterlist)
             {
                 double newdistance;
 
-                if (kmdistance == 0)
+                if (kmdistance == -1)
                 {
-                    kmdistance = Haversine.distance(this.position.ndegree, this.position.edegree,
-                            Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
+                    kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                            scooter.getPosition().ndegree, scooter.getPosition().edegree);
                 }
 
-                newdistance = Haversine.distance(this.position.ndegree, this.position.edegree,
-                        Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
+                if (returnscooter == null)
+                {
+                    returnscooter = scooter;
+                }
+
+                newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                        scooter.getPosition().ndegree, scooter.getPosition().edegree);
 
                 if (newdistance < kmdistance)
                 {
+                    returnscooter = scooter;
                     kmdistance = newdistance;
-                    scooterid = Scooter.scooterlist.get(_i).getId();
                 }
             }
-
-
-            return Scooter.scooterlist.get(scooterid);
+            return returnscooter;
         }
         else
             return null;

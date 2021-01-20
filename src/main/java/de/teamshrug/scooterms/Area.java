@@ -2,49 +2,45 @@ package de.teamshrug.scooterms;
 
 public class Area {
 
-    public Area(String _areaname, float _ndegree1, float _ndegree2, float _edegree1, float _edegree2) {
-        this.areaname = _areaname;
-        this.ndegree1 = _ndegree1;
-        this.ndegree2 = _ndegree2;
-        this.edegree1 = _edegree1;
-        this.edegree2 = _edegree2;
+    public Area(String areaname, float ndegree1, float ndegree2, float edegree1, float edegree2)
+    {
+        this.areaname = areaname;
+        this.ndegree1 = ndegree1;
+        this.ndegree2 = ndegree2;
+        this.edegree1 = edegree1;
+        this.edegree2 = edegree2;
     }
 
     public boolean isInArea(Coordinate _position)
     {
         if (((ndegree1 < _position.ndegree) && (_position.ndegree < ndegree2)) || ((ndegree1 > _position.ndegree) && (_position.ndegree > ndegree2)))
         {
-            if (((edegree1 < _position.edegree) && (_position.edegree < edegree2)) || ((edegree1 > _position.edegree) && (_position.edegree > edegree2)))
-            {
-                return true;
-            }
-            else
-                return false;
+            return ((edegree1 < _position.edegree) && (_position.edegree < edegree2)) || ((edegree1 > _position.edegree) && (_position.edegree > edegree2));
         }
         else
             return false;
     }
 
-    public float getNdegree1() {
+    public float getNdegree1()
+    {
         return ndegree1;
     }
 
-    public float getNdegree2() {
+    public float getNdegree2()
+    {
         return ndegree2;
     }
 
-    public float getEdegree1() {
+    public float getEdegree1()
+    {
         return edegree1;
     }
 
-    public float getEdegree2() {
+    public float getEdegree2()
+    {
         return edegree2;
     }
 
-    public String getAreaInfo()
-    {
-        return areaname + ": N" + ndegree1 + "° - N" + ndegree2 + "°  &  E" + edegree1 + "° - E" + edegree2 + "°";
-    }
 
     @Override
     public String toString()

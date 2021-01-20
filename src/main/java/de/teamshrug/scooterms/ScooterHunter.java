@@ -8,32 +8,66 @@ public class ScooterHunter extends Customer
     public ScooterHunter(String password)
     {
         super(password);
+        this.lowbattery = 20;
     }
 
     /**
      * Lets the ScooterHunter see which Scooters urgently need to be recharged
      */
-    public void returnScootersLowOnBattery()
+    public void printScootersLowOnBattery()
     {
         if (getIsLoggedIn())
         {
-            for (int _i = 0 ; _i < Scooter.scooterlist.size() ; _i++)
+            for (Scooter scooter : Scooter.scooterlist)
             {
-                int batterylvl = Scooter.scooterlist.get(_i).getBattery();
-                double kmdistance = 0;
-                int scooterid = 0;
-                if (batterylvl <= 20)
+                if (scooter.getBattery() <= lowbattery)
                 {
-                    kmdistance = Haversine.distance(getPosition().ndegree, getPosition().edegree,
-                            Scooter.scooterlist.get(_i).getPosition().ndegree, Scooter.scooterlist.get(_i).getPosition().edegree);
-                    scooterid = Scooter.scooterlist.get(_i).getId();
-                    double roundkmdistance = Math.round(kmdistance * 100.0) / 100.0; // round kmdistance to 2 decimal places
-                    System.out.println("ScooterId:"+" "+ scooterid +" "+ "Distance:"+" "+ roundkmdistance + "km"+" "+"Battery is:"+" "+ batterylvl + "%");
+                    System.out.println(scooter);
                 }
             }
         }
+    }
+
+
+    public Scooter returnNearestScooterLowOnBattery()
+    {
+        if (getIsLoggedIn())
+        {
+            double kmdistance = -1;
+            Scooter returnscooter = null;
+
+            for (Scooter scooter : Scooter.scooterlist)
+            {
+                if (scooter.getBattery() <= lowbattery)
+                {
+                    double newdistance;
+
+                    if (kmdistance == -1)
+                    {
+                        kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                                scooter.getPosition().ndegree, scooter.getPosition().edegree);
+                    }
+
+                    if (returnscooter == null)
+                    {
+                        returnscooter = scooter;
+                    }
+
+                    newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                            scooter.getPosition().ndegree, scooter.getPosition().edegree);
+
+                    if (newdistance < kmdistance)
+                    {
+                        returnscooter = scooter;
+                        kmdistance = newdistance;
+                    }
+                }
+            }
+            return returnscooter;
+
+        }
         else
-            System.out.println("Login failed");
+            return null;
     }
 
     /**
@@ -62,6 +96,6 @@ public class ScooterHunter extends Customer
         setBalance(actualBalance+balanceForCharging);
         scooter.setBattery(100);
     }
+
+    private final int lowbattery;
 }
-
-

@@ -7,10 +7,10 @@ public class MaintenanceDepartment
     /**
      * The scootercapacity can be set in the cunstructor
      */
-    public MaintenanceDepartment(String _departmentname, Coordinate _location, int _scootercapacity) {
-        this.location = _location;
-        this.scootercapacity = _scootercapacity;
-        this.departmentname = _departmentname;
+    public MaintenanceDepartment(String departmentname, Coordinate location, int scootercapacity) {
+        this.location = location;
+        this.scootercapacity = scootercapacity;
+        this.departmentname = departmentname;
     }
 
     /**
