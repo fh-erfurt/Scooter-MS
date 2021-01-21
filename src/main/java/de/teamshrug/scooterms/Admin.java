@@ -13,7 +13,6 @@ public class Admin extends Customer
         super(password);
     }
 
-
     /**
      * Uses toStrin method from Scooter to deliver useful information
      */
@@ -21,13 +20,9 @@ public class Admin extends Customer
     {
         if (getIsLoggedIn())
         {
-            for (Scooter scooter : Scooter.scooterlist) {
+            for (Scooter scooter : Scooter.scooterlist)
+            {
                 System.out.println(scooter);
-                /*System.out.print(scooter.getPosition().ndegree);
-                System.out.print("  ");
-                System.out.print(scooter.getPosition().edegree);
-                System.out.print("  ");
-                System.out.print(Haversine.distance(getPosition().ndegree,getPosition().edegree,scooter.getPosition().ndegree,scooter.getPosition().edegree));*/
             }
         }
     }
@@ -39,7 +34,8 @@ public class Admin extends Customer
     {
         if (getIsLoggedIn())
         {
-            for (Scooter scooter : Scooter.scooterlist) {
+            for (Scooter scooter : Scooter.scooterlist)
+            {
                 if (scooter.getState().equals(Status.damaged))
                 {
                     System.out.println(scooter);
