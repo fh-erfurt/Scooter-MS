@@ -40,5 +40,24 @@ class ScooterHunterTest {
         TestScooterHunter.printScootersLowOnBattery();
         System.out.println("Jetzt der Naheste mit wenig Akku");
         System.out.println(TestScooterHunter.returnNearestScooterLowOnBattery());
+
+    }
+
+    @Test
+    public void shouldChargeScooter()
+    {
+        TestScooterHunter.logIn("1234");
+
+        TestScooterHunter.setPosition(new Coordinate(50.975f,11.073f));
+
+
+        Scooter ScooterWhichShouldBeCharged = TestScooterHunter.returnNearestScooterLowOnBattery();
+        if (ScooterWhichShouldBeCharged != null)
+        {
+            assertNotEquals(100, ScooterWhichShouldBeCharged.getBattery());
+            TestScooterHunter.chargeScooter(TestScooterHunter.returnNearestScooterLowOnBattery());
+            assertEquals(100, ScooterWhichShouldBeCharged.getBattery());
+        }
+
     }
 }

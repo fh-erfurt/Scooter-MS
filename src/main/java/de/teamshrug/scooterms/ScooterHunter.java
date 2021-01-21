@@ -8,7 +8,7 @@ public class ScooterHunter extends Customer
     public ScooterHunter(String password)
     {
         super(password);
-        this.lowbattery = 20;
+        setLowbattery(20);
     }
 
     /**
@@ -20,7 +20,7 @@ public class ScooterHunter extends Customer
         {
             for (Scooter scooter : Scooter.scooterlist)
             {
-                if (scooter.getBattery() <= lowbattery)
+                if (scooter.getBattery() <= getLowbattery())
                 {
                     System.out.println(scooter);
                 }
@@ -29,6 +29,9 @@ public class ScooterHunter extends Customer
     }
 
 
+    /**
+     * @return Returns nearest Scooter with a Battery percentage (or below) the "lowbattery" attribute.
+     */
     public Scooter returnNearestScooterLowOnBattery()
     {
         if (getIsLoggedIn())
@@ -38,7 +41,7 @@ public class ScooterHunter extends Customer
 
             for (Scooter scooter : Scooter.scooterlist)
             {
-                if (scooter.getBattery() <= lowbattery)
+                if (scooter.getBattery() <= getLowbattery())
                 {
                     double newdistance;
 
@@ -64,7 +67,6 @@ public class ScooterHunter extends Customer
                 }
             }
             return returnscooter;
-
         }
         else
             return null;
@@ -90,12 +92,35 @@ public class ScooterHunter extends Customer
      */
     public void chargeScooter(Scooter scooter)
     {
-        scooter.setState(Status.charging);
-        float actualBalance = getBalance();
-        float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
-        setBalance(actualBalance+balanceForCharging);
-        scooter.setBattery(100);
+        if (scooter != null)
+        {
+            scooter.setState(Status.charging);
+            float actualBalance = getBalance();
+            float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
+            setBalance(actualBalance+balanceForCharging);
+            scooter.setBattery(100);
+        }
+
     }
 
-    private final int lowbattery;
+    /**
+     * @return Gets the private lowbattery attribute
+     */
+    public static int getLowbattery()
+    {
+        return lowbattery;
+    }
+
+    /**
+     * @param lowbattery Sets lowbattery attribute
+     */
+    public static void setLowbattery(int lowbattery)
+    {
+        ScooterHunter.lowbattery = lowbattery;
+    }
+
+    /**
+     * Defines what a low scooter percentage is
+     */
+    static private int lowbattery = 0;
 }
