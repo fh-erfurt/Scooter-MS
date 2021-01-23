@@ -145,7 +145,7 @@ public class ScooterHunter extends Customer
      * Returns a charged Scooter to a ScooterHotspot
      * @param scooter Scooter from a list of scooters which are charged by the ScooterHunter and will be returned to a ScooterHotspot
      */
-    public void returnScooterToHotspot(Scooter scooter, ScooterHotspot scooterHotspot)
+    public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterHotspot)
     {
         int actualScooter = scooterHotspot.getScootercount();
         int newHotspotcount = (scooterHotspot.getScootercount() + 1);
