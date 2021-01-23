@@ -147,12 +147,21 @@ public class ScooterHunter extends Customer
      */
     public void returnScooterToHotspot(Scooter scooter, ScooterHotspot scooterHotspot)
     {
-        scooter.setState(Status.ready);
-        int newHotspotcount;
-        newHotspotcount = (scooterHotspot.getScootercount()+1);
-        scooterHotspot.setScootercount(newHotspotcount);
-        scooter.setPosition(scooterHotspot.getLocation());
+        int actualScooter = scooterHotspot.getScootercount();
+        int newHotspotcount = (scooterHotspot.getScootercount() + 1);
+
+        if (actualScooter < scooterHotspot.getMaxscootercount())
+        {
+            scooter.setState(Status.ready);
+            scooterHotspot.setScootercount(newHotspotcount);
+            scooter.setPosition(scooterHotspot.getLocation());
+        }
+        else {
+            System.out.println("The Hotspot is already full, please go to another one");
+        }
+
     }
+
 
 /*
     public static int getLowbattery()
