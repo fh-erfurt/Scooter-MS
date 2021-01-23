@@ -107,6 +107,9 @@ public class ScooterHunter extends Customer
             return null;
     }
 
+
+
+
     /**
      * @param battery Gets the percentage of battery of the scooter which is going to be charged
      * @return Returns the earned credits for charging
@@ -136,6 +139,19 @@ public class ScooterHunter extends Customer
             scooter.setBattery(100);
         }
 
+    }
+
+    /**
+     * Returns a charged Scooter to a ScooterHotspot
+     * @param scooter Scooter from a list of scooters which are charged by the ScooterHunter and will be returned to a ScooterHotspot
+     */
+    public void returnScooterToHotspot(Scooter scooter, ScooterHotspot scooterHotspot)
+    {
+        scooter.setState(Status.ready);
+        int newHotspotcount;
+        newHotspotcount = (scooterHotspot.getScootercount()+1);
+        scooterHotspot.setScootercount(newHotspotcount);
+        scooter.setPosition(scooterHotspot.getLocation());
     }
 
 /*
