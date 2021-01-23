@@ -138,7 +138,6 @@ public class ScooterHunter extends Customer
             setBalance(actualBalance+balanceForCharging);
             scooter.setBattery(100);
         }
-
     }
 
     /**
