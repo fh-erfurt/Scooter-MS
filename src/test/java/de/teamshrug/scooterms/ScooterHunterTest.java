@@ -13,7 +13,7 @@ class ScooterHunterTest {
 
     static Area Erfurt = new Area("Erfurt",50.95f,51.01f, 11.00f,11.06f);
     static MaintenanceDepartment MD_Erfurt = new MaintenanceDepartment("MD_Erfurt",new Coordinate(50.975f,11.073f),8);
-    static ScooterHunter TestScooterHunter = new ScooterHunter("1234");
+    static ScooterHunter TestScooterHunter = new ScooterHunter("1234", Erfurt);
     static ScooterHotspot TestScooterHotspotFH = new ScooterHotspot("TestScooterHotspot1", new Coordinate(50.98438679f,11.04356378f), Erfurt, 8);
     static ScooterHotspot TestScooterHotspotMC = new ScooterHotspot("TestScooterHotspotMC", new Coordinate(50.97666616f,11.03521138f), Erfurt, 8);
     static ScooterHotspot TestScooterHotspotDom = new ScooterHotspot("TestScooterHotspotDom", new Coordinate(50.97615951f,11.02453083f), Erfurt, 8);
@@ -62,5 +62,14 @@ class ScooterHunterTest {
             TestScooterHunter.chargeScooter(TestScooterHunter.returnNearestScooterLowOnBattery());
             assertEquals(100, ScooterWhichShouldBeCharged.getBattery());
         }
+    }
+
+    @Test
+    public void shouldReturnMostEmptyScooterHotspot()
+    {
+        TestScooterHunter.logIn("1234");
+
+        System.out.println("ScooterHotspot with the lowest use:");
+        System.out.println(TestScooterHunter.returnMostEmptyScooterHotspot());
     }
 }

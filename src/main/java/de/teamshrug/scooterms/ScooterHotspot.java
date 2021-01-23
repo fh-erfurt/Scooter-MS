@@ -66,6 +66,18 @@ public class ScooterHotspot {
         this.registeredarea = _registeredArea;
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder strBuilder = new StringBuilder("ScooterHotspot is currently used by ");
+        strBuilder.append(this.scootercount);
+        strBuilder.append("/");
+        strBuilder.append(this.maxscootercount);
+        strBuilder.append(" Scooters.");
+
+        return strBuilder.toString();
+    }
+
 
     private String hotspotname;
     private Coordinate location;

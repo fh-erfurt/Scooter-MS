@@ -5,25 +5,26 @@ package de.teamshrug.scooterms;
  */
 public class ScooterHunter extends Customer
 {
-    public ScooterHunter(String password)
+    public ScooterHunter(String password, Area area)
     {
         super(password);
+        this.activeinarea = area;
     }
 
     /**
-     * @param area From the area where the ScooterHunter is located
-     * @return Returns most-empty ScooterHotspot in the spcified area
+     * @return Returns most-empty ScooterHotspot in the area where the ScooterHunter is
      */
-    public ScooterHotspot returnMostEmptyScooterHotspot(Area area)
+    public ScooterHotspot returnMostEmptyScooterHotspot()
     {
+        ScooterHotspot returnscooterhotspot = null;
+        int returnscooterhotspotusage = -1;
+
         if (getIsLoggedIn())
         {
-            ScooterHotspot returnscooterhotspot = null;
-            int returnscooterhotspotusage = -1;
 
             for (ScooterHotspot hotspot : ScooterHotspot.scooterhotspotlist)
             {
-                if (hotspot.getRegisteredArea() == area)
+                if (hotspot.getRegisteredArea() == getActiveInArea())
                 {
                     if (hotspot.getScootercount() < hotspot.getMaxscootercount())
                     {
@@ -161,26 +162,31 @@ public class ScooterHunter extends Customer
     }
 
 
-
-
-
-
-
-
-/*
-    public static int getLowbattery()
+    public Area getActiveInArea()
     {
-        return lowbattery;
+        return activeinarea;
     }
 
-
-    public static void setLowbattery(int lowbattery)
+    public void setActiveInArea(Area activeinarea)
     {
-        ScooterHunter.lowbattery = lowbattery;
+        this.activeinarea = activeinarea;
     }
 
+    /*
+        public static int getLowbattery()
+        {
+            return lowbattery;
+        }
 
-    static private int lowbattery = 0;
 
- */
+        public static void setLowbattery(int lowbattery)
+        {
+            ScooterHunter.lowbattery = lowbattery;
+        }
+
+
+        static private int lowbattery = 0;
+
+     */
+    private Area activeinarea;
 }
