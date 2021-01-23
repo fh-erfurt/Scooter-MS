@@ -1,5 +1,7 @@
 package de.teamshrug.scooterms;
 
+import java.util.LinkedList;
+
 public class ScooterHotspot {
 
     public ScooterHotspot(String hotspotname, Coordinate location, int maxscootercount) {
@@ -7,6 +9,7 @@ public class ScooterHotspot {
         this.location = location;
         this.maxscootercount = maxscootercount;
         this.scootercount = 0;
+        scooterhotspotlist.add(this);
     }
 
 
@@ -57,4 +60,5 @@ public class ScooterHotspot {
     private Coordinate location;
     private int maxscootercount;
     private int scootercount;
+    public static LinkedList<ScooterHotspot> scooterhotspotlist = new LinkedList<ScooterHotspot>();
 }
