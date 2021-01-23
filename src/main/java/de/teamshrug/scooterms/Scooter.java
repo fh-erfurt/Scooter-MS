@@ -3,7 +3,9 @@ package de.teamshrug.scooterms;
 import java.util.Random;
 import java.util.LinkedList;
 
-
+/**
+ * The scooter class can be used by a customer as a vehicle until the battery is empty, the customer pays a fixed price for every minute of travel. When the battery is below 20 percent, its status changes to "lowonbattery" and can now be picked up by a scooter hunter to charge it, the scooter hunter receives a reward for his effort.
+ */
 public class Scooter
 {
 
@@ -37,7 +39,9 @@ public class Scooter
     }
 
 
-
+    /**
+     * generates a license plate for the scooter that calls the method
+     */
     // creates licenseplate with pattern like '263ZDE'
     void requestLicensePlate()
     {
@@ -47,6 +51,12 @@ public class Scooter
         }
     }
 
+    /**
+     * generates a random number between min and max value
+     * @param min is the smallest value
+     * @param max is the highest value
+     * @return random number
+     */
     private int genRandomNumber(int min, int max)
     {
 
@@ -57,7 +67,10 @@ public class Scooter
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
-
+    /**
+     * generates random strings for the license plate
+     * @return random strings
+     */
     public String genChars()
     {
         char one   = (char)(Math.random()*26 + 'A');
@@ -77,6 +90,10 @@ public class Scooter
         this.registeredarea = _registeredArea;
     }
 
+    /**
+     * The Customer needs the method to start a ride with a Scooter
+     * @param driver is the Customer who wants to drive the scooter
+     */
     public void drive(Customer driver)
     {
         setState(Status.inuse);
@@ -172,7 +189,7 @@ public class Scooter
     }
 
     /**
-     * @param lowbattery Sets lowbattery attribute
+     * @param newlowbattery Sets lowbattery attribute
      */
     public static void setLowbattery(int newlowbattery)
     {
