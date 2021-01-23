@@ -164,6 +164,22 @@ public class Scooter
     }
 
     /**
+     * @return Gets the private lowbattery attribute
+     */
+    public static int getLowbattery()
+    {
+        return lowbattery;
+    }
+
+    /**
+     * @param lowbattery Sets lowbattery attribute
+     */
+    public static void setLowbattery(int newlowbattery)
+    {
+        lowbattery = newlowbattery;
+    }
+
+    /**
      * @return toString method to show important information about the Scooters instead of the internal IDs
      */
     @Override
@@ -217,4 +233,8 @@ public class Scooter
     public static LinkedList<Scooter> scooterlist = new LinkedList<Scooter>();
     private static int numberofscooters;
     private MaintenanceDepartment registeredmaintenancedepartment;
+    /**
+     * Defines what a low scooter percentage is
+     */
+    static private int lowbattery = 20;
 }

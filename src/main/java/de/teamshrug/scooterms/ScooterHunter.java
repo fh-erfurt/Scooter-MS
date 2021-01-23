@@ -8,7 +8,43 @@ public class ScooterHunter extends Customer
     public ScooterHunter(String password)
     {
         super(password);
-        setLowbattery(20);
+    }
+
+    /**
+     * @param area From the area where the ScooterHunter is located
+     * @return Returns most-empty ScooterHotspot in the spcified area
+     */
+    public ScooterHotspot returnMostEmptyScooterHotspot(Area area)
+    {
+        if (getIsLoggedIn())
+        {
+            ScooterHotspot returnscooterhotspot = null;
+            int returnscooterhotspotusage = -1;
+
+            for (ScooterHotspot hotspot : ScooterHotspot.scooterhotspotlist)
+            {
+                if (hotspot.getRegisteredArea() == area)
+                {
+                    if (hotspot.getScootercount() < hotspot.getMaxscootercount())
+                    {
+                        if (returnscooterhotspot == null)
+                        {
+                            returnscooterhotspot = hotspot;
+                            returnscooterhotspotusage = hotspot.getScootercount();
+                        }
+
+                        if (hotspot.getScootercount() < returnscooterhotspotusage)
+                        {
+                            returnscooterhotspot = hotspot;
+                            returnscooterhotspotusage = hotspot.getScootercount();
+                        }
+                    }
+                }
+            }
+            return returnscooterhotspot;
+        }
+        else
+            return null;
     }
 
     /**
@@ -20,14 +56,13 @@ public class ScooterHunter extends Customer
         {
             for (Scooter scooter : Scooter.scooterlist)
             {
-                if (scooter.getBattery() <= getLowbattery())
+                if (scooter.getBattery() <= Scooter.getLowbattery())
                 {
                     System.out.println(scooter);
                 }
             }
         }
     }
-
 
     /**
      * @return Returns nearest Scooter with a Battery percentage (or below) the "lowbattery" attribute.
@@ -41,7 +76,7 @@ public class ScooterHunter extends Customer
 
             for (Scooter scooter : Scooter.scooterlist)
             {
-                if (scooter.getBattery() <= getLowbattery())
+                if (scooter.getBattery() <= Scooter.getLowbattery())
                 {
                     double newdistance;
 
@@ -103,24 +138,20 @@ public class ScooterHunter extends Customer
 
     }
 
-    /**
-     * @return Gets the private lowbattery attribute
-     */
+/*
     public static int getLowbattery()
     {
         return lowbattery;
     }
 
-    /**
-     * @param lowbattery Sets lowbattery attribute
-     */
+
     public static void setLowbattery(int lowbattery)
     {
         ScooterHunter.lowbattery = lowbattery;
     }
 
-    /**
-     * Defines what a low scooter percentage is
-     */
+
     static private int lowbattery = 0;
+
+ */
 }

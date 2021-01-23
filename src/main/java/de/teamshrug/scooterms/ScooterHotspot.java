@@ -4,11 +4,12 @@ import java.util.LinkedList;
 
 public class ScooterHotspot {
 
-    public ScooterHotspot(String hotspotname, Coordinate location, int maxscootercount) {
+    public ScooterHotspot(String hotspotname, Coordinate location,Area area, int maxscootercount) {
         this.hotspotname = hotspotname;
         this.location = location;
         this.maxscootercount = maxscootercount;
         this.scootercount = 0;
+        this.registeredarea = area;
         scooterhotspotlist.add(this);
     }
 
@@ -55,9 +56,20 @@ public class ScooterHotspot {
         this.scootercount = scootercount;
     }
 
+    public Area getRegisteredArea()
+    {
+        return registeredarea;
+    }
+
+    public void setRegisteredArea(Area _registeredArea)
+    {
+        this.registeredarea = _registeredArea;
+    }
+
 
     private String hotspotname;
     private Coordinate location;
+    private Area registeredarea;
     private int maxscootercount;
     private int scootercount;
     public static LinkedList<ScooterHotspot> scooterhotspotlist = new LinkedList<ScooterHotspot>();
