@@ -41,12 +41,15 @@ public class Area {
         return edegree2;
     }
 
+    public String getAreaname() { return areaname;}
 
     @Override
     public String toString()
     {
         return areaname;
     }
+
+
 
     private final String areaname;
     private final float ndegree1;

@@ -10,7 +10,7 @@ skinparam componentStyle uml2
 
 class Scooter {
     .. Constructor ..
-      (id ,position ,registeredarea ,licenseplate )
+      (id ,position ,registeredarea ,licenseplate, status, battery, registeredmaintenancedepartment)
 
     .. Getter ..
   + getId() : int
@@ -22,35 +22,47 @@ class Scooter {
   + getLicensePlate() : String
   + getRegisteredMaintenanceDepartment() : MaintenanceDepartment
 
+
   .. Setter ..
   + setState(status)
+  + setBattery(int)
   + setPosition(coordinate)
+  + setLicensePlate(licensplate)
+  + setLowbattery(int)
   + setRegisteredArea(area)
+  + setRegisteredMaintenanceDepartment(MaintenanceDepartment)
 
   .. Methods ..
-  + drive() : void
+  + drive(Customer) : void
+  + park() : void
   + charge() : void
   + requestLicensePlate() : void
+  + isInRegisteredArea() : bool
+  + toString() : string
+  + genChars() : string
+  + genRandomNumber(min, max) : int
 
   __ private data __
-  -int id
-  -Status state
-  -int battery
-  -Coordinate position
-  -Area registeredarea
-  -int numberofscooter
-  -String licenseplate
+  - customer inUseByDriver
+  - area registeredarea
+  - coordinate position
+  - int id
+  - status state
+  - int battery
+  - string licenseplate
+  - int numberofscooters
+  - maintenanceDepartment registeredmaintenancedepartment
+  - int lowbattery
 }
 
 class Area {
   .. Constructor ..
-  (areaname, 4*float)
+  (areaname, ndegree1, ndegree2, edegree1, edegree2)
 
   .. Getter ..
-  + getAreaInfo() : string
+  + getAreaName() : string
 
   .. Setter ..
-  + setAreaCoordinates(4*float)
 
   .. Methods ..
   + isInArea(coordinate) : bool
