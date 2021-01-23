@@ -159,8 +159,10 @@ public class ScooterHunter extends Customer
         else {
             System.out.println("The Hotspot is already full, please go to another one");
         }
-
     }
+
+
+
 
 
 /*
