@@ -167,6 +167,7 @@ public class ScooterHunter extends Customer
 
 
 
+
 /*
     public static int getLowbattery()
     {
