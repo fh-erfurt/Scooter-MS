@@ -29,4 +29,5 @@
 ![scooter map](https://www.scribblemaps.com/api/maps/images/500/600/ScooterMapEF.png)
 -->
 
-![scooter map](map.png)
+<!-- ![scooter map](map.png) -->
+![scooter map](share/Scooter-MS-Map-Animation.gif)
