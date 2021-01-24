@@ -143,22 +143,26 @@ public class ScooterHunter extends Customer
     }
 
     /**
-     * Returns a charged Scooter to a ScooterHotspot
-     * @param scooter Scooter from a list of scooters which are charged by the ScooterHunter and will be returned to a ScooterHotspot
+     * Brings back a charged Scooter to a ScooterHotspot (the most empty one at best)
+     * @param scooter Scooter from a list of scooters which are charged by the ScooterHunter and will be brought back to a ScooterHotspot
      */
-    public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterHotspot)
+    public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterhotspot)
     {
-        int actualScooter = scooterHotspot.getScootercount();
-        int newHotspotcount = (scooterHotspot.getScootercount() + 1);
-
-        if (actualScooter < scooterHotspot.getMaxscootercount())
+        if (getIsLoggedIn())
         {
-            scooter.setState(Status.ready);
-            scooterHotspot.setScootercount(newHotspotcount);
-            scooter.setPosition(scooterHotspot.getLocation());
-        }
-        else {
-            System.out.println("The Hotspot is already full, please go to another one");
+            int actualscootercount = scooterhotspot.getScootercount();
+            int newHotspotcount = (scooterhotspot.getScootercount() + 1);
+
+            if (actualscootercount < scooterhotspot.getMaxscootercount())
+            {
+                scooter.setState(Status.ready);
+                scooterhotspot.setScootercount(newHotspotcount);
+                scooter.setPosition(scooterhotspot.getLocation());
+                System.out.println("Scooter brought back to ScooterHotspot");
+            }
+            else {
+                System.out.println("The Hotspot is already full, please go to another one");
+            }
         }
     }
 

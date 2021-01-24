@@ -21,8 +21,16 @@ public class Customer {
     {
         if (this.password.equals(password))
         {
-            this.isloggedin = true;
-            return true;
+            try
+            {
+                this.isloggedin = true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.out.println(ex);
+                return false;
+            }
         }
         else
         {
@@ -40,9 +48,16 @@ public class Customer {
 
     void changePassword(String newpassword)
     {
-        if (this.getIsLoggedIn())
+        try
         {
-            this.password = newpassword;
+            if (this.getIsLoggedIn())
+            {
+                this.password = newpassword;
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
         }
     }
 
