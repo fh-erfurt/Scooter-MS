@@ -8,7 +8,7 @@ public class ScooterHunter extends Customer
     public ScooterHunter(String password, Area area)
     {
         super(password);
-        this.activeinarea = area;
+        this.activeInArea = area;
     }
 
     /**
@@ -165,12 +165,12 @@ public class ScooterHunter extends Customer
 
     public Area getActiveInArea()
     {
-        return activeinarea;
+        return activeInArea;
     }
 
-    public void setActiveInArea(Area activeinarea)
+    public void setActiveInArea(Area activeInArea)
     {
-        this.activeinarea = activeinarea;
+        this.activeInArea = activeInArea;
     }
 
     /*
@@ -189,5 +189,5 @@ public class ScooterHunter extends Customer
         static private int lowbattery = 0;
 
      */
-    private Area activeinarea;
+    private Area activeInArea;
 }

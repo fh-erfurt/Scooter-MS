@@ -1,18 +1,13 @@
 @startuml
 
 
-
-
-
 skinparam componentStyle uml2
 
-
-
 class Scooter {
-    .. Constructor ..
-      (id ,position ,registeredarea ,licenseplate, status, battery, registeredmaintenancedepartment)
+  .. Constructor ..
+  (id ,position ,registeredarea ,licenseplate, status, battery, registeredmaintenancedepartment)
 
-    .. Getter ..
+  .. Getter ..
   + getId() : int
   + getState() : Status
   + getBatteryInfo() : int
@@ -21,7 +16,6 @@ class Scooter {
   + getNumberOfScooters() : int
   + getLicensePlate() : String
   + getRegisteredMaintenanceDepartment() : MaintenanceDepartment
-
 
   .. Setter ..
   + setState(status)
@@ -75,60 +69,83 @@ class Area {
   -float edegree2
 }
 
-
-
 class Coordinate {
   .. Constructor ..
   (ndegree, edegree)
 
+  __ public data __
   -float ndegree
   -float edegree
 }
 
-
 class Customer {
   .. Constructor ..
-  (username, password)
+  (username, password, creditedeuros, position, isloggedin)
 
   .. Getter ..
   + getPosition() : coordinate
-  + getCreditedEuros() : float
+  + getBalance() : float
 
   .. Setter ..
   + setPosition(coordinate)
-  + setCreditedEuros(creditedeuros)
+  + setBalance(creditedeuros)
 
   .. Methods ..
   + returnNearestScooter() : Scooter
   + useScooter(Scooter) : void
+  + getIsLoggedIn() : isloggedin
+  + endDrive() : void
+  + reportScooterDamaged(Scooter) : void
+  + logIn(Password) : bool
+  + logOut() : void
+  + changePassword(newPassword) : void
 
   __ private data __
   -String username
   -String password
   -float creditedeuros
   -Coordinate position
+  -bool isloggedin
+  -Scooter usingScooter
 }
 
 class ScooterHunter {
+  .. Constructor ..
+  (password, area)
+
+  .. Getter ..
+  + getActiveInArea() : activeInArea
+
+  .. Setter ..
+  + setActiveInArea(activeInArea) : Area
 
   .. Methods ..
+  + returnMostEmptyScooterHotspot() : ScooterHotspot
+  + printScootersLowOnBattery() : void
+  + returnNearestScooterLowOnBattery() : void
+  + calcBalanceForCharging(int) : float
   + chargeScooter(Scooter) : void
+  + bringBackScooterToHotspot(Scooter, ScooterHotspot) : void
   + inspectScooter(Scooter) : void
   + cashOut(float): void
+
+  __ private data __
+  - Area activeInArea
 }
 
 class Admin {
+  .. Constructor ..
+  (password)
 
   .. Methods ..
   + printAllScooters() : Scooter[]
+  + printScootersReportedAsDamaged() : void
   + sendScooterToMaintenance(Scooter,MaintenanceDepartment) : boolean
-
 }
-
 
 class MaintenanceDepartment {
   .. Constructor ..
-(departmentname, location, scootercapacity)
+  (departmentname, location, scootercapacity)
 
   .. Getter ..
   + getLocation() : coordinate
@@ -138,6 +155,7 @@ class MaintenanceDepartment {
   .. Methods ..
   + repairScooter(Scooter) : void
   + checkOutScooter(Scooter) : void
+  + receiveScooter(Scooter) : bool
 
   __ private data __
   -String departmentname
@@ -146,29 +164,31 @@ class MaintenanceDepartment {
   -Scooter scooterarray[scootercapacity]
 }
 
-
 class ScooterHotspot {
   .. Constructor ..
-(hotspotname, location, maxscootercount)
+  (hotspotname, location, maxscootercount, scootercount, registeredarea)
 
   .. Getter ..
   + getHotSpotName() : string
   + getLocation() : coordinate
   + getMaxScooterCount() : int
   + getScooterCount() : int
+  + getRegisteredArea() : registeredarea
+
   .. Setter ..
   + setHotSpotName(string) : void
   + setLocation(coordinate) : void
   + setMaxScooterCount(int) : void
   + setScooterCount(int) : void
+  + setRegisteredArea(Area) : void
 
   __ private data __
   -String hotspotname
   -Coordinate location
+  -Area registeredarea
   -int maxscootercount
   -int scootercount
-
-
+  -ScooterHotspot scooterhotspotarray[scooterhotspotlist]
 }
 
 enum Status {
@@ -188,7 +208,6 @@ Scooter -- Area
 MaintenanceDepartment -- Coordinate
 ScooterHotspot -- Coordinate
 Customer -- Coordinate
-
 
 @enduml
 
