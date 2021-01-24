@@ -48,6 +48,7 @@ public class ScooterHunter extends Customer
             return null;
     }
 
+
     /**
      * Lets the ScooterHunter see which Scooters urgently need to be recharged
      */
