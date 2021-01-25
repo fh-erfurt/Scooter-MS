@@ -21,7 +21,7 @@
 
 ### UML
 <!-- ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml) -->
- <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="700"/> 
+ <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/> 
 <!-- ![scooter map](assets/umldiagram.svg) -->
 <br />
 <br />
@@ -30,4 +30,4 @@
 <!--- ![scooter map](https://www.scribblemaps.com/api/maps/images/500/600/ScooterMapEF.png) -->
 <!-- ![scooter map](assets/map.png) -->
 <!-- ![scooter map](assets/Scooter-MS-Map-Animation.gif) -->
-<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="700"/>
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="500"/>
