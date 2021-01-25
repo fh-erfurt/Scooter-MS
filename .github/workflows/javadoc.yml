@@ -24,6 +24,7 @@ jobs:
       run: |
         rm -rf docs
         cp -rf target/site/apidocs/. docs
+        rm -rf target
 
     - name: Tidy up the javadocs
       id: tidy
