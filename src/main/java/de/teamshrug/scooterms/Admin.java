@@ -1,6 +1,5 @@
 package de.teamshrug.scooterms;
 
-
 import java.util.LinkedList;
 import java.util.logging.*;
 
