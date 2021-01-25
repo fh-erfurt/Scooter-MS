@@ -1,0 +1,47 @@
+name: Javadoc-Generate
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ '**.java' ]
+
+jobs:
+  api-website:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 15
+      uses: actions/setup-java@v1
+      with:
+        java-version: 15
+
+    - name: Build docs with Maven
+      run: mvn javadoc:javadoc --no-transfer-progress
+
+    - name: Copy to Documentation Website Location
+      run: |
+        rm -rf docs
+        cp -rf target/site/apidocs/. docs
+
+    - name: Tidy up the javadocs
+      id: tidy
+      uses: cicirello/javadoc-cleanup@v1.2.0
+      with:
+        path-to-root: docs
+        base-url-path: https://fh-erfurt.github.io/Scooter-MS/index.html
+    
+    - name: Log javadoc-cleanup output
+      run: |
+        echo "modified-count = ${{ steps.tidy.outputs.modified-count }}"
+        
+    - name: Push Local Changes
+      uses:  stefanzweifel/git-auto-commit-action@v4.8.0 
+      with: 
+        commit_user_name: "Generator"
+        commit_user_email: "retch100@gmail.com"
+        commit_author: "JavaDoc Generator <me@email.org>"
+        commit_message: "JavaDoc Generated" 
+        branch: ${{ github.head_ref }}
+    
