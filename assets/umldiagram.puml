@@ -200,7 +200,6 @@ enum Status {
   + maintenance
 }
 
-
 Admin --|> Customer
 ScooterHunter --|> Customer
 Scooter - Status
