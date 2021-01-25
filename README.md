@@ -1,5 +1,5 @@
 # Scooter-MS
-<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Logo.png" alt="PlantUML" width="800"/>
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Logo.png" alt="PlantUML" width="350"/>
 
 ## Scooter Management System
 
@@ -28,12 +28,13 @@
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/>
 
 </details>
-  <br />
+
+<br />
+
 <details>
 <summary> Scooter-Map </summary>
 
 ## Animation
-<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="500"/>
-
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="600"/>
 
 </details>
