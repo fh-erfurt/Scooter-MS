@@ -2,6 +2,9 @@ package de.teamshrug.scooterms;
 
 import java.util.LinkedList;
 
+/**
+ * there are several ScooterHotspots in one area, each hotspot has a name and a limited capacity for scooters, a ScooterHunter can replace empty scooters with reloaded ones
+ */
 public class ScooterHotspot {
 
     public ScooterHotspot(String hotspotname, Coordinate location,Area area, int maxscootercount) {
@@ -13,8 +16,17 @@ public class ScooterHotspot {
         scooterhotspotlist.add(this);
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder strBuilder = new StringBuilder("ScooterHotspot is currently used by ");
+        strBuilder.append(this.scootercount);
+        strBuilder.append("/");
+        strBuilder.append(this.maxscootercount);
+        strBuilder.append(" Scooters.");
 
-
+        return strBuilder.toString();
+    }
 
     public String getHotspotname()
     {
@@ -64,18 +76,6 @@ public class ScooterHotspot {
     public void setRegisteredArea(Area _registeredArea)
     {
         this.registeredarea = _registeredArea;
-    }
-
-    @Override
-    public String toString()
-    {
-        StringBuilder strBuilder = new StringBuilder("ScooterHotspot is currently used by ");
-        strBuilder.append(this.scootercount);
-        strBuilder.append("/");
-        strBuilder.append(this.maxscootercount);
-        strBuilder.append(" Scooters.");
-
-        return strBuilder.toString();
     }
 
 

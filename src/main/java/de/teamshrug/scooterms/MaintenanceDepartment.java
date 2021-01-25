@@ -2,6 +2,9 @@ package de.teamshrug.scooterms;
 
 import java.util.LinkedList;
 
+/**
+ * The class MaintenanceDepartment stores damaged scooters and repair them
+ */
 public class MaintenanceDepartment
 {
     /**
@@ -21,25 +24,19 @@ public class MaintenanceDepartment
         this.departmentname = _departmentname;
     }
 
-
-    public Coordinate getLocation()
-    {
-        return location;
-    }
-
-
-    public int getScootercapacity()
-    {
-        return scootercapacity;
-    }
-
-
-
+    /**
+     * repairs a damaged scooter
+     * @param _scooter - damaged scooter from a list
+     */
     void repairScooter(Scooter _scooter)
     {
 
     }
 
+    /**
+     * Sends the scooter back to the admin
+     * @param _scooter - repaired scooter
+     */
     void checkOutScooter(Scooter _scooter)
     {
 
@@ -60,6 +57,17 @@ public class MaintenanceDepartment
         else
             return false;
     }
+
+    public Coordinate getLocation()
+    {
+        return location;
+    }
+
+    public int getScootercapacity()
+    {
+        return scootercapacity;
+    }
+
 
     private final String departmentname;
     private final Coordinate location;

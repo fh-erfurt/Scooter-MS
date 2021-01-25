@@ -48,7 +48,6 @@ public class ScooterHunter extends Customer
             return null;
     }
 
-
     /**
      * Lets the ScooterHunter see which Scooters urgently need to be recharged
      */
@@ -108,9 +107,6 @@ public class ScooterHunter extends Customer
         else
             return null;
     }
-
-
-
 
     /**
      * @param battery Gets the percentage of battery of the scooter which is going to be charged
@@ -182,7 +178,6 @@ public class ScooterHunter extends Customer
             System.out.println(ex);
         }
     }
-
 
     public Area getActiveInArea()
     {

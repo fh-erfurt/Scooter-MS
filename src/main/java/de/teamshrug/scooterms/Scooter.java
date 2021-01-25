@@ -8,7 +8,6 @@ import java.util.LinkedList;
  */
 public class Scooter
 {
-
     public Scooter(Area _registeredArea, MaintenanceDepartment _registeredmaintenancedepartment)
     {
         this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
@@ -31,13 +30,11 @@ public class Scooter
         this.setPosition(new Coordinate(rndegree,redegree));
     }
 
-
     protected void finalize()
     {
         --numberofscooters;
         scooterlist.remove(this);
     }
-
 
     /**
      * generates a license plate for the scooter that calls the method
@@ -67,6 +64,7 @@ public class Scooter
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
+
     /**
      * generates random strings for the license plate
      * @return random strings
@@ -77,17 +75,6 @@ public class Scooter
         char two   = (char)(Math.random()*26 + 'A');
         char three = (char)(Math.random()*26 + 'A');
         return String.valueOf(one) + String.valueOf(two) + String.valueOf(three);
-    }
-
-
-    public Area getRegisteredArea()
-    {
-        return registeredarea;
-    }
-
-    public void setRegisteredArea(Area _registeredArea)
-    {
-        this.registeredarea = _registeredArea;
     }
 
     /**
@@ -128,6 +115,44 @@ public class Scooter
         this.battery = this.battery - (int)(meterdistance*0.002);
         inUseByDriver.setBalance(startBalance - roundkmdistance);
         inUseByDriver = null;
+    }
+
+    /**
+     * @return checks if current position is in the registered Area
+     */
+    public boolean isInRegisteredArea()
+    {
+        return registeredarea.isInArea(this.position);
+    }
+
+    /**
+     * @return toString method to show important information about the Scooters instead of the internal IDs
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder strBuilder = new StringBuilder("Scooter ");
+        strBuilder.append(this.id);
+        strBuilder.append(" with Licenseplate ");
+        strBuilder.append(this.licenseplate);
+        strBuilder.append(" is ");
+        strBuilder.append(this.state);
+        strBuilder.append(" and has ");
+        strBuilder.append(this.battery);
+        strBuilder.append("% Battery and ");
+
+        if (isInRegisteredArea())
+        {
+            strBuilder.append("is in his registered Area ");
+        }
+        else
+        {
+            strBuilder.append("is NOT in his registered Area ");
+        }
+
+        strBuilder.append(this.registeredarea);
+
+        return strBuilder.toString();
     }
 
     public int getId()
@@ -180,65 +205,32 @@ public class Scooter
         this.licenseplate = licenseplate;
     }
 
-    /**
-     * @return Gets the private lowbattery attribute
-     */
+    public Area getRegisteredArea()
+    {
+        return registeredarea;
+    }
+
+    public void setRegisteredArea(Area _registeredArea)
+    {
+        this.registeredarea = _registeredArea;
+    }
+
     public static int getLowbattery()
     {
         return lowbattery;
     }
 
-    /**
-     * @param newlowbattery Sets lowbattery attribute
-     */
     public static void setLowbattery(int newlowbattery)
     {
         lowbattery = newlowbattery;
-    }
-
-    /**
-     * @return toString method to show important information about the Scooters instead of the internal IDs
-     */
-    @Override
-    public String toString()
-    {
-        StringBuilder strBuilder = new StringBuilder("Scooter ");
-        strBuilder.append(this.id);
-        strBuilder.append(" with Licenseplate ");
-        strBuilder.append(this.licenseplate);
-        strBuilder.append(" is ");
-        strBuilder.append(this.state);
-        strBuilder.append(" and has ");
-        strBuilder.append(this.battery);
-        strBuilder.append("% Battery and ");
-
-        if (isInRegisteredArea())
-        {
-            strBuilder.append("is in his registered Area ");
-        }
-        else
-        {
-            strBuilder.append("is NOT in his registered Area ");
-        }
-
-        strBuilder.append(this.registeredarea);
-
-        return strBuilder.toString();
     }
 
     public MaintenanceDepartment getRegisteredMaintenanceDepartment() {
         return registeredmaintenancedepartment;
     }
 
-    public void setRegisteredMaintenanceDepartment(MaintenanceDepartment _registeredmaintenancedepartment) {
-        this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
-    }
+    public void setRegisteredMaintenanceDepartment(MaintenanceDepartment _registeredmaintenancedepartment) { this.registeredmaintenancedepartment = _registeredmaintenancedepartment; }
 
-
-    public boolean isInRegisteredArea()
-    {
-        return registeredarea.isInArea(this.position);
-    }
 
     private Customer inUseByDriver;
     private Area registeredarea;
@@ -250,8 +242,5 @@ public class Scooter
     public static LinkedList<Scooter> scooterlist = new LinkedList<Scooter>();
     private static int numberofscooters;
     private MaintenanceDepartment registeredmaintenancedepartment;
-    /**
-     * Defines what a low scooter percentage is
-     */
     static private int lowbattery = 20;
 }

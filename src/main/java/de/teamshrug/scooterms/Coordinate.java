@@ -9,6 +9,7 @@ public class Coordinate
         this.edegree = edegree;
     }
 
+
     public float ndegree;
     public float edegree;
 }

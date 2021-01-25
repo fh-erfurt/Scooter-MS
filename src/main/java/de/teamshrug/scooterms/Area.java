@@ -1,5 +1,8 @@
 package de.teamshrug.scooterms;
 
+/**
+ * The class Area defines a area where the scooters can be used, each area consist of four coordinates
+ */
 public class Area {
 
     public Area(String areaname, float ndegree1, float ndegree2, float edegree1, float edegree2)
@@ -11,6 +14,10 @@ public class Area {
         this.edegree2 = edegree2;
     }
 
+    /**
+     * checks whether the transferred position is in the area
+     * @param _position - the current location
+     */
     public boolean isInArea(Coordinate _position)
     {
         if (((ndegree1 < _position.ndegree) && (_position.ndegree < ndegree2)) || ((ndegree1 > _position.ndegree) && (_position.ndegree > ndegree2)))
@@ -21,10 +28,13 @@ public class Area {
             return false;
     }
 
-    public float getNdegree1()
+    @Override
+    public String toString()
     {
-        return ndegree1;
+        return areaname;
     }
+
+    public float getNdegree1() { return ndegree1; }
 
     public float getNdegree2()
     {
@@ -42,13 +52,6 @@ public class Area {
     }
 
     public String getAreaname() { return areaname;}
-
-    @Override
-    public String toString()
-    {
-        return areaname;
-    }
-
 
 
     private final String areaname;

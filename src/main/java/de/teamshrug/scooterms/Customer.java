@@ -1,7 +1,7 @@
 package de.teamshrug.scooterms;
 
 /**
- * Customer is allowed to check the account balance and drive a scotter if account balance is sufficient
+ * The class Customer is allowed to check the account balance and drive a scotter if account balance is sufficient
  */
 public class Customer {
 
@@ -46,6 +46,10 @@ public class Customer {
         this.isloggedin = false;
     }
 
+    /**
+     * replaces the current password with a new one
+     * @param newpassword - new password
+     */
     void changePassword(String newpassword)
     {
         try
@@ -61,16 +65,6 @@ public class Customer {
         }
     }
 
-    public float getBalance()
-    {
-        return creditedeuros;
-    }
-
-    public void setBalance(float creditedeuros)
-    {
-        this.creditedeuros = creditedeuros;
-    }
-
     /**
      * An attentive Customer is able to report a non-working/damaged Scooter to the system
      * @param scooter The Scooter as param which is damaged/defective
@@ -78,22 +72,6 @@ public class Customer {
     public void reportScooterDamaged(Scooter scooter)
     {
         scooter.setState(Status.damaged);
-    }
-
-    /**
-     * @return gives back the private positon as Coordinate class
-     */
-    public Coordinate getPosition()
-    {
-        return position;
-    }
-
-    /**
-     * @param position applies the position parameter to the private attribute position
-     */
-    public void setPosition(Coordinate position)
-    {
-        this.position = position;
     }
 
     /**
@@ -139,14 +117,6 @@ public class Customer {
     }
 
     /**
-     * @return Returns boolean value, whether the private isloggedin is set true or false
-     */
-    public boolean getIsLoggedIn()
-    {
-        return isloggedin;
-    }
-
-    /**
      * Customer can use the scooter (drive) if his balance is sufficient
      * @param scooter Scooter which is returned by returnNearestScooter
      */
@@ -159,11 +129,40 @@ public class Customer {
         }
     }
 
+    /**
+     * Customer can end his journey and park the scooter
+     */
     public void endDrive()
     {
         usingScooter.park();
         usingScooter = null;
     }
+
+    public float getBalance()
+    {
+        return creditedeuros;
+    }
+
+    public void setBalance(float creditedeuros)
+    {
+        this.creditedeuros = creditedeuros;
+    }
+
+    public Coordinate getPosition()
+    {
+        return position;
+    }
+
+    public void setPosition(Coordinate position)
+    {
+        this.position = position;
+    }
+
+    public boolean getIsLoggedIn()
+    {
+        return isloggedin;
+    }
+
 
     private Scooter usingScooter;
     private float creditedeuros;

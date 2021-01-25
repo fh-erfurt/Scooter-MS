@@ -44,9 +44,6 @@ public class Admin extends Customer
         }
     }
 
-
-
-
     /**
      * @param scooter Scooter which is damaged/defective
      * @return If Admin is logged in and MaintenanceDepartment has capacity, true should be returned
