@@ -9,7 +9,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     env:
-        UML_FILES: ".puml"
+        UML_FILES: ".iuml"
     steps:
       - name: Checkout Source 
         uses: actions/checkout@v2
