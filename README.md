@@ -1,6 +1,7 @@
 # Scooter-MS
+<p align="center">
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Logo.png" alt="PlantUML" width="350"/>
-
+</p>
 ## Scooter Management System
 
 [![CI](https://img.shields.io/github/workflow/status/fh-erfurt/Scooter-MS/build/main?style=flat&logo=apache-maven)](https://github.com/fh-erfurt/Scooter-MS/actions?query=workflow%3Abuild)
@@ -35,6 +36,7 @@
 <summary> Scooter-Map </summary>
 
 ## Animation
+<p align="center">
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="600"/>
-
+</p>
 </details>
