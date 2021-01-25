@@ -19,8 +19,7 @@
 - 📊 PlantUML IntelliJ integration
   <br />
   <br />
-
-
+  
 
 <details>
 <summary> Diagramme </summary>
@@ -28,17 +27,13 @@
 ## Klassendiagramm
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/>
 
-## Ablauf
-
-## mehr UML
 </details>
-
+  <br />
 <details>
 <summary> Scooter-Map </summary>
 
-## Klassendiagramm
-<div style="text-align: center;">
+## Animation
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="500"/>
-</div>
+
 
 </details>
