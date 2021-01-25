@@ -2,9 +2,9 @@ name: Generate PlantUML Diagrams
 on:
   push:
     paths:
-      - 'assets/**.puml'
+      - '**.puml'
     branches:
-      - master
+      - main
 #on:
 #  push:
 #    branches: [ main ]
