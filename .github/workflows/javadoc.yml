@@ -1,4 +1,4 @@
-name: Javadoc-Generate
+name: JavaDoc Generate
 
 on:
   push:
@@ -42,6 +42,6 @@ jobs:
         commit_user_name: "Generator"
         commit_user_email: "retch100@gmail.com"
         commit_author: "JavaDoc Generator <me@email.org>"
-        commit_message: "JavaDoc Generated" 
+        commit_message: "JavaDoc Auto-Generated" 
         branch: ${{ github.head_ref }}
     
