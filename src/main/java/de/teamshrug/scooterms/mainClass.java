@@ -3,7 +3,7 @@ package de.teamshrug.scooterms;
 public class mainClass {
     public static void main(String[] args)
     {
-        System.out.println("Scooter-MS Start...");
+        //System.out.println("Scooter-MS Start...");
 
         /*
         Area Erfurt = new Area("Erfurt",50.95f,51.01f, 11.00f,11.06f);
