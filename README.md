@@ -21,8 +21,8 @@
 
 ### UML
 <!-- ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml) -->
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml" alt="PlantUML" width="500"/>
-
+ <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="500"/> 
+<!-- ![scooter map](assets/umldiagram.svg) -->
 <br />
 <br />
 
