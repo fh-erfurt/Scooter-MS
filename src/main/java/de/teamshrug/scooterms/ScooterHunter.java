@@ -132,13 +132,23 @@ public class ScooterHunter extends Customer
      */
     public void chargeScooter(Scooter scooter)
     {
-        if (scooter != null)
+        try
         {
-            scooter.setState(Status.charging);
-            float actualBalance = getBalance();
-            float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
-            setBalance(actualBalance+balanceForCharging);
-            scooter.setBattery(100);
+            if (getIsLoggedIn())
+            {
+                if (scooter != null)
+                {
+                    scooter.setState(Status.charging);
+                    float actualBalance = getBalance();
+                    float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
+                    setBalance(actualBalance+balanceForCharging);
+                    scooter.setBattery(100);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
         }
     }
 
@@ -148,21 +158,28 @@ public class ScooterHunter extends Customer
      */
     public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterhotspot)
     {
-        if (getIsLoggedIn())
+        try
         {
-            int actualscootercount = scooterhotspot.getScootercount();
-            int newHotspotcount = (scooterhotspot.getScootercount() + 1);
-
-            if (actualscootercount < scooterhotspot.getMaxscootercount())
+            if (getIsLoggedIn())
             {
-                scooter.setState(Status.ready);
-                scooterhotspot.setScootercount(newHotspotcount);
-                scooter.setPosition(scooterhotspot.getLocation());
-                System.out.println("Scooter brought back to ScooterHotspot");
+                int actualscootercount = scooterhotspot.getScootercount();
+                int newHotspotcount = (scooterhotspot.getScootercount() + 1);
+
+                if (actualscootercount < scooterhotspot.getMaxscootercount()) {
+                    scooter.setState(Status.ready);
+                    scooterhotspot.setScootercount(newHotspotcount);
+                    scooter.setPosition(scooterhotspot.getLocation());
+                    System.out.println("Scooter brought back to ScooterHotspot");
+                }
+                else
+                    {
+                    System.out.println("The Hotspot is already full, please go to another one");
+                }
             }
-            else {
-                System.out.println("The Hotspot is already full, please go to another one");
-            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
         }
     }
 

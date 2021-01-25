@@ -20,14 +20,14 @@
   <br />
 
 ### UML
-![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml)
+<!-- ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml) -->
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml" alt="PlantUML" width="500"/>
+
 <br />
 <br />
 
 ### Scooter-Map
-<!---
-![scooter map](https://www.scribblemaps.com/api/maps/images/500/600/ScooterMapEF.png)
--->
-
+<!--- ![scooter map](https://www.scribblemaps.com/api/maps/images/500/600/ScooterMapEF.png) -->
 <!-- ![scooter map](assets/map.png) -->
-![scooter map](assets/Scooter-MS-Map-Animation.gif)
+<!-- ![scooter map](assets/Scooter-MS-Map-Animation.gif) -->
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="500"/>
