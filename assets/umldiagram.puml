@@ -3,6 +3,7 @@
 
 skinparam componentStyle uml2
 
+
 class Scooter {
   .. Constructor ..
   (id ,position ,registeredarea ,licenseplate, status, battery, registeredmaintenancedepartment)
