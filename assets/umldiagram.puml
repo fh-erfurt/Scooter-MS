@@ -197,7 +197,7 @@ enum Status {
   + inuse
   + charging
   + damaged
-  + maintenanc
+  + maintenance
 }
 
 Admin --|> Customer
