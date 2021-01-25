@@ -49,6 +49,7 @@ class Scooter {
   - int lowbattery
 }
 
+
 class Area {
   .. Constructor ..
   (areaname, ndegree1, ndegree2, edegree1, edegree2)
@@ -199,7 +200,6 @@ enum Status {
   + damaged
   + maintenance
 }
-
 
 Admin --|> Customer
 ScooterHunter --|> Customer
