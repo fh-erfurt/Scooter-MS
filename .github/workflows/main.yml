@@ -1,10 +1,14 @@
 name: Generate PlantUML Diagrams
+#on:
+#  push:
+#    paths:
+#      - '**.iuml'
+#    branches:
+#      - master
 on:
   push:
-    paths:
-      - '**.iuml'
-    branches:
-      - master
+    branches: [ main ]
+    
 jobs:
   ci:
     runs-on: ubuntu-latest
