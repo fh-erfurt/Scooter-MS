@@ -1,3 +1,7 @@
+[![CI](https://img.shields.io/github/workflow/status/fh-erfurt/Scooter-MS/build/main?style=flat&logo=apache-maven)](https://github.com/fh-erfurt/Scooter-MS/actions?query=workflow%3Abuild)
+[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
+
+
 ## Scooter Management System
 <p align="center">
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Logo.png" alt="PlantUML" width="350"/>
@@ -5,12 +9,6 @@
 
   <br/>
 
-### Build & Documentation
-
-[![CI](https://img.shields.io/github/workflow/status/fh-erfurt/Scooter-MS/build/main?style=flat&logo=apache-maven)](https://github.com/fh-erfurt/Scooter-MS/actions?query=workflow%3Abuild)
-<br />
-[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
-<br />
 
 ### Used Software and Tools in this Project
 
