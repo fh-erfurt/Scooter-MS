@@ -39,6 +39,6 @@ jobs:
         with: 
           commit_user_name: "Retch"
           commit_user_email: "retch100@gmail.com"
-          commit_author: "My User <me@email.org>"
+          commit_author: "PlantUML Generator <retch100@gmail.com>"
           commit_message: "Generate SVG and PNG images for PlantUML diagrams" 
           branch: ${{ github.head_ref }}
