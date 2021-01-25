@@ -2,7 +2,7 @@ name: Generate PlantUML Diagrams
 on:
   push:
     paths:
-      - '**.iuml'
+      - '**.puml'
     branches:
       - master
 #on:
