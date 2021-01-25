@@ -7,7 +7,7 @@
 [![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Scooter-MS)
 <br />
 
-### Used Software and Tools in this projectapachemaven
+### Used Software and Tools in this Project
 
 - <img src="https://logonoid.com/images/intellij-idea-logo.png" alt="IntelliJ" width="16"/>
   IntelliJ Idea for Development
@@ -18,16 +18,12 @@
 - 📊 PlantUML IntelliJ integration
   <br />
   <br />
+  <br />
 
 ### UML
-<!-- ![plantuml diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.iuml) -->
- <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/> 
-<!-- ![scooter map](assets/umldiagram.svg) -->
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/> 
 <br />
 <br />
 
 ### Scooter-Map
-<!--- ![scooter map](https://www.scribblemaps.com/api/maps/images/500/600/ScooterMapEF.png) -->
-<!-- ![scooter map](assets/map.png) -->
-<!-- ![scooter map](assets/Scooter-MS-Map-Animation.gif) -->
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="500"/>
