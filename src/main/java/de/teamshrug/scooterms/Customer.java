@@ -1,5 +1,9 @@
 package de.teamshrug.scooterms;
 
+import com.thoughtworks.qdox.model.expression.Not;
+import de.teamshrug.scooterms.exceptions.NotEnoughCreditsException;
+import de.teamshrug.scooterms.exceptions.NotLoggedInException;
+
 /**
  * The class Customer is allowed to check the account balance and drive a scotter if account balance is sufficient
  */
@@ -49,14 +53,14 @@ public class Customer {
     {
         try
         {
-            if (this.getIsLoggedIn())
+            if (getIsLoggedIn())
             {
                 this.password = newpassword;
             }
             else
-                throw new Exception("Not logged in");
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
             System.out.println(ex.getMessage());
         }
@@ -68,7 +72,19 @@ public class Customer {
      */
     public void reportScooterDamaged(Scooter scooter)
     {
-        scooter.setState(Status.damaged);
+        try
+        {
+            if (getIsLoggedIn())
+            {
+                scooter.setState(Status.damaged);
+            }
+            else
+                throw new NotLoggedInException();
+        }
+        catch (NotLoggedInException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
     /**
@@ -131,20 +147,19 @@ public class Customer {
                         usingScooter = scooter;
                     }
                     else
-                        throw new Exception("Not enough credits");
+                        throw new NotEnoughCreditsException();
                 }
-                catch (Exception ex)
+                catch (NotEnoughCreditsException ex)
                 {
                     System.out.println(ex.getMessage());
                 }
-
             }
             else
-                throw new Exception("Not logged in");
+                throw new NotLoggedInException();
         }
-        catch (Exception exception)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(exception.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
 
