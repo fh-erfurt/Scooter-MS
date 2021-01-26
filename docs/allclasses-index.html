@@ -20,8 +20,8 @@
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="all-classes-index-page">
-<script type="text/javascript">var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":2,"i7":2,"i8":2,"i9":4};
-var tabs = {65535:["t0","All Classes"],2:["t2","Class Summary"],4:["t3","Enum Summary"]};
+<script type="text/javascript">var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":8,"i7":8,"i8":2,"i9":2,"i10":2,"i11":4};
+var tabs = {65535:["t0","All Classes"],2:["t2","Class Summary"],4:["t3","Enum Summary"],8:["t4","Exception Summary"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
 var tableTab = "table-tab";
@@ -38,10 +38,11 @@ loadScripts(document, 'script');</script>
 <div class="top-nav" id="navbar.top">
 <div class="skip-nav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
 <ul id="navbar.top.firstrow" class="nav-list" title="Navigation">
-<li><a href="de/teamshrug/scooterms/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li>Use</li>
-<li><a href="de/teamshrug/scooterms/package-tree.html">Tree</a></li>
+<li><a href="overview-tree.html">Tree</a></li>
 <li><a href="index-files/index-1.html">Index</a></li>
 <li><a href="help-doc.html">Help</a></li>
 </ul>
@@ -63,7 +64,7 @@ loadScripts(document, 'script');</script>
 <h1 title="All&amp;nbsp;Classes" class="title">All&nbsp;Classes</h1>
 </div>
 <div class="type-summary" id="all-classes-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="active-table-tab">All Classes</button><button role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="table-tab" onclick="show(2);">Class Summary</button><button role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="table-tab" onclick="show(4);">Enum Summary</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="active-table-tab">All Classes</button><button role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="table-tab" onclick="show(2);">Class Summary</button><button role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="table-tab" onclick="show(4);">Enum Summary</button><button role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="table-tab" onclick="show(8);">Exception Summary</button></div>
 <div id="all-classes-table.tabpanel" role="tabpanel">
 <table class="summary-table" aria-labelledby="t0">
 <thead>
@@ -108,24 +109,32 @@ loadScripts(document, 'script');</script>
 </th>
 </tr>
 <tr class="alt-color" id="i6">
+<td class="col-first"><a href="de/teamshrug/scooterms/exceptions/NotEnoughCreditsException.html" title="class in de.teamshrug.scooterms.exceptions">NotEnoughCreditsException</a></td>
+<th class="col-last" scope="row">&nbsp;</th>
+</tr>
+<tr class="row-color" id="i7">
+<td class="col-first"><a href="de/teamshrug/scooterms/exceptions/NotLoggedInException.html" title="class in de.teamshrug.scooterms.exceptions">NotLoggedInException</a></td>
+<th class="col-last" scope="row">&nbsp;</th>
+</tr>
+<tr class="alt-color" id="i8">
 <td class="col-first"><a href="de/teamshrug/scooterms/Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a></td>
 <th class="col-last" scope="row">
 <div class="block">The scooter class can be used by a customer as a vehicle until the battery is empty, the customer pays a fixed price for every minute of travel.</div>
 </th>
 </tr>
-<tr class="row-color" id="i7">
+<tr class="row-color" id="i9">
 <td class="col-first"><a href="de/teamshrug/scooterms/ScooterHotspot.html" title="class in de.teamshrug.scooterms">ScooterHotspot</a></td>
 <th class="col-last" scope="row">
 <div class="block">there are several ScooterHotspots in one area, each hotspot has a name and a limited capacity for scooters, a ScooterHunter can replace empty scooters with reloaded ones</div>
 </th>
 </tr>
-<tr class="alt-color" id="i8">
+<tr class="alt-color" id="i10">
 <td class="col-first"><a href="de/teamshrug/scooterms/ScooterHunter.html" title="class in de.teamshrug.scooterms">ScooterHunter</a></td>
 <th class="col-last" scope="row">
 <div class="block">Can do what a Customer can do, but is able to see Scooters with low battery and recharge them to top up the account balance</div>
 </th>
 </tr>
-<tr class="row-color" id="i9">
+<tr class="row-color" id="i11">
 <td class="col-first"><a href="de/teamshrug/scooterms/Status.html" title="enum in de.teamshrug.scooterms">Status</a></td>
 <th class="col-last" scope="row">
 <div class="block">The enum Status consists of these types: ready, lowonbattery, inuse, charging, damaged, maintenance.</div>
@@ -142,10 +151,11 @@ loadScripts(document, 'script');</script>
 <div class="bottom-nav" id="navbar.bottom">
 <div class="skip-nav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
 <ul id="navbar.bottom.firstrow" class="nav-list" title="Navigation">
-<li><a href="de/teamshrug/scooterms/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li>Use</li>
-<li><a href="de/teamshrug/scooterms/package-tree.html">Tree</a></li>
+<li><a href="overview-tree.html">Tree</a></li>
 <li><a href="index-files/index-1.html">Index</a></li>
 <li><a href="help-doc.html">Help</a></li>
 </ul>
