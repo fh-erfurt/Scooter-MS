@@ -19,21 +19,19 @@ public class Customer {
      */
     boolean logIn(String password)
     {
-        if (this.password.equals(password))
+        try
         {
-            try
+            if (this.password.equals(password))
             {
                 this.isloggedin = true;
                 return true;
             }
-            catch (Exception ex)
-            {
-                System.out.println(ex);
+            else
                 return false;
-            }
         }
-        else
+        catch (Exception ex)
         {
+            System.out.println(ex);
             return false;
         }
     }

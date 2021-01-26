@@ -2,6 +2,7 @@ package de.teamshrug.scooterms;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.sonatype.guice.bean.containers.Main;
 
 import static org.junit.jupiter.api.Assertions.*;
 

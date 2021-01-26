@@ -1,6 +1,9 @@
 package de.teamshrug.scooterms;
 
+import org.sonatype.guice.bean.containers.Main;
+
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 /**
  * The class MaintenanceDepartment stores damaged scooters and repair them
@@ -25,21 +28,51 @@ public class MaintenanceDepartment
     }
 
     /**
-     * repairs a damaged scooter
-     * @param _scooter - damaged scooter from a list
+     * Uses toStrin method from Scooter to deliver useful information
      */
-    void repairScooter(Scooter _scooter)
+    public void printAllScootersInMd()
     {
+        try
+        {
+            for (Scooter scooter : maintenancedepartmentscooterlist)
+            {
+                System.out.println(scooter);
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+
+    /**
+     * Repairs the first Scooter in the queue
+     */
+    void repairScooter()
+    {
+        try
+        {
+            Scooter scooter = maintenancedepartmentscooterlist.getFirst();
+            scooter.setBattery(100);
+            System.out.println("Repaired Scooter will be checked out now...");
+            checkOutScooter(scooter);
+        }
+        catch (NoSuchElementException ex)
+        {
+            System.out.println("Es gibt keinen Scooter der repariert werden muss.");
+        }
 
     }
 
     /**
      * Sends the scooter back to the admin
-     * @param _scooter - repaired scooter
+     * @param scooter - repaired scooter
      */
-    void checkOutScooter(Scooter _scooter)
+    void checkOutScooter(Scooter scooter)
     {
-
+        scooter.setState(Status.ready);
+        maintenancedepartmentscooterlist.remove(scooter);
+        System.out.println("...checked out Scooter");
     }
 
     /**
@@ -48,9 +81,9 @@ public class MaintenanceDepartment
      */
     boolean receiveScooter(Scooter scooter)
     {
-        if (MaintenanceDepartmentScooterList.size() < scootercapacity)
+        if (maintenancedepartmentscooterlist.size() < scootercapacity)
         {
-            MaintenanceDepartmentScooterList.add(scooter);
+            maintenancedepartmentscooterlist.add(scooter);
             scooter.setState(Status.maintenance);
             return true;
         }
@@ -72,6 +105,6 @@ public class MaintenanceDepartment
     private final String departmentname;
     private final Coordinate location;
     private int scootercapacity = 8;
-    private LinkedList<Scooter> MaintenanceDepartmentScooterList = new LinkedList<Scooter>();
+    private LinkedList<Scooter> maintenancedepartmentscooterlist = new LinkedList<Scooter>();
 
 }

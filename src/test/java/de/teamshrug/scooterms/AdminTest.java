@@ -55,4 +55,15 @@ public class AdminTest {
 
         TestAdmin.printScootersReportedAsDamaged();
     }
+
+    @Test
+    public void shouldSendScooterToMD()
+    {
+        TestAdmin.logIn("1234");
+
+        System.out.println("gemeldeten Scooter ausgeben:");
+        System.out.println(TestAdmin.returnDamagedScooter());
+        TestAdmin.sendScooterToLocalMaintenanceDepartment(TestAdmin.returnDamagedScooter());
+        MD_Erfurt.repairScooter();
+    }
 }

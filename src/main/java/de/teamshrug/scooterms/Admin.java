@@ -14,33 +14,77 @@ public class Admin extends Customer
     }
 
     /**
-     * Uses toStrin method from Scooter to deliver useful information
+     * Uses toString method from Scooter to deliver useful information
      */
     public void printAllScooters()
     {
-        if (getIsLoggedIn())
+        try
         {
-            for (Scooter scooter : Scooter.scooterlist)
+            if (getIsLoggedIn())
             {
-                System.out.println(scooter);
-            }
-        }
-    }
-
-    /**
-     * Uses toStrin method from Scooter to deliver information about non-working Scooters
-     */
-    public void printScootersReportedAsDamaged()
-    {
-        if (getIsLoggedIn())
-        {
-            for (Scooter scooter : Scooter.scooterlist)
-            {
-                if (scooter.getState().equals(Status.damaged))
+                for (Scooter scooter : Scooter.scooterlist)
                 {
                     System.out.println(scooter);
                 }
             }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+
+    /**
+     * Uses toString method from Scooter to deliver information about non-working Scooters
+     */
+    public void printScootersReportedAsDamaged()
+    {
+        try
+        {
+            if (getIsLoggedIn())
+            {
+                for (Scooter scooter : Scooter.scooterlist)
+                {
+                    if (scooter.getState().equals(Status.damaged))
+                    {
+                        System.out.println(scooter);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+
+    /**
+     * @return Returns the first damaged Scooter from the scooterlist
+     */
+    public Scooter returnDamagedScooter()
+    {
+        try
+        {
+            if (getIsLoggedIn())
+            {
+                Scooter returnscooter = null;
+                for (Scooter scooter : Scooter.scooterlist)
+                {
+                    if (scooter.getState().equals(Status.damaged))
+                    {
+                        returnscooter = scooter;
+                        break;
+                    }
+                }
+                return returnscooter;
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+            return null;
         }
     }
 
@@ -50,11 +94,22 @@ public class Admin extends Customer
      */
      public boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
      {
-         if (getIsLoggedIn())
+         try
          {
-             return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
+             if (getIsLoggedIn())
+             {
+                 //if (!scooter.equals(null))
+                 //{
+                     return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
+                 //}
+             }
+             else
+                 return false;
          }
-         else
+         catch (Exception ex)
+         {
+             System.out.println(ex);
              return false;
+         }
      }
 }
