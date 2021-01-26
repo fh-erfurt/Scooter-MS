@@ -20,7 +20,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -52,13 +52,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -95,6 +95,51 @@ extends java.lang.Object</pre>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field.summary">
+<h2>Field Summary</h2>
+<div class="member-summary">
+<table class="summary-table">
+<caption><span>Fields</span></caption>
+<thead>
+<tr>
+<th class="col-first" scope="col">Modifier and Type</th>
+<th class="col-second" scope="col">Field</th>
+<th class="col-last" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="alt-color">
+<td class="col-first"><code>private float</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#creditedeuros">creditedeuros</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color">
+<td class="col-first"><code>private boolean</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isloggedin">isloggedin</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="alt-color">
+<td class="col-first"><code>private java.lang.String</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#password">password</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color">
+<td class="col-first"><code>private <a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#position">position</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="alt-color">
+<td class="col-first"><code>private <a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#usingScooter">usingScooter</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor.summary">
@@ -135,52 +180,73 @@ extends java.lang.Object</pre>
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
+<td class="col-first"><code>(package private) void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#changePassword(java.lang.String)">changePassword</a></span>&#8203;(java.lang.String&nbsp;newpassword)</code></th>
+<td class="col-last">
+<div class="block">replaces the current password with a new one</div>
+</td>
+</tr>
+<tr class="row-color" id="i1">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#endDrive()">endDrive</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Customer can end his journey and park the scooter</div>
 </td>
 </tr>
-<tr class="row-color" id="i1">
+<tr class="alt-color" id="i2">
 <td class="col-first"><code>float</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getBalance()">getBalance</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i2">
+<tr class="row-color" id="i3">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getIsLoggedIn()">getIsLoggedIn</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="row-color" id="i3">
+<tr class="alt-color" id="i4">
 <td class="col-first"><code><a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getPosition()">getPosition</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i4">
+<tr class="row-color" id="i5">
+<td class="col-first"><code>(package private) boolean</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#logIn(java.lang.String)">logIn</a></span>&#8203;(java.lang.String&nbsp;password)</code></th>
+<td class="col-last">
+<div class="block">if param password quals the password registered in the customer instance, private attribute loggedin is being set to true</div>
+</td>
+</tr>
+<tr class="alt-color" id="i6">
+<td class="col-first"><code>(package private) void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#logOut()">logOut</a></span>()</code></th>
+<td class="col-last">
+<div class="block">If logged in, the private attribute is set to false</div>
+</td>
+</tr>
+<tr class="row-color" id="i7">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#reportScooterDamaged(de.teamshrug.scooterms.Scooter)">reportScooterDamaged</a></span>&#8203;(<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</code></th>
 <td class="col-last">
 <div class="block">An attentive Customer is able to report a non-working/damaged Scooter to the system</div>
 </td>
 </tr>
-<tr class="row-color" id="i5">
+<tr class="alt-color" id="i8">
 <td class="col-first"><code><a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#returnNearestScooter()">returnNearestScooter</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Uses Haverine formula for calculating the distance.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i6">
+<tr class="row-color" id="i9">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setBalance(float)">setBalance</a></span>&#8203;(float&nbsp;creditedeuros)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="row-color" id="i7">
+<tr class="alt-color" id="i10">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setPosition(de.teamshrug.scooterms.Coordinate)">setPosition</a></span>&#8203;(<a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a>&nbsp;position)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i8">
+<tr class="row-color" id="i11">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#useScooter(de.teamshrug.scooterms.Scooter)">useScooter</a></span>&#8203;(<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</code></th>
 <td class="col-last">
@@ -200,6 +266,44 @@ extends java.lang.Object</pre>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field.detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="usingScooter">
+<h3>usingScooter</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a></span>&nbsp;<span class="member-name">usingScooter</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="creditedeuros">
+<h3>creditedeuros</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="member-name">creditedeuros</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="position">
+<h3>position</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></span>&nbsp;<span class="member-name">position</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="password">
+<h3>password</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">java.lang.String</span>&nbsp;<span class="member-name">password</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="isloggedin">
+<h3>isloggedin</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">isloggedin</span></div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor.detail">
@@ -219,6 +323,37 @@ extends java.lang.Object</pre>
 <section class="method-details" id="method.detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="logIn(java.lang.String)">
+<h3>logIn</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="member-name">logIn</span>&#8203;(<span class="parameters">java.lang.String&nbsp;password)</span></div>
+<div class="block">if param password quals the password registered in the customer instance, private attribute loggedin is being set to true</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>password</code> - plain text password</dd>
+<dt>Returns:</dt>
+<dd>true for the matching password, false for the wrong one</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="logOut()">
+<h3>logOut</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="member-name">logOut</span>()</div>
+<div class="block">If logged in, the private attribute is set to false</div>
+</section>
+</li>
+<li>
+<section class="detail" id="changePassword(java.lang.String)">
+<h3>changePassword</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="member-name">changePassword</span>&#8203;(<span class="parameters">java.lang.String&nbsp;newpassword)</span></div>
+<div class="block">replaces the current password with a new one</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>newpassword</code> - - new password</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="reportScooterDamaged(de.teamshrug.scooterms.Scooter)">
 <h3>reportScooterDamaged</h3>
@@ -316,13 +451,13 @@ extends java.lang.Object</pre>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

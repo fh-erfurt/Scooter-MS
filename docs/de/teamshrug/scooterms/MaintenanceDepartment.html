@@ -20,7 +20,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -52,13 +52,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,6 +91,46 @@ extends java.lang.Object</pre>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field.summary">
+<h2>Field Summary</h2>
+<div class="member-summary">
+<table class="summary-table">
+<caption><span>Fields</span></caption>
+<thead>
+<tr>
+<th class="col-first" scope="col">Modifier and Type</th>
+<th class="col-second" scope="col">Field</th>
+<th class="col-last" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="alt-color">
+<td class="col-first"><code>private java.lang.String</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#departmentname">departmentname</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color">
+<td class="col-first"><code>private <a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#location">location</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="alt-color">
+<td class="col-first"><code>private java.util.LinkedList&lt;<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#maintenancedepartmentscooterlist">maintenancedepartmentscooterlist</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color">
+<td class="col-first"><code>private int</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#scootercapacity">scootercapacity</a></span></code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor.summary">
@@ -142,20 +182,39 @@ int&nbsp;scootercapacity)</code></th>
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
+<td class="col-first"><code>(package private) void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#checkOutScooter(de.teamshrug.scooterms.Scooter)">checkOutScooter</a></span>&#8203;(<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</code></th>
+<td class="col-last">
+<div class="block">Sends the scooter back to the admin</div>
+</td>
+</tr>
+<tr class="row-color" id="i1">
 <td class="col-first"><code><a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getLocation()">getLocation</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="row-color" id="i1">
+<tr class="alt-color" id="i2">
 <td class="col-first"><code>int</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getScootercapacity()">getScootercapacity</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i2">
+<tr class="row-color" id="i3">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#printAllScootersInMd()">printAllScootersInMd</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Uses toString method from Scooter to print Scooters in the MD</div>
+</td>
+</tr>
+<tr class="alt-color" id="i4">
+<td class="col-first"><code>(package private) boolean</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#receiveScooter(de.teamshrug.scooterms.Scooter)">receiveScooter</a></span>&#8203;(<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color" id="i5">
+<td class="col-first"><code>(package private) void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#repairScooter()">repairScooter</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Repairs the first Scooter in the queue</div>
 </td>
 </tr>
 </tbody>
@@ -171,6 +230,38 @@ int&nbsp;scootercapacity)</code></th>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field.detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="departmentname">
+<h3>departmentname</h3>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">java.lang.String</span>&nbsp;<span class="member-name">departmentname</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="location">
+<h3>location</h3>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="Coordinate.html" title="class in de.teamshrug.scooterms">Coordinate</a></span>&nbsp;<span class="member-name">location</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="scootercapacity">
+<h3>scootercapacity</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">scootercapacity</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="maintenancedepartmentscooterlist">
+<h3>maintenancedepartmentscooterlist</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">java.util.LinkedList&lt;<a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&gt;</span>&nbsp;<span class="member-name">maintenancedepartmentscooterlist</span></div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor.detail">
@@ -206,6 +297,36 @@ int&nbsp;scootercapacity)</span></div>
 <h3>printAllScootersInMd</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">printAllScootersInMd</span>()</div>
 <div class="block">Uses toString method from Scooter to print Scooters in the MD</div>
+</section>
+</li>
+<li>
+<section class="detail" id="repairScooter()">
+<h3>repairScooter</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="member-name">repairScooter</span>()</div>
+<div class="block">Repairs the first Scooter in the queue</div>
+</section>
+</li>
+<li>
+<section class="detail" id="checkOutScooter(de.teamshrug.scooterms.Scooter)">
+<h3>checkOutScooter</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="member-name">checkOutScooter</span>&#8203;(<span class="parameters"><a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</span></div>
+<div class="block">Sends the scooter back to the admin</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scooter</code> - - repaired scooter</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="receiveScooter(de.teamshrug.scooterms.Scooter)">
+<h3>receiveScooter</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="member-name">receiveScooter</span>&#8203;(<span class="parameters"><a href="Scooter.html" title="class in de.teamshrug.scooterms">Scooter</a>&nbsp;scooter)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scooter</code> - Scooter which is sent by the Admin</dd>
+<dt>Returns:</dt>
+<dd>Returns true or false, depending on the capacity utilization whether the Scooter can be repaired at the moment or not</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -247,13 +368,13 @@ int&nbsp;scootercapacity)</span></div>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
