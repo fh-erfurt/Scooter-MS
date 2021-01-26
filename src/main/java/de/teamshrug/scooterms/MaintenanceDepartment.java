@@ -85,6 +85,7 @@ public class MaintenanceDepartment
         {
             maintenancedepartmentscooterlist.add(scooter);
             scooter.setState(Status.maintenance);
+            scooter.setPosition(this.location);
             return true;
         }
         else
