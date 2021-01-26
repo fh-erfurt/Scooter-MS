@@ -15,6 +15,7 @@
         <maven.compiler.target>15</maven.compiler.target>
         <splitindex>true</splitindex>
         <show>private</show>
+        <nodeprecated>true</nodeprecated>
     </properties>
 
 
