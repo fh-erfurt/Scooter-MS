@@ -6,12 +6,12 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 /**
- * The class MaintenanceDepartment stores damaged scooters and repair them
+ * The class MaintenanceDepartment stores damaged scooters and repairs them
  */
 public class MaintenanceDepartment
 {
     /**
-     * The scootercapacity can be set in the cunstructor
+     * The scootercapacity can be set in the constructor
      */
     public MaintenanceDepartment(String departmentname, Coordinate location, int scootercapacity) {
         this.location = location;
@@ -20,7 +20,7 @@ public class MaintenanceDepartment
     }
 
     /**
-     * If not scootercapacity is set, the default is 8
+     * If no scootercapacity is set, the default is 8
      */
     public MaintenanceDepartment(String _departmentname, Coordinate _location) {
         this.location = _location;
@@ -28,7 +28,7 @@ public class MaintenanceDepartment
     }
 
     /**
-     * Uses toStrin method from Scooter to deliver useful information
+     * Uses toString method from Scooter to print Scooters in the MD
      */
     public void printAllScootersInMd()
     {
