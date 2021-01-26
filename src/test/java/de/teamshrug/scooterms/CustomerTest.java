@@ -27,10 +27,18 @@ class CustomerTest {
     }
 
     @Test
-    public void testReturnNearestScooter()
+    public void shouldChangePassword()
     {
         TestCustomer.logIn("1234");
         TestCustomer.changePassword("12345");
+        TestCustomer.changePassword("1234");
+        TestCustomer.logOut();
+    }
+
+    @Test
+    public void testReturnNearestScooter()
+    {
+        TestCustomer.logIn("1234");
         System.out.println(TestCustomer.returnNearestScooter());
         TestCustomer.logOut();
     }

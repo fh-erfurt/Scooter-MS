@@ -103,14 +103,22 @@ public class Admin extends Customer
          {
              if (getIsLoggedIn())
              {
-                 return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
+                 try
+                 {
+                     return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
+                 }
+                 catch (NullPointerException exception)
+                 {
+                     System.out.println("Kein Scooter übergeben");
+                     return false;
+                 }
              }
              else
-                 return false;
+                 throw new Exception("Not logged in");
          }
-         catch (NullPointerException ex)
+         catch (Exception ex)
          {
-             System.out.println("Kein Scooter übergeben");
+             System.out.println(ex.getMessage());
              return false;
          }
      }
