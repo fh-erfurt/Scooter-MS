@@ -43,6 +43,6 @@ jobs:
         commit_user_name: "Generator"
         commit_user_email: "retch100@gmail.com"
         commit_author: "JavaDoc Generator <me@email.org>"
-        commit_message: "JavaDoc Auto-Generated" 
+        commit_message: "Auto-Generated JavaDoc " 
         branch: ${{ github.head_ref }}
     
