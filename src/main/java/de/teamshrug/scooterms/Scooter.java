@@ -93,28 +93,41 @@ public class Scooter
      */
     public void park()
     {
-        float ndestination = inUseByDriver.getPosition().ndegree;
-        float edestination = inUseByDriver.getPosition().edegree;
-        float startBalance = inUseByDriver.getBalance();
-
-        float kmdriven = (float)Haversine.distance(position.ndegree,position.edegree,ndestination,edestination);
-
-        float roundkmdistance = (float)(Math.round(kmdriven * 100.0) / 100.0);      // like this 4.11  rounds kmdriven to 2 decimal places
-        int meterdistance = (int)(kmdriven*1000);                                   // like this 4109
-
-        if (battery >= 20)
+        try
         {
-            setState(Status.ready);
+            if (isInRegisteredArea())
+            {
+                float ndestination = inUseByDriver.getPosition().ndegree;
+                float edestination = inUseByDriver.getPosition().edegree;
+                float startBalance = inUseByDriver.getBalance();
+
+                float kmdriven = (float)Haversine.distance(position.ndegree,position.edegree,ndestination,edestination);
+
+                float roundkmdistance = (float)(Math.round(kmdriven * 100.0) / 100.0);      // like this 4.11  rounds kmdriven to 2 decimal places
+                int meterdistance = (int)(kmdriven*1000);                                   // like this 4109
+
+                if (battery >= 20)
+                {
+                    setState(Status.ready);
+                }
+                else
+                {
+                    setState(Status.lowonbattery);
+                }
+
+                this.position = inUseByDriver.getPosition();                                // applies Customers position when scooter is parked
+                this.battery = this.battery - (int)(meterdistance*0.002);
+                inUseByDriver.setBalance(startBalance - roundkmdistance);
+                inUseByDriver = null;
+            }
+            else
+                throw new Exception("Scooter can't be parked here, bring it back in the Area");
         }
-        else
+        catch (Exception ex)
         {
-            setState(Status.lowonbattery);
+            System.out.println(ex.getMessage());
         }
 
-        this.position = inUseByDriver.getPosition();                    // applies Customers position when scooter is parked
-        this.battery = this.battery - (int)(meterdistance*0.002);
-        inUseByDriver.setBalance(startBalance - roundkmdistance);
-        inUseByDriver = null;
     }
 
     /**

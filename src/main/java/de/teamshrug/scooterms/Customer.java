@@ -15,24 +15,21 @@ public class Customer {
     /**
      * if param password quals the password registered in the customer instance, private attribute loggedin is being set to true
      * @param password plain text password
-     * @return true for the matching password, false for the wrong one
      */
-    boolean logIn(String password)
+    void logIn(String password)
     {
         try
         {
             if (this.password.equals(password))
             {
                 this.isloggedin = true;
-                return true;
             }
             else
-                return false;
+                throw new Exception("Wrong password");
         }
         catch (Exception ex)
         {
-            System.out.println(ex);
-            return false;
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -56,10 +53,12 @@ public class Customer {
             {
                 this.password = newpassword;
             }
+            else
+                throw new Exception("Not logged in");
         }
         catch (Exception ex)
         {
-            System.out.println(ex);
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -120,10 +119,32 @@ public class Customer {
      */
     public void useScooter(Scooter scooter)
     {
-        if (creditedeuros > 0 && isloggedin)
+        try
         {
-            scooter.drive(this);
-            usingScooter = scooter;
+            if (isloggedin)
+            {
+                try
+                {
+                    if (creditedeuros > 0)
+                    {
+                        scooter.drive(this);
+                        usingScooter = scooter;
+                    }
+                    else
+                        throw new Exception("Not enough credits");
+                }
+                catch (Exception ex)
+                {
+                    System.out.println(ex.getMessage());
+                }
+
+            }
+            else
+                throw new Exception("Not logged in");
+        }
+        catch (Exception exception)
+        {
+            System.out.println(exception.getMessage());
         }
     }
 
@@ -132,8 +153,15 @@ public class Customer {
      */
     public void endDrive()
     {
-        usingScooter.park();
-        usingScooter = null;
+        try
+        {
+            usingScooter.park();
+            usingScooter = null;
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Can not park because no Scooter was used to park");
+        }
     }
 
     public float getBalance()

@@ -33,6 +33,8 @@ In unserem Test gibt es die Umgebung Erfurt, welche sich zwischen folgenden Koor
 - N50.95 <---> N51.0
 - E11.00 <---> E11.06
 
+Anschauen kann man die Karte [hier](https://www.scribblemaps.com/create/#/id=ScooterMapEF&lat=50.98352366&lng=11.01784203&z=13&t=custom_style)
+
 
 </details>
 

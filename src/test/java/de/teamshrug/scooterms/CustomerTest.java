@@ -22,6 +22,8 @@ class CustomerTest {
         {
             Scooter scooter = new Scooter(Erfurt, MD_Erfurt);
         }
+
+        TestCustomer.setPosition(new Coordinate(50.964363f,11.02324f));
     }
 
     @Test
@@ -33,4 +35,18 @@ class CustomerTest {
         TestCustomer.logOut();
     }
 
+    @Test
+    public void testUseScooter()
+    {
+        TestCustomer.logIn("1234");
+
+        TestCustomer.setBalance(10.00f);
+        assertEquals(10,TestCustomer.getBalance());
+        TestCustomer.useScooter(TestCustomer.returnNearestScooter());
+        TestCustomer.endDrive();
+        assertNotEquals(10,TestCustomer.getBalance());
+        System.out.println(TestCustomer.getBalance());
+
+        TestCustomer.logOut();
+    }
 }
