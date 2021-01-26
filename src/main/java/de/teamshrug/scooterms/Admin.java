@@ -76,14 +76,19 @@ public class Admin extends Customer
                         break;
                     }
                 }
-                return returnscooter;
+                if (returnscooter == null)
+                {
+                    throw new Exception("Es gibt keinen Scooter mit Status: damaged");
+                }
+                else
+                    return returnscooter;
             }
             else
                 return null;
         }
         catch (Exception ex)
         {
-            System.out.println(ex);
+            System.out.println(ex.getMessage());
             return null;
         }
     }
@@ -98,17 +103,14 @@ public class Admin extends Customer
          {
              if (getIsLoggedIn())
              {
-                 //if (!scooter.equals(null))
-                 //{
-                     return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
-                 //}
+                 return scooter.getRegisteredMaintenanceDepartment().receiveScooter(scooter);
              }
              else
                  return false;
          }
-         catch (Exception ex)
+         catch (NullPointerException ex)
          {
-             System.out.println(ex);
+             System.out.println("Kein Scooter übergeben");
              return false;
          }
      }
