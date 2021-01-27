@@ -101,7 +101,6 @@ class Customer {
   + changePassword(newPassword) : void
 
   __ private data __
-  -String username
   -String password
   -float creditedeuros
   -Coordinate position
