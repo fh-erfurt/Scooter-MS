@@ -34,7 +34,7 @@ jobs:
         with:
             args: -v -tpng ${{ steps.getfile.outputs.files }}
       - name: Push Local Changes
-        uses:  stefanzweifel/git-auto-commit-action@v4.8 
+        uses:  stefanzweifel/git-auto-commit-action@v4.8.0 
         with: 
           commit_user_name: "$USERNAME"
           commit_user_email: "$EMAIL"
