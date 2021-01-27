@@ -1,7 +1,9 @@
 package de.teamshrug.scooterms;
 
-import java.util.LinkedList;
-import java.util.logging.*;
+import de.teamshrug.scooterms.enums.Status;
+import de.teamshrug.scooterms.exceptions.NotLoggedInException;
+
+import java.util.logging.Logger;
 
 /**
  * Can do what a Customer can do, but is able to see information about all Scooter and sending them to the local repair facility
@@ -18,6 +20,7 @@ public class Admin extends Customer
      */
     public void printAllScooters()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -27,10 +30,12 @@ public class Admin extends Customer
                     System.out.println(scooter);
                 }
             }
+            else
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(ex);
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -39,6 +44,7 @@ public class Admin extends Customer
      */
     public void printScootersReportedAsDamaged()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -51,10 +57,12 @@ public class Admin extends Customer
                     }
                 }
             }
+            else
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(ex);
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -63,32 +71,42 @@ public class Admin extends Customer
      */
     public Scooter returnDamagedScooter()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
             {
                 Scooter returnscooter = null;
-                for (Scooter scooter : Scooter.scooterlist)
+
+                try
                 {
-                    if (scooter.getState().equals(Status.damaged))
+                    for (Scooter scooter : Scooter.scooterlist)
                     {
-                        returnscooter = scooter;
-                        break;
+                        if (scooter.getState().equals(Status.damaged))
+                        {
+                            returnscooter = scooter;
+                            break;
+                        }
                     }
-                }
-                if (returnscooter == null)
-                {
-                    throw new Exception("Es gibt keinen Scooter mit Status: damaged");
-                }
-                else
+
+                    if (returnscooter == null)
+                    {
+                        throw new Exception("Es gibt keinen Scooter mit Status: damaged");
+                    }
                     return returnscooter;
+                }
+                catch(Exception ex)
+                {
+                    System.out.println(ex.getMessage());
+                    return null;
+                }
             }
             else
-                return null;
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(ex.getMessage());
+            logger.warning(ex.getMessage());
             return null;
         }
     }
@@ -99,6 +117,7 @@ public class Admin extends Customer
      */
      public boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
      {
+         Logger logger = Logger.getLogger("Scooter-MS Logger");
          try
          {
              if (getIsLoggedIn())
@@ -109,16 +128,16 @@ public class Admin extends Customer
                  }
                  catch (NullPointerException exception)
                  {
-                     System.out.println("Kein Scooter übergeben");
+                     logger.warning("Kein Scooter übergeben");
                      return false;
                  }
              }
              else
-                 throw new Exception("Not logged in");
+                 throw new NotLoggedInException();
          }
-         catch (Exception ex)
+         catch (NotLoggedInException ex)
          {
-             System.out.println(ex.getMessage());
+             logger.warning(ex.getMessage());
              return false;
          }
      }

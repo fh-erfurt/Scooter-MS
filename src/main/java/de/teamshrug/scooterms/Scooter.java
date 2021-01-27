@@ -1,5 +1,7 @@
 package de.teamshrug.scooterms;
 
+import de.teamshrug.scooterms.enums.Status;
+
 import java.util.Random;
 import java.util.LinkedList;
 

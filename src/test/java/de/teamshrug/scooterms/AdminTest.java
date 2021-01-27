@@ -21,12 +21,13 @@ public class AdminTest {
     {
         for (int _i = 1 ; _i <= 10 ; _i++ )
         {
-            Scooter _scooter = new Scooter(Erfurt, MD_Erfurt);
+            Scooter scooter = new Scooter(Erfurt, MD_Erfurt);
 
         }
 
         TestAdmin.setPosition(new Coordinate(51.004f,11.002f));
 
+        TestCustomer.logIn("1234");
         TestCustomer.reportScooterDamaged(Scooter.scooterlist.get(0));
         TestCustomer.reportScooterDamaged(Scooter.scooterlist.get(1));
     }

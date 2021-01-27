@@ -1,5 +1,10 @@
 package de.teamshrug.scooterms;
 
+import de.teamshrug.scooterms.enums.Status;
+import de.teamshrug.scooterms.exceptions.NotLoggedInException;
+
+import java.util.logging.Logger;
+
 /**
  * Can do what a Customer can do, but is able to see Scooters with low battery and recharge them to top up the account balance
  */
@@ -16,36 +21,44 @@ public class ScooterHunter extends Customer
      */
     public ScooterHotspot returnMostEmptyScooterHotspot()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         ScooterHotspot returnscooterhotspot = null;
         int returnscooterhotspotusage = -1;
 
-        if (getIsLoggedIn())
+        try
         {
-
-            for (ScooterHotspot hotspot : ScooterHotspot.scooterhotspotlist)
+            if (getIsLoggedIn())
             {
-                if (hotspot.getRegisteredArea() == getActiveInArea())
+                for (ScooterHotspot hotspot : ScooterHotspot.scooterhotspotlist)
                 {
-                    if (hotspot.getScootercount() < hotspot.getMaxscootercount())
+                    if (hotspot.getRegisteredArea() == getActiveInArea())
                     {
-                        if (returnscooterhotspot == null)
+                        if (hotspot.getScootercount() < hotspot.getMaxscootercount())
                         {
-                            returnscooterhotspot = hotspot;
-                            returnscooterhotspotusage = hotspot.getScootercount();
-                        }
+                            if (returnscooterhotspot == null)
+                            {
+                                returnscooterhotspot = hotspot;
+                                returnscooterhotspotusage = hotspot.getScootercount();
+                            }
 
-                        if (hotspot.getScootercount() < returnscooterhotspotusage)
-                        {
-                            returnscooterhotspot = hotspot;
-                            returnscooterhotspotusage = hotspot.getScootercount();
+                            if (hotspot.getScootercount() < returnscooterhotspotusage)
+                            {
+                                returnscooterhotspot = hotspot;
+                                returnscooterhotspotusage = hotspot.getScootercount();
+                            }
                         }
                     }
                 }
+                return returnscooterhotspot;
             }
-            return returnscooterhotspot;
+            else
+                throw new NotLoggedInException();
         }
-        else
+        catch (NotLoggedInException ex)
+        {
+            logger.warning(ex.getMessage());
             return null;
+        }
     }
 
     /**
@@ -53,15 +66,25 @@ public class ScooterHunter extends Customer
      */
     public void printScootersLowOnBattery()
     {
-        if (getIsLoggedIn())
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
+        try
         {
-            for (Scooter scooter : Scooter.scooterlist)
+            if (getIsLoggedIn())
             {
-                if (scooter.getBattery() <= Scooter.getLowbattery())
+                for (Scooter scooter : Scooter.scooterlist)
                 {
-                    System.out.println(scooter);
+                    if (scooter.getBattery() <= Scooter.getLowbattery())
+                    {
+                        System.out.println(scooter);
+                    }
                 }
             }
+            else
+                throw new NotLoggedInException();
+        }
+        catch (NotLoggedInException ex)
+        {
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -70,42 +93,51 @@ public class ScooterHunter extends Customer
      */
     public Scooter returnNearestScooterLowOnBattery()
     {
-        if (getIsLoggedIn())
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
+        try
         {
-            double kmdistance = -1;
-            Scooter returnscooter = null;
-
-            for (Scooter scooter : Scooter.scooterlist)
+            if (getIsLoggedIn())
             {
-                if (scooter.getBattery() <= Scooter.getLowbattery())
+                double kmdistance = -1;
+                Scooter returnscooter = null;
+
+                for (Scooter scooter : Scooter.scooterlist)
                 {
-                    double newdistance;
-
-                    if (kmdistance == -1)
+                    if (scooter.getBattery() <= Scooter.getLowbattery())
                     {
-                        kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                        double newdistance;
+
+                        if (kmdistance == -1)
+                        {
+                            kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                                    scooter.getPosition().ndegree, scooter.getPosition().edegree);
+                        }
+
+                        if (returnscooter == null)
+                        {
+                            returnscooter = scooter;
+                        }
+
+                        newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
                                 scooter.getPosition().ndegree, scooter.getPosition().edegree);
-                    }
 
-                    if (returnscooter == null)
-                    {
-                        returnscooter = scooter;
-                    }
-
-                    newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
-                            scooter.getPosition().ndegree, scooter.getPosition().edegree);
-
-                    if (newdistance < kmdistance)
-                    {
-                        returnscooter = scooter;
-                        kmdistance = newdistance;
+                        if (newdistance < kmdistance)
+                        {
+                            returnscooter = scooter;
+                            kmdistance = newdistance;
+                        }
                     }
                 }
+                return returnscooter;
             }
-            return returnscooter;
+            else
+                throw new NotLoggedInException();
         }
-        else
+        catch (NotLoggedInException ex)
+        {
+            logger.warning(ex.getMessage());
             return null;
+        }
     }
 
     /**
@@ -128,23 +160,35 @@ public class ScooterHunter extends Customer
      */
     public void chargeScooter(Scooter scooter)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
             {
-                if (scooter != null)
+                try
                 {
+                    //if (scooter != null)
+                    //{
                     scooter.setState(Status.charging);
                     float actualBalance = getBalance();
                     float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
                     setBalance(actualBalance+balanceForCharging);
                     scooter.setBattery(100);
+                    //}
                 }
+                catch (Exception ex)
+                {
+                    logger.warning("Parametered Scooter could not be charged");
+                    logger.warning(ex.getMessage());
+                }
+
             }
+            else
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(ex);
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -154,6 +198,7 @@ public class ScooterHunter extends Customer
      */
     public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterhotspot)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -168,14 +213,16 @@ public class ScooterHunter extends Customer
                     System.out.println("Scooter brought back to ScooterHotspot");
                 }
                 else
-                    {
+                {
                     System.out.println("The Hotspot is already full, please go to another one");
                 }
             }
+            else
+                throw new NotLoggedInException();
         }
-        catch (Exception ex)
+        catch (NotLoggedInException ex)
         {
-            System.out.println(ex);
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -189,21 +236,5 @@ public class ScooterHunter extends Customer
         this.activeInArea = activeInArea;
     }
 
-    /*
-        public static int getLowbattery()
-        {
-            return lowbattery;
-        }
-
-
-        public static void setLowbattery(int lowbattery)
-        {
-            ScooterHunter.lowbattery = lowbattery;
-        }
-
-
-        static private int lowbattery = 0;
-
-     */
     private Area activeInArea;
 }

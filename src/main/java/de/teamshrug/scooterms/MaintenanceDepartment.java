@@ -1,9 +1,10 @@
 package de.teamshrug.scooterms;
 
-import org.sonatype.guice.bean.containers.Main;
+import de.teamshrug.scooterms.enums.Status;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.logging.Logger;
 
 /**
  * The class MaintenanceDepartment stores damaged scooters and repairs them
@@ -32,6 +33,7 @@ public class MaintenanceDepartment
      */
     public void printAllScootersInMd()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             for (Scooter scooter : maintenancedepartmentscooterlist)
@@ -41,7 +43,7 @@ public class MaintenanceDepartment
         }
         catch (Exception ex)
         {
-            System.out.println(ex);
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -50,16 +52,17 @@ public class MaintenanceDepartment
      */
     void repairScooter()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             Scooter scooter = maintenancedepartmentscooterlist.getFirst();
             scooter.setBattery(100);
-            System.out.println("Repaired Scooter will be checked out now...");
+            logger.finest("Repaired Scooter will be checked out now...");
             checkOutScooter(scooter);
         }
         catch (NoSuchElementException ex)
         {
-            System.out.println("Es gibt keinen Scooter der repariert werden muss.");
+            logger.info("Es gibt keinen Scooter der repariert werden muss.");
         }
 
     }
@@ -70,9 +73,10 @@ public class MaintenanceDepartment
      */
     void checkOutScooter(Scooter scooter)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         scooter.setState(Status.ready);
         maintenancedepartmentscooterlist.remove(scooter);
-        System.out.println("...checked out Scooter");
+        logger.finest("...checked out Scooter");
     }
 
     /**

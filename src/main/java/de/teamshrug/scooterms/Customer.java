@@ -1,8 +1,10 @@
 package de.teamshrug.scooterms;
 
-import com.thoughtworks.qdox.model.expression.Not;
+import de.teamshrug.scooterms.enums.Status;
 import de.teamshrug.scooterms.exceptions.NotEnoughCreditsException;
 import de.teamshrug.scooterms.exceptions.NotLoggedInException;
+
+import java.util.logging.Logger;
 
 /**
  * The class Customer is allowed to check the account balance and drive a scotter if account balance is sufficient
@@ -22,6 +24,7 @@ public class Customer {
      */
     void logIn(String password)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (this.password.equals(password))
@@ -33,7 +36,7 @@ public class Customer {
         }
         catch (Exception ex)
         {
-            System.out.println(ex.getMessage());
+            logger.info(ex.getMessage());
         }
     }
 
@@ -51,6 +54,7 @@ public class Customer {
      */
     void changePassword(String newpassword)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -62,7 +66,7 @@ public class Customer {
         }
         catch (NotLoggedInException ex)
         {
-            System.out.println(ex.getMessage());
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -72,6 +76,7 @@ public class Customer {
      */
     public void reportScooterDamaged(Scooter scooter)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -83,7 +88,7 @@ public class Customer {
         }
         catch (NotLoggedInException ex)
         {
-            System.out.println(ex.getMessage());
+            logger.warning(ex.getMessage());
         }
     }
 
@@ -93,40 +98,50 @@ public class Customer {
      */
     public Scooter returnNearestScooter()
     {
-        if (getIsLoggedIn())
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
+        try
         {
-            double kmdistance = -1;
-            Scooter returnscooter = null;
-
-
-            for (Scooter scooter : Scooter.scooterlist)
+            if (getIsLoggedIn())
             {
-                double newdistance;
+                double kmdistance = -1;
+                Scooter returnscooter = null;
 
-                if (kmdistance == -1)
+
+                for (Scooter scooter : Scooter.scooterlist)
                 {
-                    kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                    double newdistance;
+
+                    if (kmdistance == -1)
+                    {
+                        kmdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
+                                scooter.getPosition().ndegree, scooter.getPosition().edegree);
+                    }
+
+                    if (returnscooter == null)
+                    {
+                        returnscooter = scooter;
+                    }
+
+                    newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
                             scooter.getPosition().ndegree, scooter.getPosition().edegree);
-                }
 
-                if (returnscooter == null)
-                {
-                    returnscooter = scooter;
+                    if (newdistance < kmdistance)
+                    {
+                        returnscooter = scooter;
+                        kmdistance = newdistance;
+                    }
                 }
-
-                newdistance = Haversine.distance(this.getPosition().ndegree, this.getPosition().edegree,
-                        scooter.getPosition().ndegree, scooter.getPosition().edegree);
-
-                if (newdistance < kmdistance)
-                {
-                    returnscooter = scooter;
-                    kmdistance = newdistance;
-                }
+                logger.finest("Nearest Scooter is " + kmdistance + " km away");
+                return returnscooter;
             }
-            return returnscooter;
+            else
+                throw new NotLoggedInException();
         }
-        else
+        catch (NotLoggedInException ex)
+        {
+            logger.warning(ex.getMessage());
             return null;
+        }
     }
 
     /**
@@ -135,6 +150,7 @@ public class Customer {
      */
     public void useScooter(Scooter scooter)
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (isloggedin)
@@ -159,15 +175,16 @@ public class Customer {
         }
         catch (NotLoggedInException ex)
         {
-            System.out.println(ex.getMessage());
+            logger.warning(ex.getMessage());
         }
     }
 
     /**
-     * Customer can end his journey and park the scooter
+     * Customer can end his journey and park the Scooter
      */
     public void endDrive()
     {
+        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             usingScooter.park();
@@ -175,7 +192,7 @@ public class Customer {
         }
         catch (Exception ex)
         {
-            System.out.println("Can not park because no Scooter was used to park");
+            logger.info("Can not park because no Scooter was used to park");
         }
     }
 
