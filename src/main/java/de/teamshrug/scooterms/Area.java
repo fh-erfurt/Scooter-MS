@@ -1,5 +1,7 @@
 package de.teamshrug.scooterms;
 
+import java.util.logging.Logger;
+
 /**
  * The class Area defines a area where the scooters can be used, each area consist of four coordinates
  */
@@ -20,12 +22,20 @@ public class Area {
      */
     public boolean isInArea(Coordinate _position)
     {
-        if (((ndegree1 < _position.ndegree) && (_position.ndegree < ndegree2)) || ((ndegree1 > _position.ndegree) && (_position.ndegree > ndegree2)))
+        try
         {
-            return ((edegree1 < _position.edegree) && (_position.edegree < edegree2)) || ((edegree1 > _position.edegree) && (_position.edegree > edegree2));
+            if (((ndegree1 < _position.ndegree) && (_position.ndegree < ndegree2)) || ((ndegree1 > _position.ndegree) && (_position.ndegree > ndegree2)))
+            {
+                return ((edegree1 < _position.edegree) && (_position.edegree < edegree2)) || ((edegree1 > _position.edegree) && (_position.edegree > edegree2));
+            }
+            else
+                return false;
         }
-        else
+        catch (Exception ex)
+        {
+            logger.warning(ex.getMessage());
             return false;
+        }
     }
 
     @Override
@@ -54,6 +64,7 @@ public class Area {
     public String getAreaname() { return areaname;}
 
 
+    private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private final String areaname;
     private final float ndegree1;
     private final float ndegree2;

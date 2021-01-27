@@ -4,7 +4,6 @@ import de.teamshrug.scooterms.enums.Status;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

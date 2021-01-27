@@ -3,8 +3,6 @@ package de.teamshrug.scooterms;
 import de.teamshrug.scooterms.enums.Status;
 import de.teamshrug.scooterms.exceptions.NotLoggedInException;
 
-import java.util.logging.Logger;
-
 /**
  * Can do what a Customer can do, but is able to see Scooters with low battery and recharge them to top up the account balance
  */
