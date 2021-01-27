@@ -23,12 +23,12 @@
 
 ## About
 ### About the project
-In unserem Scooter Management System können Umgebungen (Area) erstellt werden, in denen sich die Scooter (welche beim Instanziieren einer Umgebung zugewiesen werden) bewegen dürfen.
-In unserem Test gibt es die Umgebung Erfurt, welche sich zwischen folgenden Koordinaten aufspannt:
+In our Scooter Management System, Areas (Type Area) can be created, where the Scooters (Type Scooter) are allowed to move.
+In the test, there is an Area Erfurt which spans between the following coordinates:
 - N50.95 <---> N51.0
 - E11.00 <---> E11.06
 
-Anschauen kann man die Karte [hier](https://www.scribblemaps.com/create/#/id=ScooterMapEF&lat=50.98352366&lng=11.01784203&z=13&t=custom_style)
+You can view the interactive map [here](https://www.scribblemaps.com/create/#/id=ScooterMapEF&lat=50.98352366&lng=11.01784203&z=13&t=custom_style)
 
 <br />
 
@@ -59,6 +59,7 @@ Anschauen kann man die Karte [hier](https://www.scribblemaps.com/create/#/id=Sco
 <br />
 
 ## Credits
+### Credits to the people whose work has advanced our project
 
 - to [CloudBees](https://github.com/cloudbees) for their [PlantUML GitHub action](https://github.com/cloudbees/plantuml-github-action)
 - to [Vincent A. Cicirello](https://github.com/cicirello) for his [javadoc-cleanup Github Action](https://github.com/cicirello/javadoc-cleanup)
