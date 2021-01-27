@@ -18,6 +18,8 @@
 - [Diagrams](#diagrams)
 - [Credits](#credits)
 
+<br />
+<br />
 
 ## About
 ### About the project
@@ -60,6 +62,6 @@ Anschauen kann man die Karte [hier](https://www.scribblemaps.com/create/#/id=Sco
 ## Credits
 
 - to [CloudBees](https://github.com/cloudbees) for their [PlantUML GitHub action](https://github.com/cloudbees/plantuml-github-action)
-- to [Vincent Cicirello](https://github.com/cicirello) for his [javadoc-cleanup Github Action](https://github.com/cicirello/javadoc-cleanup)
+- to [Vincent A. Cicirello](https://github.com/cicirello) for his [javadoc-cleanup Github Action](https://github.com/cicirello/javadoc-cleanup)
 - to [Stefan Zweifel](https://github.com/stefanzweifel) for his [git-auto-commit Github Action](https://github.com/stefanzweifel/git-auto-commit-action)
 - to [Jason Winn](https://github.com/jasonwinn) for his [Haversine formula Java implementation](https://github.com/jasonwinn/haversine)
