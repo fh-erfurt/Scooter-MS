@@ -33,10 +33,9 @@ Anschauen kann man die Karte [hier](https://www.scribblemaps.com/create/#/id=Sco
 <br />
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="300"/>
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="400"/>
 </p>
 
-<br />
 <br />
 
 ## Software
