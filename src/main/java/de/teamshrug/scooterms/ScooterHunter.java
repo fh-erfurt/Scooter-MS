@@ -19,13 +19,12 @@ public class ScooterHunter extends Customer
      */
     public ScooterHotspot returnMostEmptyScooterHotspot()
     {
-        ScooterHotspot returnscooterhotspot = null;
-        int returnscooterhotspotusage = -1;
-
         try
         {
             if (getIsLoggedIn())
             {
+                int returnscooterhotspotusage = -1;
+                ScooterHotspot returnscooterhotspot = null;
                 for (ScooterHotspot hotspot : ScooterHotspot.scooterhotspotlist)
                 {
                     if (hotspot.getRegisteredArea() == getActiveInArea())
@@ -161,21 +160,17 @@ public class ScooterHunter extends Customer
             {
                 try
                 {
-                    //if (scooter != null)
-                    //{
                     scooter.setState(Status.charging);
                     float actualBalance = getBalance();
                     float balanceForCharging = calcBalanceForCharging(scooter.getBattery());
                     setBalance(actualBalance+balanceForCharging);
                     scooter.setBattery(100);
-                    //}
                 }
                 catch (Exception ex)
                 {
-                    logger.warning("Parametered Scooter could not be charged");
+                    logger.warning("Parametered Scooter could not be charged, maybe no Scooter was passed.");
                     logger.warning(ex.getMessage());
                 }
-
             }
             else
                 throw new NotLoggedInException();
@@ -203,11 +198,11 @@ public class ScooterHunter extends Customer
                     scooter.setState(Status.ready);
                     scooterhotspot.setScootercount(newHotspotcount);
                     scooter.setPosition(scooterhotspot.getLocation());
-                    System.out.println("Scooter brought back to ScooterHotspot");
+                    System.out.println("Scooter brought back to ScooterHotspot.");
                 }
                 else
                 {
-                    System.out.println("The Hotspot is already full, please go to another one");
+                    System.out.println("The Hotspot is already full, please go to another one.");
                 }
             }
             else

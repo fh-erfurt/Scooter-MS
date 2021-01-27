@@ -53,7 +53,6 @@ public class Customer {
      */
     void changePassword(String newpassword)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -75,7 +74,6 @@ public class Customer {
      */
     public void reportScooterDamaged(Scooter scooter)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -97,14 +95,12 @@ public class Customer {
      */
     public Scooter returnNearestScooter()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
             {
                 double kmdistance = -1;
                 Scooter returnscooter = null;
-
 
                 for (Scooter scooter : Scooter.scooterlist)
                 {
@@ -130,7 +126,7 @@ public class Customer {
                         kmdistance = newdistance;
                     }
                 }
-                logger.finest("Nearest Scooter is " + kmdistance + " km away");
+                System.out.println("Nearest Scooter is " + kmdistance + " km away");
                 return returnscooter;
             }
             else
@@ -149,7 +145,6 @@ public class Customer {
      */
     public void useScooter(Scooter scooter)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (isloggedin)
@@ -183,7 +178,6 @@ public class Customer {
      */
     public void endDrive()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             usingScooter.park();

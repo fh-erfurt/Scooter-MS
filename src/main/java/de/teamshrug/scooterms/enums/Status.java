@@ -1,4 +1,5 @@
 package de.teamshrug.scooterms.enums;
+
 /**
  * The enum Status consists of the types: ready, lowonbattery, inuse, charging, damaged, maintenance. Every Scooter can change his 'Status' to a different one.
  */
@@ -10,7 +11,7 @@ public enum Status
     ready,
 
     /**
-     * The scooter gets the state, if the battery is lower or equals 20
+     * The scooter is low on battery, if the battery is lower or equals 20%
      */
     lowonbattery,
 

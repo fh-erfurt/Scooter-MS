@@ -86,13 +86,13 @@ public class Admin extends Customer
 
                     if (returnscooter == null)
                     {
-                        throw new Exception("Es gibt keinen Scooter mit Status: damaged");
+                        throw new Exception("There's no Scooter with Status: damaged");
                     }
                     return returnscooter;
                 }
                 catch(Exception ex)
                 {
-                    System.out.println(ex.getMessage());
+                    logger.info(ex.getMessage());
                     return null;
                 }
             }
@@ -122,7 +122,7 @@ public class Admin extends Customer
                  }
                  catch (NullPointerException exception)
                  {
-                     logger.warning("Kein Scooter übergeben");
+                     logger.warning("No Scooter was passed");
                      return false;
                  }
              }

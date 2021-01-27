@@ -23,9 +23,9 @@ public class MaintenanceDepartment
     /**
      * If no scootercapacity is set, the default is 8
      */
-    public MaintenanceDepartment(String _departmentname, Coordinate _location) {
-        this.location = _location;
-        this.departmentname = _departmentname;
+    public MaintenanceDepartment(String departmentname, Coordinate location) {
+        this.location = location;
+        this.departmentname = departmentname;
     }
 
     /**
@@ -60,9 +60,8 @@ public class MaintenanceDepartment
         }
         catch (NoSuchElementException ex)
         {
-            logger.fine("Es gibt keinen Scooter der repariert werden muss.");
+            logger.fine("There's no Scooter which has to be repaired.");
         }
-
     }
 
     /**

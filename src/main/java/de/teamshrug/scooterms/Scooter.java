@@ -11,11 +11,11 @@ import java.util.logging.Logger;
  */
 public class Scooter
 {
-    public Scooter(Area _registeredArea, MaintenanceDepartment _registeredmaintenancedepartment)
+    public Scooter(Area registeredArea, MaintenanceDepartment registeredmaintenancedepartment)
     {
-        this.registeredmaintenancedepartment = _registeredmaintenancedepartment;
+        this.registeredmaintenancedepartment = registeredmaintenancedepartment;
         this.state = Status.ready;
-        this.registeredarea = _registeredArea;
+        this.registeredarea = registeredArea;
         this.battery = genRandomNumber(1,100);
         this.id = ++numberofscooters;
         scooterlist.add(this);
@@ -53,7 +53,7 @@ public class Scooter
 
     /**
      * generates a random number between min and max value
-     * @param min is the smallest value
+     * @param min is the lowest value
      * @param max is the highest value
      * @return random number
      */
