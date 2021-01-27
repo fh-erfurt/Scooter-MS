@@ -21,7 +21,6 @@ public class ScooterHunter extends Customer
      */
     public ScooterHotspot returnMostEmptyScooterHotspot()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         ScooterHotspot returnscooterhotspot = null;
         int returnscooterhotspotusage = -1;
 
@@ -66,7 +65,6 @@ public class ScooterHunter extends Customer
      */
     public void printScootersLowOnBattery()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -93,7 +91,6 @@ public class ScooterHunter extends Customer
      */
     public Scooter returnNearestScooterLowOnBattery()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -160,7 +157,6 @@ public class ScooterHunter extends Customer
      */
     public void chargeScooter(Scooter scooter)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -198,7 +194,6 @@ public class ScooterHunter extends Customer
      */
     public void bringBackScooterToHotspot(Scooter scooter, ScooterHotspot scooterhotspot)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())

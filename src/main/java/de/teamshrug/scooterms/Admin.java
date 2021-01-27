@@ -20,7 +20,6 @@ public class Admin extends Customer
      */
     public void printAllScooters()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -44,7 +43,6 @@ public class Admin extends Customer
      */
     public void printScootersReportedAsDamaged()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -71,7 +69,6 @@ public class Admin extends Customer
      */
     public Scooter returnDamagedScooter()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (getIsLoggedIn())
@@ -117,7 +114,6 @@ public class Admin extends Customer
      */
      public boolean sendScooterToLocalMaintenanceDepartment(Scooter scooter)
      {
-         Logger logger = Logger.getLogger("Scooter-MS Logger");
          try
          {
              if (getIsLoggedIn())

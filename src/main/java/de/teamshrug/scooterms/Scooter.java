@@ -4,6 +4,7 @@ import de.teamshrug.scooterms.enums.Status;
 
 import java.util.Random;
 import java.util.LinkedList;
+import java.util.logging.Logger;
 
 /**
  * The scooter class can be used by a customer as a vehicle until the battery is empty, the customer pays a fixed price for every minute of travel. When the battery is below 20 percent, its status changes to "lowonbattery" and can now be picked up by a scooter hunter to charge it, the scooter hunter receives a reward for his effort.
@@ -127,9 +128,8 @@ public class Scooter
         }
         catch (Exception ex)
         {
-            System.out.println(ex.getMessage());
+            logger.info(ex.getMessage());
         }
-
     }
 
     /**
@@ -247,6 +247,7 @@ public class Scooter
     public void setRegisteredMaintenanceDepartment(MaintenanceDepartment _registeredmaintenancedepartment) { this.registeredmaintenancedepartment = _registeredmaintenancedepartment; }
 
 
+    private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private Customer inUseByDriver;
     private Area registeredarea;
     private Coordinate position;

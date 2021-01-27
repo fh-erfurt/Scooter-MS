@@ -24,7 +24,6 @@ public class Customer {
      */
     void logIn(String password)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             if (this.password.equals(password))
@@ -222,6 +221,7 @@ public class Customer {
     }
 
 
+    protected final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private Scooter usingScooter;
     private float creditedeuros;
     private Coordinate position;

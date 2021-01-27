@@ -4,6 +4,7 @@ import de.teamshrug.scooterms.enums.Status;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -33,7 +34,6 @@ public class MaintenanceDepartment
      */
     public void printAllScootersInMd()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             for (Scooter scooter : maintenancedepartmentscooterlist)
@@ -52,7 +52,6 @@ public class MaintenanceDepartment
      */
     void repairScooter()
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         try
         {
             Scooter scooter = maintenancedepartmentscooterlist.getFirst();
@@ -62,7 +61,7 @@ public class MaintenanceDepartment
         }
         catch (NoSuchElementException ex)
         {
-            logger.info("Es gibt keinen Scooter der repariert werden muss.");
+            logger.fine("Es gibt keinen Scooter der repariert werden muss.");
         }
 
     }
@@ -73,10 +72,9 @@ public class MaintenanceDepartment
      */
     void checkOutScooter(Scooter scooter)
     {
-        Logger logger = Logger.getLogger("Scooter-MS Logger");
         scooter.setState(Status.ready);
         maintenancedepartmentscooterlist.remove(scooter);
-        logger.finest("...checked out Scooter");
+        System.out.println("...checked out Scooter");
     }
 
     /**
@@ -106,10 +104,9 @@ public class MaintenanceDepartment
         return scootercapacity;
     }
 
-
+    private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private final String departmentname;
     private final Coordinate location;
     private int scootercapacity = 8;
     private LinkedList<Scooter> maintenancedepartmentscooterlist = new LinkedList<Scooter>();
-
 }
