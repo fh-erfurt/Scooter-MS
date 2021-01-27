@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.teamshrug.scooterms"},{"l":"de.teamshrug.scooterms.exceptions"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.teamshrug.scooterms"},{"l":"de.teamshrug.scooterms.enums"},{"l":"de.teamshrug.scooterms.exceptions"}];updateSearchResults();
