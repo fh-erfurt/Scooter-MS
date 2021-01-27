@@ -208,5 +208,6 @@ MaintenanceDepartment -- Coordinate
 ScooterHotspot -- Coordinate
 Customer -- Coordinate
 
+
 @enduml
 
