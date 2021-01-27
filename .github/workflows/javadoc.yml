@@ -8,6 +8,9 @@ on:
 jobs:
   api-website:
     runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ secrets.R_USERNAME }}
+      EMAIL: ${{ secrets.R_EMAIL }}
     steps:
 
     - name: Checkout the repo
@@ -40,9 +43,6 @@ jobs:
         
     - name: Push Local Changes
       uses:  stefanzweifel/git-auto-commit-action@v4.8.0
-      env:
-        USERNAME: ${{ secrets.R_USERNAME }}
-        EMAIL: ${{ secrets.R_EMAIL }}
       with: 
         commit_user_name: "$USERNAME"
         commit_user_email: "$EMAIL"
