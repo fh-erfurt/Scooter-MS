@@ -55,12 +55,12 @@ public class MaintenanceDepartment
         {
             Scooter scooter = maintenancedepartmentscooterlist.getFirst();
             scooter.setBattery(100);
-            logger.finest("Repaired Scooter will be checked out now...");
+            System.out.println("Repaired Scooter will be checked out now...");
             checkOutScooter(scooter);
         }
         catch (NoSuchElementException ex)
         {
-            logger.fine("There's no Scooter which has to be repaired.");
+            System.out.println("There's no Scooter which has to be repaired.");
         }
     }
 
