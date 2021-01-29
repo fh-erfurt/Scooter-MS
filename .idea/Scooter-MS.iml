@@ -13,6 +13,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:maven-surefire-common:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-booter:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-spi:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-toolchain:3.0-alpha-2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-artifact-transfer:0.11.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-common-artifact-filters:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-shared-utils:3.0.0-M4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter:5.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
