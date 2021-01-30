@@ -28,10 +28,14 @@ In the test, there is an Area Erfurt which spans between the following coordinat
 - N50.95 <---> N51.0
 - E11.00 <---> E11.06
 
-You can view the interactive map [here](https://www.scribblemaps.com/create/#/id=ScooterMapEF&lat=50.98352366&lng=11.01784203&z=13&t=custom_style)
-
+You can view the interactive scribblemap [here](https://www.scribblemaps.com/create/#/id=ScooterMapEF&lat=50.98352366&lng=11.01784203&z=13&t=custom_style)
 <br />
 
+In the Scooter-MS, a Customer is able to rent a Scooter.
+An Admin can do what the Customer can do, but is employed and is responsible for one Area. When a Scooter is reported as damaged by a Customer, the Admin must check what is wrong with the Scooter.
+A ScooterHunter is able to do what the Customer can do, but the ScooterHunter also can top up his balance by recharging Scooter with low battery level. This balance then can be withdrawn.
+
+<br />
 <p align="center">
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="400"/>
 </p>
@@ -42,7 +46,7 @@ You can view the interactive map [here](https://www.scribblemaps.com/create/#/id
 ### The Software used to create this Project
 
 - <img src="https://logonoid.com/images/intellij-idea-logo.png" alt="IntelliJ" width="16"/>
-  IntelliJ Idea for Development
+  IntelliJ Idea for Coding
   <br />
 - <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-512.png" alt="Plantuml" width="17"/>
   Scribblemaps.com for the embedded Area Image
