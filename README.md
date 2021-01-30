@@ -13,8 +13,9 @@
 
 ## Table of Contents
 
-- [About](#about)
-- [Software](#software)
+- [About the project](#about)
+- [Gert started](#get-started)
+- [Software we used](#software)
 - [Diagrams](#diagrams)
 - [Credits](#credits)
 
@@ -39,6 +40,18 @@ A ScooterHunter is able to do what the Customer can do, but the ScooterHunter al
 <p align="center">
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Scooter-MS-Map-Animation.gif" alt="ScooterMap" width="400"/>
 </p>
+
+<br />
+
+## Get-started
+### How to run
+
+
+Just one simple command is needed to run the project.</br>
+Simply run it from the root directory of the project.
+```
+mvn clean -f pom.xml
+```
 
 <br />
 
