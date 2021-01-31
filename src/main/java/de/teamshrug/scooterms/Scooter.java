@@ -40,9 +40,8 @@ public class Scooter
     }
 
     /**
-     * generates a license plate for the scooter that calls the method
+     * generates a license plate for the scooter that calls the method like '263ZDE'
      */
-    // creates licenseplate with pattern like '263ZDE'
     void requestLicensePlate()
     {
         if (this.licenseplate == null)
@@ -87,7 +86,7 @@ public class Scooter
     public void drive(Customer driver)
     {
         setState(Status.inuse);
-        inUseByDriver = driver;
+        inusebydriver = driver;
     }
 
     /**
@@ -100,9 +99,9 @@ public class Scooter
         {
             if (isInRegisteredArea())
             {
-                float ndestination = inUseByDriver.getPosition().ndegree;
-                float edestination = inUseByDriver.getPosition().edegree;
-                float startBalance = inUseByDriver.getBalance();
+                float ndestination = inusebydriver.getPosition().ndegree;
+                float edestination = inusebydriver.getPosition().edegree;
+                float startBalance = inusebydriver.getBalance();
 
                 float kmdriven = (float)Haversine.distance(position.ndegree,position.edegree,ndestination,edestination);
 
@@ -118,10 +117,10 @@ public class Scooter
                     setState(Status.lowonbattery);
                 }
 
-                this.position = inUseByDriver.getPosition();                                // applies Customers position when scooter is parked
+                this.position = inusebydriver.getPosition();                                // applies Customers position when scooter is parked
                 this.battery = this.battery - (int)(meterdistance*0.002);
-                inUseByDriver.setBalance(startBalance - roundkmdistance);
-                inUseByDriver = null;
+                inusebydriver.setBalance(startBalance - roundkmdistance);
+                inusebydriver = null;
             }
             else
                 throw new Exception("Scooter can't be parked here, bring it back in the Area");
@@ -248,7 +247,7 @@ public class Scooter
 
 
     private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    private Customer inUseByDriver;
+    private Customer inusebydriver;
     private Area registeredarea;
     private Coordinate position;
     private final int id;
