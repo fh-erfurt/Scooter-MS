@@ -71,7 +71,20 @@ mvn clean -f pom.xml
 ## Diagrams
 ### Class Diagramm
 <img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/umldiagram.png" alt="PlantUML" width="800"/>
+<br />
 
+## Use Case Diagrams
+### Customer
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Customer.png" alt="PlantUML" width="800"/>
+<br />
+
+### CustomerHunter
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/CustomerHunter.png" alt="PlantUML" width="800"/>
+<br />
+
+### Admin
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/Admin.png" alt="PlantUML" width="800"/>
+<br />
 <br />
 <br />
 
