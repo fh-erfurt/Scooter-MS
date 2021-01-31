@@ -79,7 +79,7 @@ mvn clean -f pom.xml
 <br />
 
 ### CustomerHunter
-<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/CustomerHunter.png" alt="PlantUML" width="800"/>
+<img src="https://raw.githubusercontent.com/fh-erfurt/Scooter-MS/main/assets/ScooterHunter.png" alt="PlantUML" width="800"/>
 <br />
 
 ### Admin
